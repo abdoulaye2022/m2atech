@@ -5,7 +5,7 @@ export const menus = [
   },
   {
     label: "Services",
-    link: "/services/2/"
+    link: "/services/"
   },
   {
     label: "Projects",
@@ -13,7 +13,7 @@ export const menus = [
   },
   {
     label: "About Us",
-    link: "/about-us/2/"
+    link: "/about-us/"
   },
   {
     label: "Contact",

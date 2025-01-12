@@ -1,5 +1,5 @@
 "use client";
-  
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,7 +17,7 @@ const MainBanner: React.FC = () => {
                   data-aos-duration="800"
                   data-aos-delay="100"
                 >
-                  Secure IT Solutions Services
+                  Innovative Digital Solutions for Your Business
                 </h1>
 
                 <p
@@ -25,8 +25,7 @@ const MainBanner: React.FC = () => {
                   data-aos-duration="800"
                   data-aos-delay="200"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  At M2ATech, we specialize in creating modern, user-friendly websites, powerful mobile apps, and custom software solutions tailored to your unique needs. Let’s transform your ideas into reality.
                 </p>
 
                 <div
@@ -37,7 +36,7 @@ const MainBanner: React.FC = () => {
                 >
                   <Link href="/contact" className="default-btn">
                     <i className="flaticon-right"></i>
-                    Get Started <span></span>
+                    Start Your Project <span></span>
                   </Link>
                 </div>
               </div>
@@ -52,10 +51,10 @@ const MainBanner: React.FC = () => {
               >
                 <Image
                   src="/img/banner-img1.png"
-                  alt="image"
-                  width={750}
-                  height={626}
-                />
+                alt="M2ATech Digital Solutions"
+                width={750}
+                height={626}
+          />
               </div>
             </div>
           </div>

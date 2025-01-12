@@ -34,7 +34,7 @@ const ContactInfo: React.FC = () => {
                   Mobile: <a href="tel:+44457895789">+1 - (506) - 850 - 6548</a>
                 </p>
                 <p>
-                  E-mail: <a href="mailto:hello@tracer.com">m2atech@gmail.com</a>
+                  E-mail: <a href="mailto:contact@m2atech.com">contact@m2atech.com</a>
                 </p>
               </div>
             </div>

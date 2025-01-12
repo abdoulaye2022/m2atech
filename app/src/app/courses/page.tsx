@@ -3,6 +3,7 @@ import Navbar from "../../components/Layouts/Navbar";
 import PageBanner from "../../components/Common/PageBanner";
 import CoursesGridContent from "../../components/Courses/CoursesGridContent";
 import Footer from "../../components/Layouts/Footer";
+import Projects from "@/components/DigitalMarketingAgency/Projects";
 
 export default function Page() {
   return (
@@ -10,13 +11,13 @@ export default function Page() {
       <Navbar />
 
       <PageBanner
-        pageTitle="Course Grid"
+        pageTitle="Projects"
         homePageText="Home"
         homePageUrl="/"
-        activePageText="Course Grid"
+        activePageText="Projects Grid"
       />
 
-      <CoursesGridContent />
+      <Projects />
 
       <Footer />
     </>

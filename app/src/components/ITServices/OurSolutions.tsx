@@ -21,10 +21,10 @@ const OurSolutions: React.FC = () => {
               Our Solutions
             </span>
             <h2>We Different From Others Should Choose Us</h2>
-            <p>
+            {/* <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna.
-            </p>
+            </p> */}
           </div>
 
           <div className="row justify-content-center">
@@ -40,11 +40,11 @@ const OurSolutions: React.FC = () => {
                   <i className="flaticon-rocket"></i>
                 </div>
                 <h3>
-                  <Link href="/services/details/">Code Security</Link>
+                  <Link href="/services/details/">Tailored Solutions & Innovation</Link>
                 </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et.
+                At M2ATech, we don’t just build websites and software—we create custom solutions designed to fit your unique needs. With a focus on i
+                nnovation and user-friendly design, we deliver tools that help you stand out. Choose M2ATech for a partner that turns your vision into reality.
                 </p>
 
                 <Link href="/services/details/" className="view-details-btn">
@@ -66,12 +66,12 @@ const OurSolutions: React.FC = () => {
                 </div>
 
                 <h3>
-                  <Link href="/services/details/">Team Management</Link>
+                  <Link href="/services/details/">Your Success, Our Priority</Link>
                 </h3>
 
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et.
+                What sets us apart is our commitment to your success. From start to finish, we work closely with you to ensure your project 
+                meets its goals. With personalized support, on-time delivery, and transparent communication, M2ATech is the partner you can trust.
                 </p>
 
                 <Link href="/services/details/" className="view-details-btn">
@@ -93,12 +93,12 @@ const OurSolutions: React.FC = () => {
                 </div>
 
                 <h3>
-                  <Link href="/services/details/">Access Controlled</Link>
+                  <Link href="/services/details/">Client-Centric Approach</Link>
                 </h3>
 
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et.
+                M2ATech stands out by putting your needs first. We take the time to understand your challenges and goals, crafting websites and 
+                software that combine functionality, design, and performance. Choose M2ATech for a partner focused on your growth.
                 </p>
 
                 <Link href="/services/details/" className="view-details-btn">

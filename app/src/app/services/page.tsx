@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Layouts/Navbar";
 import PageBanner from "../../components/Common/PageBanner";
-import ServicesOne from "../../components/Services/ServicesOne";
+import ServicesStyleTwo from "../../components/Services/ServicesStyleTwo";
 import StartProject from "../../components/Common/StartProject";
 import Footer from "../../components/Layouts/Footer";
 
@@ -11,13 +11,13 @@ export default function Page() {
       <Navbar />
 
       <PageBanner
-        pageTitle="Services"
+        pageTitle="Services Two"
         homePageText="Home"
         homePageUrl="/"
-        activePageText="Services"
+        activePageText="Services Two"
       />
 
-      <ServicesOne />
+      <ServicesStyleTwo />
 
       <StartProject />
 

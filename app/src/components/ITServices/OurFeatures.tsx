@@ -1,5 +1,5 @@
 "use client";
-  
+
 import React from "react";
 import Image from "next/image";
 
@@ -8,7 +8,7 @@ const OurFeatures: React.FC = () => {
     <>
       <div className="services-area pt-100 pb-70 bg-f1f8fb">
         <div className="container">
-          <div 
+          <div
             className="section-title"
             data-aos="fade-up"
             data-aos-duration="800"
@@ -27,13 +27,12 @@ const OurFeatures: React.FC = () => {
 
             <h2>We’re Here To Help</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
+              At M2ATech, we specialize in delivering innovative web and software solutions tailored to your needs. From cutting-edge technology to seamless user experiences, we’ve got you covered.
             </p>
           </div>
 
           <div className="row">
-            <div 
+            <div
               className="col-lg-4 col-sm-6"
               data-aos="fade-up"
               data-aos-duration="800"
@@ -49,15 +48,14 @@ const OurFeatures: React.FC = () => {
                     height={70}
                   />
                 </div>
-                <h3>Incredible Infrastructure</h3>
+                <h3>Custom Web Development</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore.
+                  We build responsive, high-performance websites using modern technologies like React JS, Next JS, and Laravel.
                 </p>
               </div>
             </div>
 
-            <div 
+            <div
               className="col-lg-4 col-sm-6"
               data-aos="fade-up"
               data-aos-duration="800"
@@ -73,15 +71,14 @@ const OurFeatures: React.FC = () => {
                     height={70}
                   />
                 </div>
-                <h3>Email Notifications</h3>
+                <h3>Mobile App Development</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore.
+                  Create powerful, cross-platform mobile apps with Flutter, designed for both Android and iOS.
                 </p>
               </div>
             </div>
 
-            <div 
+            <div
               className="col-lg-4 col-sm-6"
               data-aos="fade-up"
               data-aos-duration="800"
@@ -97,15 +94,14 @@ const OurFeatures: React.FC = () => {
                     height={70}
                   />
                 </div>
-                <h3>Simple Dashboard</h3>
+                <h3>User-Centric Design</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore.
+                  We craft intuitive and visually stunning UX/UI designs that enhance user engagement and satisfaction.
                 </p>
               </div>
             </div>
 
-            <div 
+            <div
               className="col-lg-4 col-sm-6"
               data-aos="fade-up"
               data-aos-duration="800"
@@ -121,15 +117,14 @@ const OurFeatures: React.FC = () => {
                     height={70}
                   />
                 </div>
-                <h3>Information Retrieval</h3>
+                <h3>Backend Solutions</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore.
+                  Robust backend development with Node JS and Laravel, ensuring scalability and security for your applications.
                 </p>
               </div>
             </div>
 
-            <div 
+            <div
               className="col-lg-4 col-sm-6"
               data-aos="fade-up"
               data-aos-duration="800"
@@ -145,15 +140,14 @@ const OurFeatures: React.FC = () => {
                     height={70}
                   />
                 </div>
-                <h3>Drag and Drop</h3>
+                <h3>E-commerce Solutions</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore.
+                  Build feature-rich e-commerce platforms that drive sales and provide seamless shopping experiences.
                 </p>
               </div>
             </div>
 
-            <div 
+            <div
               className="col-lg-4 col-sm-6"
               data-aos="fade-up"
               data-aos-duration="800"
@@ -169,10 +163,9 @@ const OurFeatures: React.FC = () => {
                     height={70}
                   />
                 </div>
-                <h3>Deadline Reminders</h3>
+                <h3>Ongoing Support</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore.
+                  We provide continuous maintenance and support to ensure your digital solutions remain up-to-date and efficient.
                 </p>
               </div>
             </div>

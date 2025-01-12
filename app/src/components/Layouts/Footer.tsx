@@ -1,5 +1,5 @@
 "use client";
-  
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,17 +17,15 @@ const Footer: React.FC = () => {
                 <Link href="/" className="logo">
                   <Image
                     src="/img/m2atech.png"
-                    alt="m2atech"
+                    alt="M2ATech Logo"
                     width={130}
                     height={54}
                   />
                 </Link>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-                  suspendisse.
+                  At M2ATech, we specialize in creating innovative web and software solutions tailored to your needs. From stunning websites 
+                  to powerful mobile apps and custom software, we’re here to help your business thrive in the digital world.
                 </p>
-
                 <ul className="social-link">
                   <li>
                     <a
@@ -128,15 +126,11 @@ const Footer: React.FC = () => {
                   </li>
                   <li>
                     <i className="bx bx-phone-call"></i>
-                    <a href="tel:+44587154756">+1 (123) 456 7890</a>
+                    <a href="tel:+44587154756">+1 (506) 850 6548</a>
                   </li>
                   <li>
                     <i className="bx bx-envelope"></i>
-                    <a href="mailto:hello@tarn.com">m2atodev@gmail.com</a>
-                  </li>
-                  <li>
-                    <i className="bx bxs-inbox"></i>
-                    <a href="tel:+557854578964">+1 506 850 6548</a>
+                    <a href="mailto:contact@m2atech.com">contact@m2atech.com</a>
                   </li>
                 </ul>
               </div>
@@ -157,12 +151,12 @@ const Footer: React.FC = () => {
 
               <div className="col-lg-6 col-md-6">
                 <ul>
-                  <li>
+                  {/* <li>
                     <Link href="/privacy-policy">Privacy Policy</Link>
                   </li>
                   <li>
                     <Link href="/terms-of-service">Terms & Conditions</Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

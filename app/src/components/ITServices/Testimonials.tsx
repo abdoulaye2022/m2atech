@@ -1,5 +1,5 @@
 "use client";
-  
+
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -13,18 +13,12 @@ const Testimonials: React.FC = () => {
         <div className="container">
           <div className="section-title">
             <span className="sub-title">
-              <Image
-                src="/img/star-icon.png"
-                alt="image"
-                width={32}
-                height={34}
-              />
+              
               Testimonials
             </span>
-            <h2>What Our Clients are Saying?</h2>
+            <h2>What Our Clients Are Saying</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
+              Hear from our satisfied clients about their experiences working with M2ATech. We take pride in delivering exceptional results and building lasting relationships.
             </p>
           </div>
 
@@ -50,23 +44,15 @@ const Testimonials: React.FC = () => {
             <SwiperSlide>
               <div className="single-testimonials-item">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna ali.
-                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
-                  maecenas accumsan lacus vel facilisis.
+                  "Working with M2ATech was an incredible experience. They transformed my vision for MastaBarber into a stunning, user-friendly website that has significantly boosted my business. Their team is professional, responsive, and truly cares about their clients' success."
                 </p>
 
                 <div className="client-info">
                   <div className="d-flex justify-content-center align-items-center">
-                    <Image
-                      src="/img/testimonials/client1.jpg"
-                      alt="image"
-                      width={50}
-                      height={50}
-                    />
+                    
                     <div className="title">
-                      <h3>Alex Maxwell</h3>
-                      <span>CEO at EnvyTheme</span>
+                      <h3>Djibril Mahaman</h3>
+                      <span>Owner of MastaBarber</span>
                     </div>
                   </div>
                 </div>
@@ -76,48 +62,15 @@ const Testimonials: React.FC = () => {
             <SwiperSlide>
               <div className="single-testimonials-item">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna ali.
-                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
-                  maecenas accumsan lacus vel facilisis.
+                  "M2ATech delivered an outstanding website for Kane Eco-Construction. They understood our needs perfectly and created a modern, professional platform that reflects our brand. Their attention to detail and commitment to quality are unmatched."
                 </p>
 
                 <div className="client-info">
                   <div className="d-flex justify-content-center align-items-center">
-                    <Image
-                      src="/img/testimonials/client2.jpg"
-                      alt="image"
-                      width={50}
-                      height={50}
-                    />
+                   
                     <div className="title">
-                      <h3>David Warner</h3>
-                      <span>CEO at Envato</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="single-testimonials-item">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna ali.
-                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
-                  maecenas accumsan lacus vel facilisis.
-                </p>
-                <div className="client-info">
-                  <div className="d-flex justify-content-center align-items-center">
-                    <Image
-                      src="/img/testimonials/client3.jpg"
-                      alt="image"
-                      width={50}
-                      height={50}
-                    />
-                    <div className="title">
-                      <h3>Sarah Taylor</h3>
-                      <span>CEO at ThemeForest</span>
+                      <h3>Abdou Abdou</h3>
+                      <span>CEO of Kane Eco-Construction</span>
                     </div>
                   </div>
                 </div>
@@ -125,12 +78,12 @@ const Testimonials: React.FC = () => {
             </SwiperSlide>
           </Swiper>
 
-          <div className="testimonials-view-btn text-center">
+          {/* <div className="testimonials-view-btn text-center">
             <Link href="/testimonials" className="default-btn">
               <i className="flaticon-view"></i>
               Check Out All Reviews <span></span>
             </Link>
-          </div>
+          </div> */}
         </div>
 
         <div className="shape-img1">
