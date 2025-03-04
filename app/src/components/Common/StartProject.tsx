@@ -23,9 +23,11 @@ const StartProject: React.FC = () => {
 
             <div className="col-lg-6 col-md-12">
               <div className="project-start-content">
-                <h2>Let’s Bring Your Vision to Life</h2>
+                <h2>Transform Your Ideas into Reality with Us</h2>
                 <p>
-                  At M2ATech, we’re passionate about turning your ideas into reality. Whether you need a stunning website, a powerful mobile app, or custom software, our team is here to guide you every step of the way. Let’s build something amazing together!
+                At M2ATech, we're driven by the vision of turning your ideas into exceptional digital solutions. 
+                Whether it’s a sleek website, a dynamic mobile app, or custom software, our team is ready to bring 
+                your vision to life. Let's create something remarkable together! 
                 </p>
 
                 <Link href="/contact" className="default-btn">

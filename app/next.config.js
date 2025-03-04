@@ -14,7 +14,4 @@ module.exports = {
     }
     return config;
   },
-  experimental: {
-    reactRefresh: true, // Assurez-vous que Fast Refresh est activé pour un rechargement rapide des composants
-  },
 };

@@ -17,7 +17,7 @@ const ContactInfo: React.FC = () => {
                   <i className="bx bx-map"></i>
                 </div>
                 <h3>Our Address</h3>
-                <p>245 Rue Lorette, Dieppe, NB E1A 8M4, Canada</p>
+                <p>203-74 Belmont Street, Moncton,<br /> NB E1C 8W4, Canada</p>
               </div>
             </div>
 
@@ -34,7 +34,7 @@ const ContactInfo: React.FC = () => {
                   Mobile: <a href="tel:+44457895789">+1 - (506) - 850 - 6548</a>
                 </p>
                 <p>
-                  E-mail: <a href="mailto:contact@m2atech.com">contact@m2atech.com</a>
+                  E-mail: <a href="mailto:contacts@m2atech.com">contact@m2atech.com</a>
                 </p>
               </div>
             </div>

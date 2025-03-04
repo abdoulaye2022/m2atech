@@ -11,10 +11,10 @@ export default function Page() {
       <Navbar />
 
       <PageBanner
-        pageTitle="Services Two"
+        pageTitle="Services"
         homePageText="Home"
         homePageUrl="/"
-        activePageText="Services Two"
+        activePageText="Services"
       />
 
       <ServicesStyleTwo />

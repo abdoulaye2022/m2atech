@@ -16,23 +16,17 @@ export default function Home() {
 
       <MainBanner />
 
-      <OurSolutions />
-
       <OurServices />
 
-      <OurFeatures />
+      {/* <OurFeatures /> */}
 
-      <TeamMember />
+      <OurSolutions />
+
+      {/* <TeamMember /> */}
 
       <RecentProjects />
 
-      {/* <Pricing /> */}
-
       <Testimonials />
-
-      {/* <Partner /> */}
-
-      {/* <OurBlog /> */}
 
       <ProjectStartArea />
 

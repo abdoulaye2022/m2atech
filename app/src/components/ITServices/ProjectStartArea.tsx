@@ -1,5 +1,5 @@
 "use client";
-  
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,7 +14,7 @@ const ProjectStartArea: React.FC = () => {
               <div className="project-start-image">
                 <Image
                   src="/img/project-start1.png"
-                  alt="image"
+                  alt="Start Your Project with M2ATech"
                   width={600}
                   height={398}
                 />
@@ -23,15 +23,16 @@ const ProjectStartArea: React.FC = () => {
 
             <div className="col-lg-6 col-md-12">
               <div className="project-start-content">
-                <h2>We Like to Start Your Project With Us</h2>
+                <h2>Transform Your Ideas into Reality with Us</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
+                At M2ATech, we're driven by the vision of turning your ideas into exceptional digital solutions. 
+                Whether it’s a sleek website, a dynamic mobile app, or custom software, our team is ready to bring 
+                your vision to life. Let's create something remarkable together! 
                 </p>
 
                 <Link href="/contact" className="default-btn">
                   <i className="flaticon-web"></i>
-                  Get Started
+                  Start Your Project
                   <span></span>
                 </Link>
               </div>

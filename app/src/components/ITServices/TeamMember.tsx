@@ -24,9 +24,10 @@ const TeamMember: React.FC = () => {
               />
               Team Members
             </span>
-            <h2>Our Awesome Team</h2>
+            <h2>Our Exceptional Team</h2>
             <p>
-              At M2ATech, our strength lies in our talented and passionate team. From developers to designers, our experts work together to deliver innovative web and software solutions tailored to your needs.
+              At M2ATech, our strength lies in our passionate and talented team. Developers, designers, and
+              tech experts collaborate to deliver innovative and tailor-made web and software solutions.
             </p>
           </div>
 
@@ -39,57 +40,48 @@ const TeamMember: React.FC = () => {
               data-aos-once="true"
             >
               <div className="single-scientist-item-box">
-                <div className="image">
-                  <Image
-                    src="/img/team/team1.jpg"
-                    alt="image"
-                    width={580}
-                    height={580}
-                  />
-
-                  <ul className="social">
-                    <li>
-                      <a
-                        href="https://www.facebook.com/"
-                        className="d-block"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.twitter.com/"
-                        className="d-block"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.instagram.com/"
-                        className="d-block"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-instagram"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.linkedin.com/"
-                        className="d-block"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-linkedin"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
                 <div className="content">
                   <h3>Abdoulaye Mohamed</h3>
                   <span>CEO & Founder</span>
                 </div>
+                <ul className="social" style={{ listStyle: "none", display: "flex", justifyContent: "center", marginTop: 10 }}>
+                  <li style={{ margin: "0px 10px", }}>
+                    <a
+                      href="https://www.facebook.com/"
+                      className="d-block"
+                      target="_blank"
+                    >
+                      <i className="bx bxl-facebook"></i>
+                    </a>
+                  </li>
+                  <li style={{ margin: "0px 10px" }}>
+                    <a
+                      href="https://www.twitter.com/"
+                      className="d-block"
+                      target="_blank"
+                    >
+                      <i className="bx bxl-twitter"></i>
+                    </a>
+                  </li>
+                  <li style={{ margin: "0px 10px" }}>
+                    <a
+                      href="https://www.instagram.com/"
+                      className="d-block"
+                      target="_blank"
+                    >
+                      <i className="bx bxl-instagram"></i>
+                    </a>
+                  </li>
+                  <li style={{ margin: "0px 10px" }}>
+                    <a
+                      href="https://www.linkedin.com/"
+                      className="d-block"
+                      target="_blank"
+                    >
+                      <i className="bx bxl-linkedin"></i>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -101,57 +93,48 @@ const TeamMember: React.FC = () => {
               data-aos-once="true"
             >
               <div className="single-scientist-item-box">
-                <div className="image">
-                  <Image
-                    src="/img/team/team4.jpg"
-                    alt="image"
-                    width={580}
-                    height={580}
-                  />
-
-                  <ul className="social">
-                    <li>
-                      <a
-                        href="https://www.facebook.com/"
-                        className="d-block"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.twitter.com/"
-                        className="d-block"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.instagram.com/"
-                        className="d-block"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-instagram"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.linkedin.com/"
-                        className="d-block"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-linkedin"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
                 <div className="content">
                   <h3>Aboubacar Salou Moussa</h3>
                   <span>PDG</span>
                 </div>
+                <ul className="social" style={{ listStyle: "none", display: "flex", justifyContent: "center", marginTop: 10 }}>
+                  <li style={{ margin: "0px 10px", }}>
+                    <a
+                      href="https://www.facebook.com/"
+                      className="d-block"
+                      target="_blank"
+                    >
+                      <i className="bx bxl-facebook"></i>
+                    </a>
+                  </li>
+                  <li style={{ margin: "0px 10px" }}>
+                    <a
+                      href="https://www.twitter.com/"
+                      className="d-block"
+                      target="_blank"
+                    >
+                      <i className="bx bxl-twitter"></i>
+                    </a>
+                  </li>
+                  <li style={{ margin: "0px 10px" }}>
+                    <a
+                      href="https://www.instagram.com/"
+                      className="d-block"
+                      target="_blank"
+                    >
+                      <i className="bx bxl-instagram"></i>
+                    </a>
+                  </li>
+                  <li style={{ margin: "0px 10px" }}>
+                    <a
+                      href="https://www.linkedin.com/"
+                      className="d-block"
+                      target="_blank"
+                    >
+                      <i className="bx bxl-linkedin"></i>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
 

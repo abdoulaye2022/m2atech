@@ -11,6 +11,7 @@ import Testimonials from "../../components/AboutUsTwo/Testimonials";
 import Partner from "../../components/AboutUsTwo/Partner";
 import StartProjectTwo from "../../components/Common/StartProjectTwo";
 import Footer from "../../components/Layouts/Footer";
+import OurSolutions from "@/components/ITServices/OurSolutions";
 
 export default function Page() {
   return (
@@ -24,21 +25,18 @@ export default function Page() {
         activePageText="About Us Two"
       />
 
-      <AboutUsContent />
+      <OurSolutions />
 
-      <OurMission />
+      {/* <OurMission /> */}
 
-      <Funfacts />
+      {/* <HowItWork /> */}
 
-      <HowItWork />
 
-      <History />
+      {/* <TeamMembers /> */}
 
-      <TeamMembers />
+      {/* <Testimonials /> */}
 
-      <Testimonials />
-
-      <Partner />
+      {/* <Partner /> */}
 
       <StartProjectTwo />
 

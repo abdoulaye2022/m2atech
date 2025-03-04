@@ -25,9 +25,9 @@ const RecentProjects: React.FC = () => {
               />{" "}
               Recent Projects
             </span>
-            <h2>Check Some Of Our Recent Work</h2>
+            <h2>See Our Recent Work</h2>
             <p>
-              Explore some of the projects we’ve developed for our clients, showcasing our expertise in creating modern, functional, and user-friendly websites.
+              Here are a few of the **successful projects** we've delivered to clients just like you. Each project is a result of our dedication to creating websites and software that meet your specific needs.
             </p>
           </div>
 
@@ -43,10 +43,10 @@ const RecentProjects: React.FC = () => {
                 <div className="image">
                   <Image
                     src="/img/projects/mastabarber.jpeg"
-                  alt="MastaBarber Website"
-                  width={750}
-                  height={600}
-            />
+                    alt="MastaBarber Website"
+                    width={750}
+                    height={600}
+                  />
 
                   <Link href="https://www.mastabarber.com" className="link-btn" target="_blank">
                     <i className="bx bx-plus"></i>
@@ -74,11 +74,43 @@ const RecentProjects: React.FC = () => {
               <div className="single-projects-box">
                 <div className="image">
                   <Image
+                    src="/img/projects/zaiqaeats.png"
+                    alt="Kane Eco-Construction Website"
+                    width={750}
+                    height={600}
+                  />
+
+                  <Link href="https://www.zaiqaeats.com" className="link-btn" target="_blank">
+                    <i className="bx bx-plus"></i>
+                  </Link>
+                </div>
+
+                <div className="content">
+                  <h3>
+                    <Link href="https://www.zaiqaeats.com" target="_blank">
+                      Zaiqaeats
+                    </Link>
+                  </h3>
+                  <span>Indian Halal Restaurant Website</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="200"
+              data-aos-once="true"
+            >
+              <div className="single-projects-box">
+                <div className="image">
+                  <Image
                     src="/img/projects/kane-eco.jpeg"
-                  alt="Kane Eco-Construction Website"
-                  width={750}
-                  height={600}
-            />
+                    alt="Kane Eco-Construction Website"
+                    width={750}
+                    height={600}
+                  />
 
                   <Link href="https://www.kane-eco-construction.com" className="link-btn" target="_blank">
                     <i className="bx bx-plus"></i>
@@ -107,10 +139,10 @@ const RecentProjects: React.FC = () => {
                 <div className="image">
                   <Image
                     src="/img/projects/kilo-share.png"
-                  alt="Kilo-Share Website"
-                  width={750}
-                  height={600}
-            />
+                    alt="Kilo-Share Website"
+                    width={750}
+                    height={600}
+                  />
 
                   <Link href="https://www.kilo-share.com" className="link-btn" target="_blank">
                     <i className="bx bx-plus"></i>

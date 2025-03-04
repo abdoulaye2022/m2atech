@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       <footer className="footer-area bg-color">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 col-sm-6">
+            <div className="col-lg-6 col-sm-6">
               <div className="single-footer-widget">
                 <Link href="/" className="logo">
                   <Image
@@ -23,8 +23,8 @@ const Footer: React.FC = () => {
                   />
                 </Link>
                 <p>
-                  At M2ATech, we specialize in creating innovative web and software solutions tailored to your needs. From stunning websites 
-                  to powerful mobile apps and custom software, we’re here to help your business thrive in the digital world.
+                At M2ATech, we specialize in creating modern, user-friendly websites, powerful mobile apps, and custom software 
+                solutions tailored to your unique needs. Let’s transform your ideas into reality.
                 </p>
                 <ul className="social-link">
                   <li>
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                       <i className="bx bxl-facebook"></i>
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a
                       className="d-block"
                       target="_blank"
@@ -44,12 +44,12 @@ const Footer: React.FC = () => {
                     >
                       <i className="bx bxl-twitter"></i>
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <a
                       className="d-block"
                       target="_blank"
-                      href="https://www.instagram.com/"
+                      href="https://www.instagram.com/m2atech.solutions/"
                     >
                       <i className="bx bxl-instagram"></i>
                     </a>
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                     <a
                       className="d-block"
                       target="_blank"
-                      href="https://www.linkedin.com/"
+                      href="https://www.linkedin.com/company/m2atech-solutions-inc"
                     >
                       <i className="bx bxl-linkedin"></i>
                     </a>
@@ -76,40 +76,13 @@ const Footer: React.FC = () => {
                     <Link href="/">Home</Link>
                   </li>
                   <li>
-                    <Link href="/about-us">About</Link>
+                    <Link href="/services">Services</Link>
                   </li>
                   <li>
-                    <Link href="/case-studies">Case Studies</Link>
-                  </li>
-                  <li>
-                    <Link href="/blog">Our Blog</Link>
+                    <Link href="/about-us">About Us</Link>
                   </li>
                   <li>
                     <Link href="/contact">Contact</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-sm-6">
-              <div className="single-footer-widget">
-                <h3>Resources</h3>
-
-                <ul className="footer-links-list">
-                  <li>
-                    <Link href="/team">Our Scientists</Link>
-                  </li>
-                  <li>
-                    <Link href="/services">Our Services</Link>
-                  </li>
-                  <li>
-                    <Link href="/testimonials">Testimonials</Link>
-                  </li>
-                  <li>
-                    <Link href="/services">SaaS Solutions</Link>
-                  </li>
-                  <li>
-                    <Link href="/case-studies">Case Studies</Link>
                   </li>
                 </ul>
               </div>
@@ -122,7 +95,7 @@ const Footer: React.FC = () => {
                 <ul className="footer-contact-info">
                   <li>
                     <i className="bx bx-map"></i>
-                    245 Rue Lorette, Dieppe, NB E1A 2C6, <br /> Canada
+                    203-74 Belmont Street, Moncton,<br /> NB E1C 8W4, Canada
                   </li>
                   <li>
                     <i className="bx bx-phone-call"></i>
@@ -130,7 +103,7 @@ const Footer: React.FC = () => {
                   </li>
                   <li>
                     <i className="bx bx-envelope"></i>
-                    <a href="mailto:contact@m2atech.com">contact@m2atech.com</a>
+                    <a href="mailto:contacts@m2atech.com">contact@m2atech.com</a>
                   </li>
                 </ul>
               </div>
