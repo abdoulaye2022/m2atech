@@ -1,0 +1,37 @@
+name: Deploy API via FTP
+
+on:
+  push:
+    branches:
+      - master  # Déclencher uniquement sur la branche master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Checkout le code du dépôt
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Étape 2 : Configurer PHP et installer les dépendances
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'  # Version PHP utilisée
+          tools: composer     # Installe Composer
+
+      - name: Install Composer dependencies
+        working-directory: ./api/  # Se déplacer dans le dossier 'api'
+        run: composer install --no-dev --prefer-dist --optimize-autoloader
+
+      # Étape 3 : Déployer uniquement les fichiers modifiés via FTP
+      - name: Deploy to LWS via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER_M2A }}         # Adresse du serveur FTP
+          username: ${{ secrets.FTP_USERNAME_M2A }}     # Nom d'utilisateur FTP
+          password: ${{ secrets.FTP_PASSWORD_M2A }}     # Mot de passe FTP
+          local-dir: ./api/                             # Dossier local à déployer (avec le slash final)
+          server-dir: /public_html/api.m2atech/      # Chemin distant sur le serveur
+          log-level: verbose                            # Logs détaillés

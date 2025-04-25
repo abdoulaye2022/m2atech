@@ -1,0 +1,49 @@
+# Dependencies
+/vendor/
+/node_modules/
+/uploads/
+
+# Environnement
+/.env
+/.env.*
+!.env.example
+
+# Fichiers de configuration sensibles
+/config/*.local.php
+
+# Fichiers de cache
+/var/cache/*
+!/var/cache/.gitkeep
+
+# Fichiers de logs
+/var/logs/*
+!/var/logs/.gitkeep
+
+# Fichiers temporaires
+/tmp/*
+!/tmp/.gitkeep
+
+# Fichiers de développement
+/.idea/
+/.vscode/
+/.DS_Store
+/.phpunit.result.cache
+
+# Fichiers de tests
+/tests/_output/*
+/tests/_support/_generated/*
+
+# Fichiers de déploiement
+/build/
+/public/assets/
+/public/uploads/
+
+# Fichiers spécifiques à Composer
+/composer.lock
+/composer.phar
+
+# Fichiers spécifiques à PHPUnit
+/phpunit.xml
+/phpunit.xml.dist
+
+/service-account.json
