@@ -65,7 +65,7 @@ class ContactController
                             <!-- Header with Logo -->
                             <tr>
                                 <td style='background-color: #FFFFFF; padding: 30px 20px; text-align: center; border-bottom: 1px solid #f1f1f1;'>
-                                    <img src='https://m2atech.com/images/logo.png' alt='M2ATech Solutions' style='max-width: 180px; height: auto;'>
+                                    <img src='http://m2acode.com/api.m2atech/logo.png' alt='M2ATech Solutions' style='max-width: 180px; height: auto;'>
                                 </td>
                             </tr>
             
