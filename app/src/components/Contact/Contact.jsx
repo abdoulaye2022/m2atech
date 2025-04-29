@@ -115,8 +115,6 @@ const Contact = () => {
       // Simuler un appel API
       const res = await api_contact(formData);
 
-      console.log(res);
-
       if (res.status) {
         onOpen();
         e.target.reset();
