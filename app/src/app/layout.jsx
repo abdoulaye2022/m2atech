@@ -88,6 +88,27 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Métadonnées essentielles (recommandé pour le SEO) */}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Google Tag Manager - Version optimisée */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17035220539"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17035220539');
+          `,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

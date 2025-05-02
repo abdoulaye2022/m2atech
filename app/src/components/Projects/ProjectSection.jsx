@@ -69,9 +69,9 @@ const projects = [
     icon: FaGlobe,
     category: "Website & Admin Panel",
     images: [
-      "/img/projects/kane1.png",
-      "/img/projects/kane2.png",
-      "/img/projects/kane3.png",
+      "/img/projects/kane1.PNG",
+      "/img/projects/kane2.PNG",
+      "/img/projects/kane3.PNG",
     ],
     features: [
       "Responsive Company Website",
