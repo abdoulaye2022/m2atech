@@ -1,0 +1,33 @@
+{
+  "name": "M2ATech Solutions Inc.",
+  "short_name": "M2ATech",
+  "description": "Digital solutions for modern businesses - Web & Mobile Development in Moncton, NB",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff5d22",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo3.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo3.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "business",
+    "productivity",
+    "technology"
+  ],
+  "lang": "en-CA",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

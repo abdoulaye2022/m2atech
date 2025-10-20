@@ -9,25 +9,65 @@ import {
   Text,
   Button,
   Image,
-  useBreakpointValue
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { useTranslation } from "@/hooks/useTranslation";
+import AnimatedSection from "../Partials/AnimatedSection";
+import { motion } from "framer-motion";
+
+const MotionButton = motion(Button);
+const MotionImage = motion(Image);
 
 function MainBanner() {
   const flexDirection = useBreakpointValue({ base: "column", lg: "row" });
   const headingSize = useBreakpointValue({ base: "xl", md: "2xl" });
   const textSize = useBreakpointValue({ base: "lg", md: "xl" });
+  const { t } = useTranslation();
+
+  const buttonVariants = {
+    hover: {
+      y: -3,
+      scale: 1.05,
+      transition: {
+        duration: 0.2,
+        ease: "easeOut"
+      }
+    },
+    tap: {
+      scale: 0.95
+    }
+  };
+
+  const imageVariants = {
+    initial: { scale: 0.8, opacity: 0 },
+    animate: { 
+      scale: 1, 
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        delay: 0.4,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      scale: 1.02,
+      transition: {
+        duration: 0.3
+      }
+    }
+  };
 
   return (
-    <Box 
+    <Box
       bgGradient="linear(to-r, #f8f9fa, #e9ecef)"
       position="relative"
       overflow="hidden"
-      minH="calc(100vh - 103px)" // Hauteur totale moins la navbar
+      minH="calc(100vh - 103px)"
       display="flex"
       alignItems="center"
-      pt="103px" // Compensation pour la navbar fixe
-      boxSizing="border-box" // Important pour inclure le padding dans la hauteur
+      pt="103px"
+      boxSizing="border-box"
     >
       <Container maxW="container.xl" py={8}>
         <Flex
@@ -37,70 +77,83 @@ function MainBanner() {
           gap={12}
           h="100%"
         >
-          <Box flex="1" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-            <Heading 
-              as="h1" 
+          <AnimatedSection
+            flex="1"
+            delay={0.1}
+            direction="left"
+            distance={50}
+          >
+            <Heading
+              as="h1"
               size={headingSize}
               mb={6}
               fontWeight="bold"
               lineHeight="1.2"
               color="gray.800"
             >
-              Innovative Digital Solutions for Your Business
+              {t('home.mainBanner.title')}{" "}
+              <Text as="span" color="orange.500">
+                {t('home.mainBanner.titleHighlight')}
+              </Text>
             </Heading>
 
-            <Text 
-              fontSize={textSize}
-              mb={8}
-              color="gray.600"
-              data-aos="fade-up" 
-              data-aos-duration="800" 
-              data-aos-delay="200"
-            >
-              At M2ATech, we specialize in creating modern, user-friendly websites, 
-              powerful mobile apps, and custom software solutions tailored to your 
-              unique needs. Let's transform your ideas into reality.
-            </Text>
+            <AnimatedSection delay={0.2} distance={30}>
+              <Text
+                fontSize={textSize}
+                mb={8}
+                color="gray.600"
+              >
+                {t('home.mainBanner.subtitle')}
+              </Text>
+            </AnimatedSection>
 
-            <Box data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+            <AnimatedSection delay={0.3} distance={20}>
               <Link href="/contact" passHref>
-                <Button
+                <MotionButton
                   colorScheme="orange"
                   size="lg"
                   px={8}
                   py={6}
                   borderRadius="full"
                   boxShadow="md"
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
                   _hover={{
-                    transform: "translateY(-2px)",
-                    boxShadow: "lg",
+                    boxShadow: "0 8px 25px rgba(221, 107, 32, 0.3)",
                   }}
                   transition="all 0.3s ease"
                 >
-                  Start Your Project
-                </Button>
+                  {t('home.mainBanner.cta')}
+                </MotionButton>
               </Link>
-            </Box>
-          </Box>
+            </AnimatedSection>
+          </AnimatedSection>
 
-          <Box 
-            flex="1" 
-            data-aos="fade-up" 
-            data-aos-duration="800" 
-            data-aos-delay="400"
-            position="relative"
-            minH={{ base: "300px", md: "500px" }}
-            w="100%"
+          <AnimatedSection
+            flex="1"
+            delay={0.4}
+            direction="right"
+            distance={50}
           >
-            <Image
-              src="/img/banner-img1.png"
-              alt="M2ATech Digital Solutions"
-              layout="fill"
-              objectFit="contain"
-              quality={100}
-              priority
-            />
-          </Box>
+            <Box
+              position="relative"
+              minH={{ base: "300px", md: "500px" }}
+              w="100%"
+            >
+              <MotionImage
+                src="/img/banner-img1.png"
+                alt="M2ATech Digital Solutions"
+                w="100%"
+                h="100%"
+                objectFit="contain"
+                variants={imageVariants}
+                initial="initial"
+                animate="animate"
+                whileHover="hover"
+              />
+            </Box>
+          </AnimatedSection>
         </Flex>
       </Container>
     </Box>

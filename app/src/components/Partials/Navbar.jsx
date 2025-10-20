@@ -30,28 +30,86 @@ import {
   PhoneIcon,
   EmailIcon,
 } from "@chakra-ui/icons";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "@/hooks/useTranslation";
+import { motion, AnimatePresence } from "framer-motion";
+
+const MotionBox = motion(Box);
+const MotionFlex = motion(Flex);
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = "#ff5d22";
+  const { t } = useTranslation();
+
+  const getNavItems = () => [
+    {
+      label: t('nav.services'),
+      href: null, // Pas de lien direct, juste pour le menu déroulant
+      children: [
+        {
+          label: "Web Apps",
+          href: "/services/web-apps",
+        },
+        {
+          label: "Mobile Apps",
+          href: "/services/mobile-apps",
+        },
+        {
+          label: "Custom Software",
+          href: "/services/custom-software",
+        },
+        {
+          label: "SEO",
+          href: "/services/seo",
+        },
+      ],
+    },
+    {
+      label: t('nav.projects'),
+      href: "/projects",
+    },
+    {
+      label: t('nav.jobs'),
+      href: "/jobs",
+    },
+    {
+      label: t('nav.contact'),
+      href: "/contact",
+    },
+  ];
 
   return (
     <Stack direction={"row"} spacing={8} align="center">
-      {NAV_ITEMS.map((navItem) => (
+      {getNavItems().map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
-                p={2}
-                href={navItem.href ?? "#"}
-                fontSize={"md"}
-                fontWeight={500}
-                color={linkColor}
-                position="relative"
-                _hover={{
-                  textDecoration: "none",
-                  color: linkHoverColor,
-                  "&::after": {
+              {navItem.children ? (
+                <Box
+                  as="button"
+                  p={2}
+                  fontSize={"md"}
+                  fontWeight={500}
+                  color={linkColor}
+                  position="relative"
+                  cursor="pointer"
+                  _hover={{
+                    textDecoration: "none",
+                    color: linkHoverColor,
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      bottom: "0",
+                      left: "0",
+                      width: "100%",
+                      height: "2px",
+                      backgroundColor: "#ff5d22",
+                      transform: "scaleX(1)",
+                      transition: "transform 0.3s ease",
+                    },
+                  }}
+                  _after={{
                     content: '""',
                     position: "absolute",
                     bottom: "0",
@@ -59,24 +117,50 @@ const DesktopNav = () => {
                     width: "100%",
                     height: "2px",
                     backgroundColor: "#ff5d22",
-                    transform: "scaleX(1)",
+                    transform: "scaleX(0)",
                     transition: "transform 0.3s ease",
-                  },
-                }}
-                _after={{
-                  content: '""',
-                  position: "absolute",
-                  bottom: "0",
-                  left: "0",
-                  width: "100%",
-                  height: "2px",
-                  backgroundColor: "#ff5d22",
-                  transform: "scaleX(0)",
-                  transition: "transform 0.3s ease",
-                }}
-              >
-                {navItem.label}
-              </Link>
+                  }}
+                >
+                  {navItem.label}
+                </Box>
+              ) : (
+                <Link
+                  p={2}
+                  href={navItem.href ?? "#"}
+                  fontSize={"md"}
+                  fontWeight={500}
+                  color={linkColor}
+                  position="relative"
+                  _hover={{
+                    textDecoration: "none",
+                    color: linkHoverColor,
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      bottom: "0",
+                      left: "0",
+                      width: "100%",
+                      height: "2px",
+                      backgroundColor: "#ff5d22",
+                      transform: "scaleX(1)",
+                      transition: "transform 0.3s ease",
+                    },
+                  }}
+                  _after={{
+                    content: '""',
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    width: "100%",
+                    height: "2px",
+                    backgroundColor: "#ff5d22",
+                    transform: "scaleX(0)",
+                    transition: "transform 0.3s ease",
+                  }}
+                >
+                  {navItem.label}
+                </Link>
+              )}
             </PopoverTrigger>
 
             {navItem.children && (
@@ -129,13 +213,52 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
 };
 
 const MobileNav = () => {
+  const { t } = useTranslation();
+
+  const getNavItems = () => [
+    {
+      label: t('nav.services'),
+      href: null, // Pas de lien direct, juste pour le menu déroulant
+      children: [
+        {
+          label: "Web Apps",
+          href: "/services/web-apps",
+        },
+        {
+          label: "Mobile Apps",
+          href: "/services/mobile-apps",
+        },
+        {
+          label: "Custom Software",
+          href: "/services/custom-software",
+        },
+        {
+          label: "SEO",
+          href: "/services/seo",
+        },
+      ],
+    },
+    {
+      label: t('nav.projects'),
+      href: "/projects",
+    },
+    {
+      label: t('nav.jobs'),
+      href: "/jobs",
+    },
+    {
+      label: t('nav.contact'),
+      href: "/contact",
+    },
+  ];
+
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}
       p={4}
       display={{ md: "none" }}
     >
-      {NAV_ITEMS.map((navItem) => (
+      {getNavItems().map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
       <Button
@@ -160,13 +283,14 @@ const MobileNavItem = ({ label, children, href }) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
-        as={Link}
-        href={href ?? "#"}
+        as={children ? "div" : Link}
+        href={children ? undefined : (href ?? "#")}
         justify={"space-between"}
         align={"center"}
         _hover={{
           textDecoration: "none",
         }}
+        cursor={children ? "pointer" : "default"}
       >
         <Text
           fontWeight={600}
@@ -206,107 +330,86 @@ const MobileNavItem = ({ label, children, href }) => {
   );
 };
 
-const NAV_ITEMS = [
-  {
-    label: "Services",
-    href: "#",
-    children: [
-      {
-        label: "Web Apps",
-        href: "/services/web-apps",
-      },
-      {
-        label: "Mobile Apps",
-        href: "/services/mobile-apps",
-      },
-      {
-        label: "Custom Software",
-        href: "/services/custom-software",
-      },
-      {
-        label: "SEO",
-        href: "/services/seo",
-      },
-    ],
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-  },
-  {
-    label: "Jobs",
-    href: "/jobs",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
-
 const ModernNavbar = () => {
   const { isOpen, onToggle } = useDisclosure();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <Box position="fixed" width="full" zIndex="sticky" top={0}>
+    <MotionBox 
+      position="fixed" 
+      width="full" 
+      zIndex="sticky" 
+      top={0}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       {/* Bandeau supérieur */}
-      <Box bg="#ff5d22" color="white" py={1} px={4}>
-        <Flex justify="space-between" align="center" maxW="1200px" mx="auto">
-          <HStack spacing={4}>
-            <HStack spacing={2}>
-              <Icon as={EmailIcon} fontSize="xs" />
-              <Link
-                href="mailto:contact@m2atech.com"
-                fontSize="xs"
-                _hover={{ textDecoration: "none", opacity: 0.8 }}
-              >
-                contact@m2atech.com
-              </Link>
-            </HStack>
-            <HStack
-              spacing={2}
-              as="a"
-              href="tel:+15068506548"
-              _hover={{
-                color: "#DD6B20",
-                cursor: "pointer",
-                textDecoration: "underline",
-              }}
-              transition="color 0.2s"
-            >
-              <Icon as={PhoneIcon} fontSize="xs" />
-              <Text fontSize="xs">+1 (506) 850-6548</Text>
-            </HStack>
-          </HStack>
+      <AnimatePresence>
+        {!scrolled && (
+          <MotionBox 
+            bg="#ff5d22" 
+            color="white" 
+            py={1} 
+            px={4}
+            initial={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Flex justify="space-between" align="center" maxW="1200px" mx="auto">
+              <HStack spacing={4}>
+                <HStack spacing={2}>
+                  <Icon as={EmailIcon} fontSize="xs" />
+                  <Link
+                    href="mailto:contact@m2atech.com"
+                    fontSize="xs"
+                    _hover={{ textDecoration: "none", opacity: 0.8 }}
+                  >
+                    contact@m2atech.com
+                  </Link>
+                </HStack>
+                <HStack
+                  spacing={2}
+                  as="a"
+                  href="tel:+15068506548"
+                  _hover={{
+                    color: "#DD6B20",
+                    cursor: "pointer",
+                    textDecoration: "underline",
+                  }}
+                  transition="color 0.2s"
+                >
+                  <Icon as={PhoneIcon} fontSize="xs" />
+                  <Text fontSize="xs">+1 (506) 850-6548</Text>
+                </HStack>
+              </HStack>
 
-          <Menu>
-            <MenuButton
-              as={Button}
-              size="xs"
-              // bg="white"
-              color="black"
-              // _hover={{ bg: "white" }}
-              _focus={{
-                bg: "gray",
-                color: "black",
-              }}
-              rightIcon={<ChevronDownIcon />}
-            >
-              Français
-            </MenuButton>
-            <MenuList>
-              <MenuItem>Français</MenuItem>
-              <MenuItem>English</MenuItem>
-            </MenuList>
-          </Menu>
-        </Flex>
-      </Box>
+              <LanguageSwitcher variant="icon" />
+            </Flex>
+          </MotionBox>
+        )}
+      </AnimatePresence>
 
       {/* Navbar principal */}
-      <Box
+      <MotionBox
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         bg={useColorModeValue("white", "gray.800")}
+        boxShadow={scrolled ? "lg" : "none"}
+        animate={{
+          boxShadow: scrolled ? "0 4px 6px -1px rgba(0, 0, 0, 0.1)" : "none"
+        }}
+        transition={{ duration: 0.3 }}
       >
         <Flex
           color={useColorModeValue("gray.600", "white")}
@@ -373,7 +476,11 @@ const ModernNavbar = () => {
             justify={"flex-end"}
             direction={"row"}
             spacing={6}
+            align="center"
           >
+            {scrolled && (
+              <LanguageSwitcher variant="icon" />
+            )}
             <Button
               as={"a"}
               fontSize={"sm"}
@@ -386,6 +493,7 @@ const ModernNavbar = () => {
                 transform: "translateY(-2px)",
                 boxShadow: "lg",
               }}
+              transition="all 0.3s ease"
               px={6}
               py={4}
             >
@@ -397,8 +505,8 @@ const ModernNavbar = () => {
         <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
-      </Box>
-    </Box>
+      </MotionBox>
+    </MotionBox>
   );
 };
 

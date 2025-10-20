@@ -13,7 +13,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { EmailIcon, PhoneIcon } from "@chakra-ui/icons";
-import { FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 
 const FooterApp = () => {
   const columnTemplate = useBreakpointValue({
@@ -47,6 +47,14 @@ const FooterApp = () => {
                 and success.
               </Text>
               <Flex mt="auto" gap={4}>
+                <Link
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=61578397720574"
+                  isExternal
+                  _hover={{ color: "orange.300" }}
+                >
+                  <FaFacebook size={20} />
+                </Link>
                 <Link
                   target="_blank"
                   href="https://www.linkedin.com/company/m2atech-solutions-inc"

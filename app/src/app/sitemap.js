@@ -1,62 +1,62 @@
 // app/sitemap.js
 export default function sitemap() {
-    const baseUrl = "https://m2atech.com";
-  
+    const baseUrl = "https://www.m2atech.com";
+    const currentDate = new Date();
+
     return [
       {
         url: baseUrl,
-        lastModified: new Date(),
-        changeFrequency: "daily",
+        lastModified: currentDate,
+        changeFrequency: "weekly",
         priority: 1.0,
       },
       {
         url: `${baseUrl}/services`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
+        lastModified: currentDate,
+        changeFrequency: "monthly",
         priority: 0.9,
       },
       {
         url: `${baseUrl}/services/web-apps`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
+        lastModified: currentDate,
+        changeFrequency: "monthly",
         priority: 0.8,
       },
       {
         url: `${baseUrl}/services/mobile-apps`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
+        lastModified: currentDate,
+        changeFrequency: "monthly",
         priority: 0.8,
       },
       {
         url: `${baseUrl}/services/custom-software`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
+        lastModified: currentDate,
+        changeFrequency: "monthly",
         priority: 0.8,
       },
       {
         url: `${baseUrl}/services/seo`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
+        lastModified: currentDate,
+        changeFrequency: "monthly",
         priority: 0.8,
       },
       {
         url: `${baseUrl}/projects`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.7,
+        lastModified: currentDate,
+        changeFrequency: "weekly",
+        priority: 0.9,
       },
       {
         url: `${baseUrl}/jobs`,
-        lastModified: new Date(),
+        lastModified: currentDate,
         changeFrequency: "monthly",
         priority: 0.6,
       },
       {
         url: `${baseUrl}/contact`,
-        lastModified: new Date(),
+        lastModified: currentDate,
         changeFrequency: "monthly",
-        priority: 0.7,
+        priority: 0.8,
       },
-      // Ajoutez d'autres pages si nécessaire
     ];
   }
