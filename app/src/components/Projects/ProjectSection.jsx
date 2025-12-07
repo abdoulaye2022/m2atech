@@ -45,6 +45,9 @@ import {
   FaSuitcaseRolling,
   FaShoppingCart,
   FaHeart,
+  FaRobot,
+  FaMosque,
+  FaClipboardList,
 } from "react-icons/fa";
 import { useTranslation } from "@/hooks/useTranslation";
 import AnimatedSection from "../Partials/AnimatedSection";
@@ -55,6 +58,51 @@ const MotionBox = motion(Box);
 const MotionButton = motion(Button);
 
 const getProjects = (t) => [
+  {
+    key: "m2adoc",
+    title: t('projects.projects.m2adoc.title'),
+    description: t('projects.projects.m2adoc.description'),
+    tags: ["Next.js", "React", "AI/ML", "OpenAI", "Node.js", "MongoDB", "Speech-to-Text", "Healthcare", "PIPEDA"],
+    icon: FaRobot,
+    category: t('projects.projects.m2adoc.category'),
+    images: [
+      "/img/projects/m2adoc1.png",
+      "/img/projects/m2adoc2.png",
+      "/img/projects/m2adoc3.png",
+    ],
+    features: t('projects.projects.m2adoc.features'),
+    liveUrl: "https://m2adoc.com",
+  },
+  {
+    key: "timetopray",
+    title: t('projects.projects.timetopray.title'),
+    description: t('projects.projects.timetopray.description'),
+    tags: ["React Native", "Next.js", "PWA", "GPS API", "Push Notifications", "Offline Mode", "Gamification"],
+    icon: FaMosque,
+    category: t('projects.projects.timetopray.category'),
+    images: [
+      "/img/projects/timetopray1.png",
+      "/img/projects/timetopray2.png",
+      "/img/projects/timetopray3.png",
+    ],
+    features: t('projects.projects.timetopray.features'),
+    liveUrl: "https://timetopray.app",
+  },
+  {
+    key: "crmDioCleaning",
+    title: t('projects.projects.crmDioCleaning.title'),
+    description: t('projects.projects.crmDioCleaning.description'),
+    tags: ["Next.js", "React", "Node.js", "MongoDB", "CRM", "Business Management", "Real-time", "Dashboard"],
+    icon: FaClipboardList,
+    category: t('projects.projects.crmDioCleaning.category'),
+    images: [
+      "/img/projects/crmdiocleaning1.png",
+      "/img/projects/crmdiocleaning2.png",
+      "/img/projects/crmdiocleaning3.png",
+    ],
+    features: t('projects.projects.crmDioCleaning.features'),
+    liveUrl: "https://crmdiocleaning.com",
+  },
   {
     key: "mastaBarber",
     title: t('projects.projects.mastaBarber.title'),

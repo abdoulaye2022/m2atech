@@ -1,8 +1,22 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useLayoutEffect } from 'react';
 
 const LanguageContext = createContext();
+
+// Utiliser useLayoutEffect côté client pour éviter le flash
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
+// Fonction pour obtenir la langue initiale de manière synchrone
+const getInitialLanguage = () => {
+  if (typeof window === 'undefined') return 'fr'; // SSR: utiliser français par défaut
+
+  const savedLanguage = localStorage.getItem('language');
+  if (savedLanguage) return savedLanguage;
+
+  const browserLanguage = navigator.language.slice(0, 2);
+  return browserLanguage === 'fr' ? 'fr' : 'en';
+};
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
@@ -13,17 +27,15 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en');
-  const [isLoading, setIsLoading] = useState(true);
+  // Initialiser avec français par défaut pour éviter le flash (la plupart des utilisateurs sont francophones)
+  const [language, setLanguage] = useState('fr');
+  const [isHydrated, setIsHydrated] = useState(false);
 
-  useEffect(() => {
-    // Récupérer la langue depuis localStorage ou utiliser la langue du navigateur
-    const savedLanguage = typeof window !== 'undefined' ? localStorage.getItem('language') : null;
-    const browserLanguage = typeof window !== 'undefined' ? navigator.language.slice(0, 2) : 'en';
-    
-    const initialLanguage = savedLanguage || (browserLanguage === 'fr' ? 'fr' : 'en');
+  // Utiliser useLayoutEffect pour synchroniser la langue AVANT le premier paint
+  useIsomorphicLayoutEffect(() => {
+    const initialLanguage = getInitialLanguage();
     setLanguage(initialLanguage);
-    setIsLoading(false);
+    setIsHydrated(true);
   }, []);
 
   const changeLanguage = (newLanguage) => {
@@ -33,8 +45,20 @@ export const LanguageProvider = ({ children }) => {
     }
   };
 
+  // Ne pas rendre les enfants tant que la langue n'est pas hydratée
+  // Cela évite le flash de contenu dans la mauvaise langue
+  if (!isHydrated) {
+    return (
+      <LanguageContext.Provider value={{ language: 'fr', changeLanguage, isLoading: true }}>
+        <div style={{ visibility: 'hidden' }}>
+          {children}
+        </div>
+      </LanguageContext.Provider>
+    );
+  }
+
   return (
-    <LanguageContext.Provider value={{ language, changeLanguage, isLoading }}>
+    <LanguageContext.Provider value={{ language, changeLanguage, isLoading: false }}>
       {children}
     </LanguageContext.Provider>
   );

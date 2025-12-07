@@ -3,91 +3,92 @@
 import React from 'react';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, useBreakpointValue } from '@chakra-ui/react';
 import { FaCogs, FaDatabase, FaCloud, FaShieldAlt, FaSync, FaChartBar } from 'react-icons/fa';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const CustomSoftwareSection = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
+  const { t } = useTranslation();
 
   const features = [
     {
       icon: FaCogs,
-      title: "Tailored Solutions",
-      description: "Bespoke software designed for your unique business needs"
+      title: t('servicesPage.customSoftware.features.tailoredSolutions.title'),
+      description: t('servicesPage.customSoftware.features.tailoredSolutions.description')
     },
     {
       icon: FaDatabase,
-      title: "Data Management",
-      description: "Custom databases and analytics platforms"
+      title: t('servicesPage.customSoftware.features.dataManagement.title'),
+      description: t('servicesPage.customSoftware.features.dataManagement.description')
     },
     {
       icon: FaCloud,
-      title: "Cloud Integration",
-      description: "Seamless cloud deployment and migration"
+      title: t('servicesPage.customSoftware.features.cloudIntegration.title'),
+      description: t('servicesPage.customSoftware.features.cloudIntegration.description')
     },
     {
       icon: FaShieldAlt,
-      title: "Enterprise Security",
-      description: "Robust protection for sensitive data"
+      title: t('servicesPage.customSoftware.features.enterpriseSecurity.title'),
+      description: t('servicesPage.customSoftware.features.enterpriseSecurity.description')
     },
     {
       icon: FaSync,
-      title: "System Integration",
-      description: "Connect with your existing tools and workflows"
+      title: t('servicesPage.customSoftware.features.systemIntegration.title'),
+      description: t('servicesPage.customSoftware.features.systemIntegration.description')
     },
     {
       icon: FaChartBar,
-      title: "Business Intelligence",
-      description: "Turn data into actionable insights"
+      title: t('servicesPage.customSoftware.features.businessIntelligence.title'),
+      description: t('servicesPage.customSoftware.features.businessIntelligence.description')
     }
   ];
 
   return (
     <Box py={16} bg="white" id="custom-software">
       <Container maxW="container.xl">
-        {/* Added the new heading here */}
         <Heading as="h1" size="2xl" mb={16} textAlign="center" color="gray.800">
-          Custom{" "}
+          {t('servicesPage.customSoftware.title')}{" "}
           <Box as="span" color="#DD6B20">
-            Software
+            {t('servicesPage.customSoftware.titleHighlight')}
           </Box>
         </Heading>
 
         <Flex direction={{ base: 'column', lg: 'row' }} gap={12} align="center">
           <Box flex={1}>
             <Heading as="h2" size="xl" mb={6} color="gray.800" lineHeight="1.2">
-              Powerful <Box as="span" color="#DD6B20">Custom Software</Box>
+              {t('servicesPage.customSoftware.heading')} <Box as="span" color="#DD6B20">{t('servicesPage.customSoftware.headingHighlight')}</Box>
             </Heading>
-            
+
             <Text fontSize="lg" color="gray.600" mb={8}>
-              We build specialized solutions that streamline operations and drive business growth.
+              {t('servicesPage.customSoftware.description')}
             </Text>
 
             <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={4} mb={8}>
               <Flex align="center">
                 <Icon as={FaCogs} color="#DD6B20" mr={3} />
-                <Text>Process automation</Text>
+                <Text>{t('servicesPage.customSoftware.bullets.processAutomation')}</Text>
               </Flex>
               <Flex align="center">
                 <Icon as={FaDatabase} color="#DD6B20" mr={3} />
-                <Text>Custom CRM/ERP systems</Text>
+                <Text>{t('servicesPage.customSoftware.bullets.customCRM')}</Text>
               </Flex>
               <Flex align="center">
                 <Icon as={FaCloud} color="#DD6B20" mr={3} />
-                <Text>Cloud-native applications</Text>
+                <Text>{t('servicesPage.customSoftware.bullets.cloudNative')}</Text>
               </Flex>
               <Flex align="center">
                 <Icon as={FaShieldAlt} color="#DD6B20" mr={3} />
-                <Text>Compliance-ready solutions</Text>
+                <Text>{t('servicesPage.customSoftware.bullets.complianceReady')}</Text>
               </Flex>
             </SimpleGrid>
           </Box>
 
           {isDesktop && (
             <Box flex={1} bg="orange.50" p={8} borderRadius="2xl" boxShadow="inner">
-              <Box 
-                bg="white" 
-                h="400px" 
-                borderRadius="xl" 
-                border="1px solid" 
+              <Box
+                bg="white"
+                h="400px"
+                borderRadius="xl"
+                border="1px solid"
                 borderColor="gray.200"
                 display="flex"
                 alignItems="center"
@@ -96,8 +97,8 @@ const CustomSoftwareSection = () => {
                 p={6}
               >
                 <Icon as={FaCogs} w={12} h={12} color="#DD6B20" mb={4} />
-                <Text fontWeight="bold" mb={2} textAlign="center">Your Business. Your Software.</Text>
-                <Text textAlign="center" color="gray.500">Fully customized to your operational requirements</Text>
+                <Text fontWeight="bold" mb={2} textAlign="center">{t('servicesPage.customSoftware.preview')}</Text>
+                <Text textAlign="center" color="gray.500">{t('servicesPage.customSoftware.previewDescription')}</Text>
               </Box>
             </Box>
           )}
@@ -105,10 +106,10 @@ const CustomSoftwareSection = () => {
 
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} mt={16}>
           {features.map((feature, index) => (
-            <Box 
-              key={index} 
-              bg="gray.50" 
-              p={8} 
+            <Box
+              key={index}
+              bg="gray.50"
+              p={8}
               borderRadius="xl"
               border="1px solid"
               borderColor="gray.100"

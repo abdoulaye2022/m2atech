@@ -2,12 +2,14 @@
 
 import { Box, Flex, Text, Button, Badge, useBreakpointValue } from '@chakra-ui/react';
 import { FiArrowRight } from 'react-icons/fi';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const PromotionBanner = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const { t } = useTranslation();
 
   return (
-    <Box 
+    <Box
       bgGradient="linear(to-r, blue.500, purple.600)"
       borderRadius="lg"
       p={6}
@@ -29,26 +31,26 @@ const PromotionBanner = () => {
     >
       <Flex direction={{ base: 'column', md: 'row' }} align="center" justify="space-between">
         <Box maxW={{ md: '70%' }}>
-          <Badge 
-            colorScheme="yellow" 
+          <Badge
+            colorScheme="yellow"
             mb={3}
             fontSize="sm"
             px={3}
             py={1}
             borderRadius="full"
           >
-            NEW LAUNCH
+            {t('home.promotion.badge')}
           </Badge>
-          
+
           <Text fontSize={{ base: 'xl', md: '2xl' }} fontWeight="bold" mb={2}>
-            🎉 2025 Launch Special!
+            {t('home.promotion.title')}
           </Text>
-          
+
           <Text fontSize={{ base: 'md', md: 'lg' }} opacity={0.9}>
-            Get 30% OFF all services until March 31, 2025
+            {t('home.promotion.description')}
           </Text>
         </Box>
-        
+
         <Button
           rightIcon={<FiArrowRight />}
           colorScheme="whiteAlpha"
@@ -58,10 +60,10 @@ const PromotionBanner = () => {
           _hover={{ transform: 'scale(1.05)' }}
           transition="all 0.2s"
         >
-          View Offers
+          {t('home.promotion.button')}
         </Button>
       </Flex>
-      
+
       <Box
         position="absolute"
         bottom={-20}

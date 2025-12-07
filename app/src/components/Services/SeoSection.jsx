@@ -3,91 +3,92 @@
 import React from 'react';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, useBreakpointValue } from '@chakra-ui/react';
 import { FaSearch, FaChartLine, FaMobile, FaPenFancy, FaGlobe, FaLink } from 'react-icons/fa';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const SeoSection = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
+  const { t } = useTranslation();
 
   const features = [
     {
       icon: FaSearch,
-      title: "Keyword Strategy",
-      description: "Targeted research to attract qualified traffic"
+      title: t('servicesPage.seo.features.keywordStrategy.title'),
+      description: t('servicesPage.seo.features.keywordStrategy.description')
     },
     {
       icon: FaChartLine,
-      title: "Performance Analytics",
-      description: "Data-driven optimization with Google Analytics"
+      title: t('servicesPage.seo.features.performanceAnalytics.title'),
+      description: t('servicesPage.seo.features.performanceAnalytics.description')
     },
     {
       icon: FaMobile,
-      title: "Mobile Optimization",
-      description: "SEO-friendly responsive design"
+      title: t('servicesPage.seo.features.mobileOptimization.title'),
+      description: t('servicesPage.seo.features.mobileOptimization.description')
     },
     {
       icon: FaPenFancy,
-      title: "Content Optimization",
-      description: "Engaging content that ranks well"
+      title: t('servicesPage.seo.features.contentOptimization.title'),
+      description: t('servicesPage.seo.features.contentOptimization.description')
     },
     {
       icon: FaGlobe,
-      title: "Local SEO",
-      description: "Dominate local search results"
+      title: t('servicesPage.seo.features.localSeo.title'),
+      description: t('servicesPage.seo.features.localSeo.description')
     },
     {
       icon: FaLink,
-      title: "Link Building",
-      description: "High-quality backlink strategies"
+      title: t('servicesPage.seo.features.linkBuilding.title'),
+      description: t('servicesPage.seo.features.linkBuilding.description')
     }
   ];
 
   return (
     <Box py={16} bg="white" id="seo">
       <Container maxW="container.xl">
-        {/* Added the new heading here */}
         <Heading as="h1" size="2xl" mb={16} textAlign="center" color="gray.800">
-          Search{" "}
+          {t('servicesPage.seo.title')}{" "}
           <Box as="span" color="#DD6B20">
-            Optimization
+            {t('servicesPage.seo.titleHighlight')}
           </Box>
         </Heading>
 
         <Flex direction={{ base: 'column', lg: 'row' }} gap={12} align="center">
           <Box flex={1}>
             <Heading as="h2" size="xl" mb={6} color="gray.800" lineHeight="1.2">
-              Comprehensive <Box as="span" color="#DD6B20">SEO Services</Box>
+              {t('servicesPage.seo.heading')} <Box as="span" color="#DD6B20">{t('servicesPage.seo.headingHighlight')}</Box>
             </Heading>
-            
+
             <Text fontSize="lg" color="gray.600" mb={8}>
-              We optimize your digital presence to increase visibility and drive organic growth.
+              {t('servicesPage.seo.description')}
             </Text>
 
             <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={4} mb={8}>
               <Flex align="center">
                 <Icon as={FaSearch} color="#DD6B20" mr={3} />
-                <Text>Technical SEO audits</Text>
+                <Text>{t('servicesPage.seo.bullets.technicalAudits')}</Text>
               </Flex>
               <Flex align="center">
                 <Icon as={FaChartLine} color="#DD6B20" mr={3} />
-                <Text>Competitor analysis</Text>
+                <Text>{t('servicesPage.seo.bullets.competitorAnalysis')}</Text>
               </Flex>
               <Flex align="center">
                 <Icon as={FaPenFancy} color="#DD6B20" mr={3} />
-                <Text>Content strategy</Text>
+                <Text>{t('servicesPage.seo.bullets.contentStrategy')}</Text>
               </Flex>
               <Flex align="center">
                 <Icon as={FaGlobe} color="#DD6B20" mr={3} />
-                <Text>Google My Business</Text>
+                <Text>{t('servicesPage.seo.bullets.googleBusiness')}</Text>
               </Flex>
             </SimpleGrid>
           </Box>
 
           {isDesktop && (
             <Box flex={1} bg="orange.50" p={8} borderRadius="2xl" boxShadow="inner">
-              <Box 
-                bg="white" 
-                h="400px" 
-                borderRadius="xl" 
-                border="1px solid" 
+              <Box
+                bg="white"
+                h="400px"
+                borderRadius="xl"
+                border="1px solid"
                 borderColor="gray.200"
                 display="flex"
                 alignItems="center"
@@ -96,8 +97,8 @@ const SeoSection = () => {
                 p={6}
               >
                 <Icon as={FaSearch} w={12} h={12} color="#DD6B20" mb={4} />
-                <Text fontWeight="bold" mb={2} textAlign="center">SEO Results</Text>
-                <Text textAlign="center" color="gray.500">Higher rankings · More traffic · Better conversions</Text>
+                <Text fontWeight="bold" mb={2} textAlign="center">{t('servicesPage.seo.preview')}</Text>
+                <Text textAlign="center" color="gray.500">{t('servicesPage.seo.previewDescription')}</Text>
               </Box>
             </Box>
           )}
@@ -105,10 +106,10 @@ const SeoSection = () => {
 
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} mt={16}>
           {features.map((feature, index) => (
-            <Box 
-              key={index} 
-              bg="gray.50" 
-              p={8} 
+            <Box
+              key={index}
+              bg="gray.50"
+              p={8}
               borderRadius="xl"
               border="1px solid"
               borderColor="gray.100"

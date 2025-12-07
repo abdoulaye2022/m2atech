@@ -1,31 +1,35 @@
+"use client";
+
 import React from 'react';
 import { Box, Container, Heading, Text, Grid, GridItem, Flex, useBreakpointValue, Icon } from '@chakra-ui/react';
 import { FaComments, FaProjectDiagram, FaCode, FaHeadset } from 'react-icons/fa';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const ProcessSection = () => {
   const columns = useBreakpointValue({ base: 1, md: 2, lg: 4 });
   const iconSize = useBreakpointValue({ base: 10, md: 12 });
+  const { t } = useTranslation();
 
   const processSteps = [
     {
       icon: FaComments,
-      title: "Consultation",
-      description: "We discuss your project, technical challenges, and goals to understand your needs and desired solutions."
+      title: t('servicesPage.process.steps.consultation.title'),
+      description: t('servicesPage.process.steps.consultation.description')
     },
     {
       icon: FaProjectDiagram,
-      title: "Planning",
-      description: "We design the optimal solution with constant communication to keep you informed at every decision point."
+      title: t('servicesPage.process.steps.planning.title'),
+      description: t('servicesPage.process.steps.planning.description')
     },
     {
       icon: FaCode,
-      title: "Development",
-      description: "We build your project from the ground up with transparent progress updates and milestone deliveries."
+      title: t('servicesPage.process.steps.development.title'),
+      description: t('servicesPage.process.steps.development.description')
     },
     {
       icon: FaHeadset,
-      title: "Complete Support",
-      description: "We provide ongoing support and updates to ensure your software evolves and stays competitive."
+      title: t('servicesPage.process.steps.support.title'),
+      description: t('servicesPage.process.steps.support.description')
     }
   ];
 
@@ -33,9 +37,9 @@ const ProcessSection = () => {
     <Box py={20} bg="gray.50" id="process">
       <Container maxW="container.xl">
         <Box textAlign="center" mb={16}>
-          <Heading 
-            as="h2" 
-            size="xl" 
+          <Heading
+            as="h2"
+            size="xl"
             mb={4}
             color="gray.800"
             position="relative"
@@ -50,19 +54,19 @@ const ProcessSection = () => {
               mt: '4'
             }}
           >
-            Our Process
+            {t('servicesPage.process.title')}
           </Heading>
           <Text fontSize="lg" color="gray.600" maxW="2xl" mx="auto">
-            A transparent, collaborative approach to turning your vision into reality
+            {t('servicesPage.process.subtitle')}
           </Text>
         </Box>
 
         <Grid templateColumns={`repeat(${columns}, 1fr)`} gap={8}>
           {processSteps.map((step, index) => (
             <GridItem key={index}>
-              <Flex 
-                direction="column" 
-                align="center" 
+              <Flex
+                direction="column"
+                align="center"
                 textAlign="center"
                 bg="white"
                 p={8}

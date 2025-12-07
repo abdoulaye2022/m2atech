@@ -12,8 +12,10 @@ import {
   Image,
   VStack,
 } from "@chakra-ui/react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const ToolsSection = () => {
+  const { t } = useTranslation();
   const columns = useBreakpointValue({ base: 3, md: 5, lg: 7 });
 
   const programmingLanguages = [
@@ -39,6 +41,9 @@ const ToolsSection = () => {
     { name: "Docker", logo: "/tools/docker.png" },
     { name: "Figma", logo: "/tools/figma.png" },
     { name: "Gimp", logo: "/tools/gimp.jpg" },
+    { name: "OpenAI", logo: "/tools/openai.png" },
+    { name: "LLM", logo: "/tools/llm.png" },
+    { name: "K6", logo: "/tools/k6.png" },
   ];
 
   const renderTechGroup = (title, items) => (
@@ -88,7 +93,7 @@ const ToolsSection = () => {
   );
 
   return (
-    <Box py={20} bg="white">
+    <Box py={20} bg="gray.50">
       <Container maxW="container.xl">
         <Box textAlign="center" mb={12}>
           <Heading
@@ -108,19 +113,18 @@ const ToolsSection = () => {
               mt: "4",
             }}
           >
-            Our Technology Stack
+            {t('home.tools.title')}
           </Heading>
 
           <Text fontSize="xl" color="gray.600" maxW="2xl" mx="auto">
-            At M2atech, we use the best technologies tailored to your project
-            needs. We ensure your product's success, longevity and scalability.
+            {t('home.tools.subtitle')}
           </Text>
         </Box>
 
         <VStack spacing={12}>
-          {renderTechGroup("Programming Languages", programmingLanguages)}
-          {renderTechGroup("Frameworks & Libraries", frameworks)}
-          {renderTechGroup("Tools & Platforms", tools)}
+          {renderTechGroup(t('home.tools.programmingLanguages'), programmingLanguages)}
+          {renderTechGroup(t('home.tools.frameworks'), frameworks)}
+          {renderTechGroup(t('home.tools.toolsPlatforms'), tools)}
         </VStack>
       </Container>
     </Box>

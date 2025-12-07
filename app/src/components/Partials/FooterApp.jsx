@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Box,
@@ -14,8 +16,10 @@ import {
 } from "@chakra-ui/react";
 import { EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const FooterApp = () => {
+  const { t } = useTranslation();
   const columnTemplate = useBreakpointValue({
     base: "1fr",
     sm: "repeat(2, 1fr)",
@@ -43,8 +47,7 @@ const FooterApp = () => {
                 loading="lazy"
               />
               <Text mb={6} fontSize="sm" opacity={0.8}>
-                Delivering innovative digital solutions for your business growth
-                and success.
+                {t('footer.description')}
               </Text>
               <Flex mt="auto" gap={4}>
                 <Link
@@ -71,14 +74,6 @@ const FooterApp = () => {
                 >
                   <FaInstagram size={20} />
                 </Link>
-                {/* <Link
-                  target="_blank"
-                  href="https://youtube.com/m2atech"
-                  isExternal
-                  _hover={{ color: "orange.300" }}
-                >
-                  <FaYoutube size={20} />
-                </Link> */}
               </Flex>
             </Flex>
           </GridItem>
@@ -92,7 +87,7 @@ const FooterApp = () => {
               color="orange.400"
               fontWeight="semibold"
             >
-              Quick Links
+              {t('footer.quickLinks')}
             </Heading>
             <Stack spacing={3}>
               <Link
@@ -100,28 +95,28 @@ const FooterApp = () => {
                 _hover={{ color: "orange.300", transform: "translateX(4px)" }}
                 transition="all 0.2s"
               >
-                About Us
+                {t('footer.aboutUs')}
               </Link>
               <Link
                 href="/services/web-apps"
                 _hover={{ color: "orange.300", transform: "translateX(4px)" }}
                 transition="all 0.2s"
               >
-                Services
-              </Link>
-              <Link
-                href="/portfolio"
-                _hover={{ color: "orange.300", transform: "translateX(4px)" }}
-                transition="all 0.2s"
-              >
-                Projects
+                {t('footer.services')}
               </Link>
               <Link
                 href="/projects"
                 _hover={{ color: "orange.300", transform: "translateX(4px)" }}
                 transition="all 0.2s"
               >
-                Contact
+                {t('footer.projects')}
+              </Link>
+              <Link
+                href="/contact"
+                _hover={{ color: "orange.300", transform: "translateX(4px)" }}
+                transition="all 0.2s"
+              >
+                {t('footer.contact')}
               </Link>
             </Stack>
           </GridItem>
@@ -135,7 +130,7 @@ const FooterApp = () => {
               color="orange.400"
               fontWeight="semibold"
             >
-              Our Services
+              {t('footer.ourServices')}
             </Heading>
             <Stack spacing={3}>
               <Link
@@ -143,28 +138,42 @@ const FooterApp = () => {
                 _hover={{ color: "orange.300", transform: "translateX(4px)" }}
                 transition="all 0.2s"
               >
-                Web Apps
+                {t('footer.webApps')}
               </Link>
               <Link
                 href="/services/mobile-apps"
                 _hover={{ color: "orange.300", transform: "translateX(4px)" }}
                 transition="all 0.2s"
               >
-                Mobile Apps
+                {t('footer.mobileApps')}
               </Link>
               <Link
                 href="/services/custom-software"
                 _hover={{ color: "orange.300", transform: "translateX(4px)" }}
                 transition="all 0.2s"
               >
-                Custom Software
+                {t('footer.customSoftware')}
               </Link>
               <Link
                 href="/services/seo"
                 _hover={{ color: "orange.300", transform: "translateX(4px)" }}
                 transition="all 0.2s"
               >
-                SEO
+                {t('footer.seo')}
+              </Link>
+              <Link
+                href="/services/ai"
+                _hover={{ color: "orange.300", transform: "translateX(4px)" }}
+                transition="all 0.2s"
+              >
+                {t('footer.ai')}
+              </Link>
+              <Link
+                href="/services/cybersecurity"
+                _hover={{ color: "orange.300", transform: "translateX(4px)" }}
+                transition="all 0.2s"
+              >
+                {t('footer.cybersecurity')}
               </Link>
             </Stack>
           </GridItem>
@@ -178,26 +187,24 @@ const FooterApp = () => {
               color="orange.400"
               fontWeight="semibold"
             >
-              Contact Us
+              {t('footer.contactUs')}
             </Heading>
             <Stack spacing={3}>
               <Flex align="center">
                 <EmailIcon mr={3} color="orange.300" />
                 <Link
-                  href="mailto:info@m2atech.com"
+                  href="mailto:contact@m2atech.com"
                   _hover={{ color: "orange.300" }}
                 >
-                  contact@m2atech.com
+                  {t('footer.email')}
                 </Link>
               </Flex>
               <Flex align="center">
                 <PhoneIcon mr={3} color="orange.300" />
-                <Text>+1 (506) 850-6548</Text>
+                <Text>{t('footer.phone')}</Text>
               </Flex>
               <Text mt={4} fontSize="sm" opacity={0.8}>
-                203-74 Belmont Street,
-                <br />
-                Moncton, NB E1C 8W4, Canada
+                {t('footer.address')}
               </Text>
             </Stack>
           </GridItem>
@@ -211,8 +218,7 @@ const FooterApp = () => {
             align="center"
           >
             <Text color="gray.400" mb={{ base: 2, md: 0 }}>
-              © {new Date().getFullYear()} M2ATech Solutions Inc. All rights
-              reserved.
+              © {new Date().getFullYear()} {t('footer.copyright')}
             </Text>
             <Flex gap={4}>
               <Link
@@ -220,14 +226,14 @@ const FooterApp = () => {
                 fontSize="sm"
                 _hover={{ color: "orange.300" }}
               >
-                Privacy Policy
+                {t('footer.privacyPolicy')}
               </Link>
               <Link
                 href="/cookie"
                 fontSize="sm"
                 _hover={{ color: "orange.300" }}
               >
-                Cookie Policy
+                {t('footer.cookiePolicy')}
               </Link>
             </Flex>
           </Flex>

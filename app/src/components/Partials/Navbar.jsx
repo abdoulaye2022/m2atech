@@ -45,23 +45,31 @@ const DesktopNav = () => {
   const getNavItems = () => [
     {
       label: t('nav.services'),
-      href: null, // Pas de lien direct, juste pour le menu déroulant
+      href: null,
       children: [
         {
-          label: "Web Apps",
+          label: t('nav.webApps'),
           href: "/services/web-apps",
         },
         {
-          label: "Mobile Apps",
+          label: t('nav.mobileApps'),
           href: "/services/mobile-apps",
         },
         {
-          label: "Custom Software",
+          label: t('nav.customSoftware'),
           href: "/services/custom-software",
         },
         {
-          label: "SEO",
+          label: t('nav.seo'),
           href: "/services/seo",
+        },
+        {
+          label: t('nav.ai'),
+          href: "/services/ai",
+        },
+        {
+          label: t('nav.cybersecurity'),
+          href: "/services/cybersecurity",
         },
       ],
     },
@@ -218,23 +226,31 @@ const MobileNav = () => {
   const getNavItems = () => [
     {
       label: t('nav.services'),
-      href: null, // Pas de lien direct, juste pour le menu déroulant
+      href: null,
       children: [
         {
-          label: "Web Apps",
+          label: t('nav.webApps'),
           href: "/services/web-apps",
         },
         {
-          label: "Mobile Apps",
+          label: t('nav.mobileApps'),
           href: "/services/mobile-apps",
         },
         {
-          label: "Custom Software",
+          label: t('nav.customSoftware'),
           href: "/services/custom-software",
         },
         {
-          label: "SEO",
+          label: t('nav.seo'),
           href: "/services/seo",
+        },
+        {
+          label: t('nav.ai'),
+          href: "/services/ai",
+        },
+        {
+          label: t('nav.cybersecurity'),
+          href: "/services/cybersecurity",
         },
       ],
     },
@@ -262,6 +278,8 @@ const MobileNav = () => {
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
       <Button
+        as="a"
+        href="/contact"
         w="full"
         color={"#ff5d22"}
         bg={"white"}
@@ -270,7 +288,7 @@ const MobileNav = () => {
         }}
         mt={2}
       >
-        Work with us
+        {t('nav.workWithUs')}
       </Button>
     </Stack>
   );
@@ -333,21 +351,22 @@ const MobileNavItem = ({ label, children, href }) => {
 const ModernNavbar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <MotionBox 
-      position="fixed" 
-      width="full" 
-      zIndex="sticky" 
+    <MotionBox
+      position="fixed"
+      width="full"
+      zIndex="sticky"
       top={0}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -356,10 +375,10 @@ const ModernNavbar = () => {
       {/* Bandeau supérieur */}
       <AnimatePresence>
         {!scrolled && (
-          <MotionBox 
-            bg="#ff5d22" 
-            color="white" 
-            py={1} 
+          <MotionBox
+            bg="#ff5d22"
+            color="white"
+            py={1}
             px={4}
             initial={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -442,7 +461,7 @@ const ModernNavbar = () => {
 
           <Flex
             flex={{ base: 1 }}
-            justify={{ base: "center", md: "start" }} // Centré sur mobile, aligné à gauche sur desktop
+            justify={{ base: "center", md: "start" }}
             align="center"
           >
             <Link href="/" _hover={{ textDecoration: "none" }}>
@@ -462,7 +481,7 @@ const ModernNavbar = () => {
                 height="40px"
                 objectFit="contain"
                 display={{ base: "block", md: "none" }}
-                mx="auto" // Centre le logo horizontalement
+                mx="auto"
               />
             </Link>
 
@@ -497,7 +516,7 @@ const ModernNavbar = () => {
               px={6}
               py={4}
             >
-              Work with us
+              {t('nav.workWithUs')}
             </Button>
           </Stack>
         </Flex>

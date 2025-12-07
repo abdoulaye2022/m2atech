@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   Box,
   Container,
@@ -24,6 +24,7 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
+  Image,
 } from "@chakra-ui/react";
 import {
   FaMapMarkerAlt,
@@ -52,9 +53,52 @@ const Contact = () => {
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&q=${encodedAddress}`;
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
   const { t } = useTranslation();
+
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+  // Load reCAPTCHA Enterprise script
+  useEffect(() => {
+    if (!recaptchaSiteKey || recaptchaSiteKey === 'your-recaptcha-site-key') return;
+
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/enterprise.js?render=${recaptchaSiteKey}`;
+    script.async = true;
+    script.onload = () => setRecaptchaLoaded(true);
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector(`script[src*="recaptcha/enterprise.js"]`);
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, [recaptchaSiteKey]);
+
+  // Get reCAPTCHA token
+  const getRecaptchaToken = useCallback(async () => {
+    if (!recaptchaLoaded || !window.grecaptcha?.enterprise) {
+      return null;
+    }
+
+    return new Promise((resolve) => {
+      window.grecaptcha.enterprise.ready(async () => {
+        try {
+          const token = await window.grecaptcha.enterprise.execute(recaptchaSiteKey, {
+            action: 'CONTACT_FORM'
+          });
+          resolve(token);
+        } catch (error) {
+          console.error('reCAPTCHA error:', error);
+          resolve(null);
+        }
+      });
+    });
+  }, [recaptchaLoaded, recaptchaSiteKey]);
 
   const getContactMethods = () => [
     {
@@ -121,8 +165,26 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Simuler un appel API
-      const res = await api_contact(formData);
+      // Get reCAPTCHA Enterprise token
+      const recaptchaToken = await getRecaptchaToken();
+
+      if (!recaptchaToken && recaptchaSiteKey && recaptchaSiteKey !== 'your-recaptcha-site-key') {
+        toast({
+          title: t('contact.form.errors.recaptchaRequired'),
+          description: "reCAPTCHA verification failed. Please try again.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Include recaptcha token in the request
+      const res = await api_contact({
+        ...formData,
+        recaptchaToken: recaptchaToken,
+      });
 
       if (res.status) {
         onOpen();
@@ -163,8 +225,50 @@ const Contact = () => {
   };
 
   return (
-    <Box py={16} bg="white" id="contact">
-      <Container maxW="container.xl">
+    <Box py={16} bg="white" id="contact" position="relative" overflow="hidden">
+      {/* Decorative shape - Globe map en arrière-plan */}
+      <Box
+        position="absolute"
+        right={{ base: "-200px", md: "-100px", lg: "0" }}
+        top="50%"
+        transform="translateY(-50%)"
+        w={{ base: "400px", md: "500px", lg: "600px" }}
+        h={{ base: "400px", md: "500px", lg: "600px" }}
+        opacity={0.15}
+        zIndex={0}
+        pointerEvents="none"
+      >
+        <Image
+          src="/img/shape/map-shape1.png"
+          alt=""
+          w="100%"
+          h="100%"
+          objectFit="contain"
+        />
+      </Box>
+
+      {/* Decorative shape - Vector en bas à gauche */}
+      <Box
+        position="absolute"
+        left={{ base: "-150px", md: "-100px" }}
+        bottom={{ base: "-100px", md: "-50px" }}
+        w={{ base: "300px", md: "400px" }}
+        h={{ base: "300px", md: "400px" }}
+        opacity={0.15}
+        zIndex={0}
+        pointerEvents="none"
+        display={{ base: "none", md: "block" }}
+      >
+        <Image
+          src="/img/shape/vector-shape5.png"
+          alt=""
+          w="100%"
+          h="100%"
+          objectFit="contain"
+        />
+      </Box>
+
+      <Container maxW="container.xl" position="relative" zIndex={1}>
         <AnimatedSection>
           <Heading as="h1" size="2xl" mb={16} textAlign="center" color="gray.800">
             {t('contact.title')}{" "}
@@ -356,6 +460,10 @@ const Contact = () => {
                     >
                       {t('contact.form.submit')}
                     </MotionButton>
+                    {/* reCAPTCHA Enterprise badge info */}
+                    <Text fontSize="xs" color="gray.500" mt={2} textAlign="center">
+                      {t('contact.form.recaptchaNotice')}
+                    </Text>
                   </motion.div>
                 </StaggeredContainer>
               </form>

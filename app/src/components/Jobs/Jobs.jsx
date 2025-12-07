@@ -3,8 +3,11 @@
 import React from 'react';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, Button, Link, Badge } from '@chakra-ui/react';
 import { FaBriefcase, FaMapMarkerAlt, FaClock, FaDollarSign } from 'react-icons/fa';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const Jobs = () => {
+  const { t } = useTranslation();
+
   const jobOpenings = [
     // {
     //   id: 1,
@@ -22,14 +25,14 @@ const Jobs = () => {
     <Box py={16} bg="white" id="jobs">
       <Container maxW="container.xl">
         <Heading as="h1" size="2xl" mb={16} textAlign="center" color="gray.800">
-          Career{" "}
+          {t('jobs.pageTitle')}{" "}
           <Box as="span" color="#DD6B20">
-            Opportunities
+            {t('jobs.pageTitleHighlight')}
           </Box>
         </Heading>
 
         <Text fontSize="xl" textAlign="center" color="gray.600" mb={16} maxW="2xl" mx="auto">
-          Join our team and help build innovative digital solutions for clients around the world.
+          {t('jobs.subtitle')}
         </Text>
 
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8} mb={16}>
@@ -93,7 +96,7 @@ const Jobs = () => {
                   textDecoration: "none"
                 }}
               >
-                Apply Now
+                {t('jobs.applyNow')}
               </Button>
             </Box>
           ))}
@@ -101,7 +104,7 @@ const Jobs = () => {
 
         <Box textAlign="center" mt={16}>
           <Text fontSize="lg" color="gray.600" mb={4}>
-            Don't see your dream job? Send us your resume anyway!
+            {t('jobs.noJobsMessage')}
           </Text>
           <Button
             as={Link}
@@ -110,7 +113,7 @@ const Jobs = () => {
             colorScheme="orange"
             rightIcon={<FaBriefcase />}
           >
-            Submit General Application
+            {t('jobs.submitApplication')}
           </Button>
         </Box>
       </Container>

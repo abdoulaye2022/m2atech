@@ -3,91 +3,92 @@
 import React from 'react';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, useBreakpointValue } from '@chakra-ui/react';
 import { FaLaptopCode, FaServer, FaMobileAlt, FaRocket, FaShieldAlt, FaSyncAlt } from 'react-icons/fa';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const WebAppsSection = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
+  const { t } = useTranslation();
 
   const features = [
     {
       icon: FaLaptopCode,
-      title: "Modern Interfaces",
-      description: "Optimized UX/UI with React, Next.js or Vue.js"
+      title: t('servicesPage.webApps.features.modernInterfaces.title'),
+      description: t('servicesPage.webApps.features.modernInterfaces.description')
     },
     {
       icon: FaServer,
-      title: "Robust Backend",
-      description: "High-performance APIs with Node.js, Python or .NET"
+      title: t('servicesPage.webApps.features.robustBackend.title'),
+      description: t('servicesPage.webApps.features.robustBackend.description')
     },
     {
       icon: FaMobileAlt,
-      title: "Mobile-First",
-      description: "Responsive design for all devices"
+      title: t('servicesPage.webApps.features.mobileFirst.title'),
+      description: t('servicesPage.webApps.features.mobileFirst.description')
     },
     {
       icon: FaRocket,
-      title: "Performance",
-      description: "Loading time optimization"
+      title: t('servicesPage.webApps.features.performance.title'),
+      description: t('servicesPage.webApps.features.performance.description')
     },
     {
       icon: FaShieldAlt,
-      title: "Security",
-      description: "Data protection and GDPR compliance"
+      title: t('servicesPage.webApps.features.security.title'),
+      description: t('servicesPage.webApps.features.security.description')
     },
     {
       icon: FaSyncAlt,
-      title: "Scalability",
-      description: "Future-proof architecture for your growth"
+      title: t('servicesPage.webApps.features.scalability.title'),
+      description: t('servicesPage.webApps.features.scalability.description')
     }
   ];
 
   return (
     <Box py={16} bg="white" id="web-apps">
       <Container maxW="container.xl">
-        {/* Added the new heading here */}
         <Heading as="h1" size="2xl" mb={16} textAlign="center" color="gray.800">
-          Web{" "}
+          {t('servicesPage.webApps.title')}{" "}
           <Box as="span" color="#DD6B20">
-            Applications
+            {t('servicesPage.webApps.titleHighlight')}
           </Box>
         </Heading>
 
         <Flex direction={{ base: 'column', lg: 'row' }} gap={12} align="center">
           <Box flex={1}>
             <Heading as="h2" size="xl" mb={6} color="gray.800" lineHeight="1.2">
-              High Performance <Box as="span" color="#DD6B20">Web Solutions</Box>
+              {t('servicesPage.webApps.heading')} <Box as="span" color="#DD6B20">{t('servicesPage.webApps.headingHighlight')}</Box>
             </Heading>
-            
+
             <Text fontSize="lg" color="gray.600" mb={8}>
-              We develop web applications that combine aesthetics, functionality and technical performance.
+              {t('servicesPage.webApps.description')}
             </Text>
 
             <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={4} mb={8}>
               <Flex align="center">
                 <Icon as={FaRocket} color="#DD6B20" mr={3} />
-                <Text>Optimized delivery timelines</Text>
+                <Text>{t('servicesPage.webApps.bullets.optimizedDelivery')}</Text>
               </Flex>
               <Flex align="center">
                 <Icon as={FaShieldAlt} color="#DD6B20" mr={3} />
-                <Text>Comprehensive security testing</Text>
+                <Text>{t('servicesPage.webApps.bullets.securityTesting')}</Text>
               </Flex>
               <Flex align="center">
                 <Icon as={FaSyncAlt} color="#DD6B20" mr={3} />
-                <Text>Maintenance and updates</Text>
+                <Text>{t('servicesPage.webApps.bullets.maintenance')}</Text>
               </Flex>
               <Flex align="center">
                 <Icon as={FaMobileAlt} color="#DD6B20" mr={3} />
-                <Text>Multi-device compatibility</Text>
+                <Text>{t('servicesPage.webApps.bullets.multiDevice')}</Text>
               </Flex>
             </SimpleGrid>
           </Box>
 
           {isDesktop && (
             <Box flex={1} bg="orange.50" p={8} borderRadius="2xl" boxShadow="inner">
-              <Box 
-                bg="white" 
-                h="400px" 
-                borderRadius="xl" 
-                border="1px solid" 
+              <Box
+                bg="white"
+                h="400px"
+                borderRadius="xl"
+                border="1px solid"
                 borderColor="gray.200"
                 display="flex"
                 alignItems="center"
@@ -96,8 +97,8 @@ const WebAppsSection = () => {
                 p={6}
               >
                 <Icon as={FaLaptopCode} w={12} h={12} color="#DD6B20" mb={4} />
-                <Text fontWeight="bold" mb={2} textAlign="center">Preview</Text>
-                <Text textAlign="center" color="gray.500">Your custom web application</Text>
+                <Text fontWeight="bold" mb={2} textAlign="center">{t('servicesPage.webApps.preview')}</Text>
+                <Text textAlign="center" color="gray.500">{t('servicesPage.webApps.previewDescription')}</Text>
               </Box>
             </Box>
           )}
@@ -105,10 +106,10 @@ const WebAppsSection = () => {
 
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} mt={16}>
           {features.map((feature, index) => (
-            <Box 
-              key={index} 
-              bg="gray.50" 
-              p={8} 
+            <Box
+              key={index}
+              bg="gray.50"
+              p={8}
               borderRadius="xl"
               border="1px solid"
               borderColor="gray.100"

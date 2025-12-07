@@ -6,40 +6,92 @@ import GoogleAnalytics from "@/components/Analytics/GoogleAnalytics";
 import Hotjar from "@/components/Analytics/Hotjar";
 
 export const metadata = {
-  title: "M2ATech Solutions Inc. | Web & Mobile Development in Moncton, NB",
+  title: "M2ATech Solutions Inc. | Agence Web, Mobile, IA & Cybersécurité à Moncton, NB, Canada",
   description:
-    "Specialized in web apps, mobile apps, custom software and SEO services in Atlantic Canada. Moncton's leading tech solutions provider for businesses seeking digital transformation.",
+    "Agence technologique leader au Canada Atlantique. Développement web, applications mobiles, logiciels sur mesure, solutions IA, cybersécurité et SEO à Moncton, Nouveau-Brunswick. Votre partenaire digital au Canada.",
   keywords: [
-    // English Keywords
+    // English Keywords - Moncton
     "web development Moncton",
+    "web developer Moncton NB",
+    "website design Moncton",
+    "Moncton web agency",
+    "web development company Moncton",
+    "best web developer Moncton",
+
+    // English Keywords - New Brunswick
+    "web development New Brunswick",
     "mobile app development New Brunswick",
+    "software company New Brunswick",
+    "IT services New Brunswick",
+    "tech company New Brunswick",
+    "New Brunswick web design",
+    "NB software development",
+
+    // English Keywords - Canada & Atlantic
+    "web development Canada",
     "custom software Atlantic Canada",
-    "SEO services NB",
+    "digital agency Canada",
+    "software development Maritimes",
+    "tech consulting Atlantic Canada",
+    "Canadian web development company",
+
+    // English Keywords - Services
     "M2ATech Solutions",
-    "digital agency Moncton",
-    "website development",
     "e-commerce solutions",
     "responsive web design",
     "React development",
     "Next.js experts",
-    "software development Maritimes",
-    "digital transformation NB",
-    "tech consulting Moncton",
+    "Flutter app development",
+    "SEO services NB",
+    "digital transformation",
+    "AI solutions Canada",
+    "artificial intelligence Moncton",
+    "chatbot development",
+    "machine learning services",
+    "cybersecurity services Moncton",
+    "penetration testing NB",
+    "security audit Canada",
+    "data protection services",
 
-    // French Keywords
+    // French Keywords - Moncton
     "développement web Moncton",
+    "développeur web Moncton",
+    "création site web Moncton",
+    "agence web Moncton",
+    "meilleur développeur Moncton",
+    "site internet Moncton",
+
+    // French Keywords - Nouveau-Brunswick
+    "développement web Nouveau-Brunswick",
     "application mobile Nouveau-Brunswick",
+    "entreprise informatique Nouveau-Brunswick",
+    "services TI Nouveau-Brunswick",
+    "développeur NB",
+    "création site web NB",
+
+    // French Keywords - Canada & Atlantique
+    "développement web Canada",
     "logiciel personnalisé Canada Atlantique",
-    "services SEO NB",
-    "agence digitale Moncton",
-    "création site web",
+    "agence digitale Canada",
+    "développement logiciel Maritimes",
+    "consultation tech Canada",
+
+    // French Keywords - Services
     "solutions e-commerce",
     "design web adaptatif",
     "développement React",
     "experts Next.js",
-    "développement logiciel Maritimes",
-    "transformation digitale NB",
-    "consultation tech Moncton",
+    "développement Flutter",
+    "services SEO NB",
+    "transformation digitale",
+    "solutions IA Canada",
+    "intelligence artificielle Moncton",
+    "développement chatbot",
+    "apprentissage automatique",
+    "cybersécurité Moncton",
+    "test de pénétration NB",
+    "audit de sécurité Canada",
+    "protection des données",
   ],
   authors: [{ name: "M2ATech Solutions Inc." }],
   creator: "M2ATech Solutions Inc.",
@@ -61,9 +113,9 @@ export const metadata = {
     alternateLocale: ["fr_CA"],
     url: "https://www.m2atech.com",
     siteName: "M2ATech Solutions Inc.",
-    title: "M2ATech Solutions Inc. | Digital Technology Experts - Moncton",
+    title: "M2ATech Solutions Inc. | Web, Mobile, AI & Cybersecurity Experts - Moncton",
     description:
-      "Your partner for high-performance web, mobile and SEO solutions in the Maritimes. Transforming businesses through innovative technology.",
+      "Your partner for high-performance web, mobile, AI, cybersecurity and SEO solutions in the Maritimes. Transforming businesses through innovative technology.",
     images: [
       {
         url: "https://www.m2atech.com/logo3.png",
@@ -78,17 +130,22 @@ export const metadata = {
     card: "summary_large_image",
     site: "@M2ATechSolutions",
     creator: "@M2ATechSolutions",
-    title: "M2ATech Solutions Inc. | Expert Developers in Moncton",
+    title: "M2ATech Solutions Inc. | Web, Mobile, AI & Cybersecurity Experts",
     description:
-      "Custom digital solutions for New Brunswick businesses. Web apps, mobile apps, and SEO services.",
+      "Custom digital solutions for New Brunswick businesses. Web apps, mobile apps, AI, cybersecurity & SEO services.",
     images: ["https://www.m2atech.com/logo3.png"],
   },
   alternates: {
     canonical: "https://www.m2atech.com",
-    languages: {
-      "en-CA": "https://www.m2atech.com/en",
-      "fr-CA": "https://www.m2atech.com/fr",
-    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "256x256" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "256x256", type: "image/png" },
+    ],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "your-google-verification-code",
@@ -122,10 +179,7 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#ff5d22" />
         <meta name="msapplication-TileColor" content="#ff5d22" />
 
-        {/* Favicons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
 
         {/* DNS Prefetch pour améliorer les performances */}
@@ -140,10 +194,11 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+                  "@type": ["Organization", "LocalBusiness", "ProfessionalService", "ITService"],
                   "@id": "https://www.m2atech.com/#organization",
                   name: "M2ATech Solutions Inc.",
                   legalName: "M2ATech Solutions Inc.",
+                  alternateName: ["M2ATech", "M2A Tech Solutions", "M2ATech Moncton"],
                   url: "https://www.m2atech.com",
                   logo: {
                     "@type": "ImageObject",
@@ -153,13 +208,18 @@ export default function RootLayout({ children }) {
                   },
                   image: "https://www.m2atech.com/logo3.png",
                   description:
-                    "Specialized in web apps, mobile apps, custom software and SEO services in Atlantic Canada.",
+                    "Agence de développement web, mobile, IA et cybersécurité à Moncton, Nouveau-Brunswick, Canada. Web development, mobile apps, AI solutions and cybersecurity services in Moncton, New Brunswick, Canada.",
+                  slogan: "Your Digital Partner in Atlantic Canada | Votre Partenaire Digital au Canada Atlantique",
                   foundingDate: "2024",
+                  foundingLocation: {
+                    "@type": "Place",
+                    name: "Moncton, New Brunswick, Canada"
+                  },
                   address: {
                     "@type": "PostalAddress",
                     streetAddress: "203-74 Belmont Street",
                     addressLocality: "Moncton",
-                    addressRegion: "NB",
+                    addressRegion: "New Brunswick",
                     postalCode: "E1C 8W4",
                     addressCountry: "CA",
                   },
@@ -168,21 +228,29 @@ export default function RootLayout({ children }) {
                     latitude: "46.0878",
                     longitude: "-64.7782",
                   },
+                  telephone: "+1-506-850-6548",
+                  email: "contact@m2atech.com",
                   contactPoint: [
                     {
                       "@type": "ContactPoint",
                       telephone: "+1-506-850-6548",
                       contactType: "customer service",
                       email: "contact@m2atech.com",
-                      availableLanguage: ["en", "fr"],
-                      areaServed: ["CA-NB", "CA-NS", "CA-PE"],
+                      availableLanguage: ["English", "French"],
+                      areaServed: ["CA", "CA-NB", "CA-NS", "CA-PE"],
+                      hoursAvailable: {
+                        "@type": "OpeningHoursSpecification",
+                        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        opens: "09:00",
+                        closes: "17:00",
+                      },
                     },
                     {
                       "@type": "ContactPoint",
                       telephone: "+1-506-850-6548",
                       contactType: "sales",
                       email: "contact@m2atech.com",
-                      availableLanguage: ["en", "fr"],
+                      availableLanguage: ["English", "French"],
                     },
                   ],
                   sameAs: [
@@ -191,6 +259,19 @@ export default function RootLayout({ children }) {
                     "https://www.instagram.com/m2atech.solutions",
                   ],
                   areaServed: [
+                    {
+                      "@type": "Country",
+                      name: "Canada",
+                      "@id": "https://en.wikipedia.org/wiki/Canada",
+                    },
+                    {
+                      "@type": "City",
+                      name: "Moncton",
+                      containedInPlace: {
+                        "@type": "State",
+                        name: "New Brunswick"
+                      }
+                    },
                     {
                       "@type": "State",
                       name: "New Brunswick",
@@ -205,6 +286,9 @@ export default function RootLayout({ children }) {
                       name: "Prince Edward Island",
                     },
                   ],
+                  knowsLanguage: ["en", "fr"],
+                  paymentAccepted: ["Cash", "Credit Card", "Debit Card", "E-Transfer"],
+                  currenciesAccepted: "CAD",
                   priceRange: "$$",
                   openingHoursSpecification: [
                     {
@@ -252,6 +336,24 @@ export default function RootLayout({ children }) {
                           name: "SEO Services",
                           description: "Search engine optimization to improve online visibility",
                           serviceType: "SEO",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "AI Solutions",
+                          description: "Artificial intelligence solutions including chatbots, machine learning, and process automation",
+                          serviceType: "AI Development",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Cybersecurity Services",
+                          description: "Comprehensive security solutions including audits, penetration testing, and compliance",
+                          serviceType: "Cybersecurity",
                         },
                       },
                     ],

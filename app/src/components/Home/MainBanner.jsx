@@ -69,7 +69,50 @@ function MainBanner() {
       pt="103px"
       boxSizing="border-box"
     >
-      <Container maxW="container.xl" py={8}>
+      {/* Decorative shape - Globe en arrière-plan */}
+      <Box
+        position="absolute"
+        right={{ base: "-150px", md: "-100px", lg: "0" }}
+        top={{ base: "auto", lg: "50%" }}
+        bottom={{ base: "-100px", lg: "auto" }}
+        transform={{ base: "none", lg: "translateY(-50%)" }}
+        w={{ base: "400px", md: "500px", lg: "600px" }}
+        h={{ base: "400px", md: "500px", lg: "600px" }}
+        opacity={0.35}
+        zIndex={0}
+        pointerEvents="none"
+      >
+        <Image
+          src="/img/shape/circle-shape1.png"
+          alt=""
+          w="100%"
+          h="100%"
+          objectFit="contain"
+        />
+      </Box>
+
+      {/* Decorative shape - Network en haut à gauche */}
+      <Box
+        position="absolute"
+        left={{ base: "-100px", md: "-50px" }}
+        top={{ base: "-50px", md: "50px" }}
+        w={{ base: "250px", md: "350px" }}
+        h={{ base: "250px", md: "350px" }}
+        opacity={0.25}
+        zIndex={0}
+        pointerEvents="none"
+        display={{ base: "none", md: "block" }}
+      >
+        <Image
+          src="/img/shape/vector-shape1.png"
+          alt=""
+          w="100%"
+          h="100%"
+          objectFit="contain"
+        />
+      </Box>
+
+      <Container maxW="container.xl" py={8} position="relative" zIndex={1}>
         <Flex
           direction={flexDirection}
           align="center"

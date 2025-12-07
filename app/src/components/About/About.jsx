@@ -3,37 +3,39 @@
 import React from 'react';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, Image, useBreakpointValue, Button } from '@chakra-ui/react';
 import { FaRocket, FaUsers, FaLightbulb, FaHandshake, FaMapMarkerAlt } from 'react-icons/fa';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const About = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
+  const { t } = useTranslation();
 
   const stats = [
-    { value: "6+", label: "Projects Delivered" },
-    { value: "4+", label: "Satisfied Clients" },
-    { value: "100%", label: "Client Retention" },
-    { value: "New Brunswick", label: "Based in", icon: FaMapMarkerAlt }
+    { value: "6+", label: t('about.stats.projectsDelivered') },
+    { value: "4+", label: t('about.stats.satisfiedClients') },
+    { value: "100%", label: t('about.stats.clientRetention') },
+    { value: t('about.stats.location'), label: t('about.stats.basedIn'), icon: FaMapMarkerAlt }
   ];
 
   const values = [
     {
       icon: FaRocket,
-      title: "Innovation",
-      description: "Modern solutions tailored for Atlantic Canadian businesses"
+      title: t('about.values.innovation.title'),
+      description: t('about.values.innovation.description')
     },
     {
       icon: FaUsers,
-      title: "Collaboration",
-      description: "Your vision combined with our technical expertise"
+      title: t('about.values.collaboration.title'),
+      description: t('about.values.collaboration.description')
     },
     {
       icon: FaLightbulb,
-      title: "Creativity",
-      description: "Unique digital experiences that stand out"
+      title: t('about.values.creativity.title'),
+      description: t('about.values.creativity.description')
     },
     {
       icon: FaHandshake,
-      title: "Integrity",
-      description: "Transparent processes and honest communication"
+      title: t('about.values.integrity.title'),
+      description: t('about.values.integrity.description')
     }
   ];
 
@@ -41,28 +43,27 @@ const About = () => {
     <Box py={16} bg="white" id="about">
       <Container maxW="container.xl">
         <Heading as="h1" size="2xl" mb={16} textAlign="center" color="gray.800">
-          About <Box as="span" color="#DD6B20">Our New Brunswick Agency</Box>
+          {t('about.pageTitle')} <Box as="span" color="#DD6B20">{t('about.pageTitleHighlight')}</Box>
         </Heading>
 
         <Flex direction={{ base: 'column', lg: 'row' }} gap={12} align="center" mb={16}>
           <Box flex={1}>
             <Heading as="h2" size="xl" mb={6} color="gray.800">
-              Our Story
+              {t('about.story.title')}
             </Heading>
             <Text fontSize="lg" color="gray.600" mb={4}>
-              Founded in New Brunswick, we're a passionate team dedicated to helping local businesses thrive through digital transformation. 
-              In just a few months, we've already delivered successful projects for clients across Atlantic Canada.
+              {t('about.story.description1')}
             </Text>
             <Text fontSize="lg" color="gray.600">
-              What sets us apart is our deep understanding of regional business needs combined with cutting-edge technical expertise.
+              {t('about.story.description2')}
             </Text>
           </Box>
 
           {isDesktop && (
             <Box flex={1}>
               <Image
-                src="/img/about1.png" // Suggested New Brunswick-themed image
-                alt="Our New Brunswick team"
+                src="/img/about1.png"
+                alt={t('about.teamAlt')}
                 borderRadius="2xl"
                 boxShadow="lg"
               />
@@ -85,13 +86,13 @@ const About = () => {
         </Box>
 
         <Heading as="h2" size="xl" mb={12} textAlign="center" color="gray.800">
-          Our <Box as="span" color="#DD6B20">Values</Box>
+          {t('about.values.title')} <Box as="span" color="#DD6B20">{t('about.values.titleHighlight')}</Box>
         </Heading>
 
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8} mb={16}>
           {values.map((value, index) => (
-            <Box 
-              key={index} 
+            <Box
+              key={index}
               textAlign="center"
               p={6}
               borderRadius="xl"
@@ -114,8 +115,8 @@ const About = () => {
           {isDesktop && (
             <Box flex={1}>
               <Image
-                src="/img/mission.png" // New Brunswick mission image
-                alt="Serving Atlantic Canada"
+                src="/img/mission.png"
+                alt={t('about.missionAlt')}
                 borderRadius="2xl"
                 boxShadow="lg"
               />
@@ -123,13 +124,13 @@ const About = () => {
           )}
           <Box flex={1}>
             <Heading as="h2" size="xl" mb={6} color="gray.800">
-              Our Local Mission
+              {t('about.mission.title')}
             </Heading>
             <Text fontSize="lg" color="gray.600" mb={4}>
-              To empower New Brunswick businesses with affordable, high-quality digital solutions that drive real growth in our local economy.
+              {t('about.mission.description1')}
             </Text>
             <Text fontSize="lg" color="gray.600" mb={4}>
-              We're committed to helping Atlantic Canadian businesses compete in the digital age while maintaining their unique local identity.
+              {t('about.mission.description2')}
             </Text>
             <Button
               colorScheme="orange"
@@ -138,7 +139,7 @@ const About = () => {
               as="a"
               href="/contact"
             >
-              Let's Build Something Great
+              {t('about.mission.cta')}
             </Button>
           </Box>
         </Flex>
