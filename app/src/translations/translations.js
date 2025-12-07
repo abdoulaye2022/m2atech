@@ -217,11 +217,10 @@ export const translations = {
         description2: "What sets us apart is our deep understanding of regional business needs combined with cutting-edge technical expertise."
       },
       stats: {
-        projectsDelivered: "Projects Delivered",
-        satisfiedClients: "Satisfied Clients",
-        clientRetention: "Client Retention",
-        basedIn: "Based in",
-        location: "New Brunswick"
+        projectsCompleted: "Projects Completed",
+        clientSatisfaction: "Client Satisfaction",
+        support: "Support Available",
+        yearsExperience: "Years Experience"
       },
       values: {
         title: "Our",
@@ -968,11 +967,10 @@ export const translations = {
         description2: "Ce qui nous distingue, c'est notre compréhension profonde des besoins commerciaux régionaux combinée à une expertise technique de pointe."
       },
       stats: {
-        projectsDelivered: "Projets Livrés",
-        satisfiedClients: "Clients Satisfaits",
-        clientRetention: "Fidélisation Client",
-        basedIn: "Basé au",
-        location: "Nouveau-Brunswick"
+        projectsCompleted: "Projets Complétés",
+        clientSatisfaction: "Satisfaction Client",
+        support: "Support Disponible",
+        yearsExperience: "Années d'Expérience"
       },
       values: {
         title: "Nos",

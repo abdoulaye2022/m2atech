@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, Image, useBreakpointValue, Button } from '@chakra-ui/react';
-import { FaRocket, FaUsers, FaLightbulb, FaHandshake, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaRocket, FaUsers, FaLightbulb, FaHandshake } from 'react-icons/fa';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const About = () => {
@@ -10,10 +10,10 @@ const About = () => {
   const { t } = useTranslation();
 
   const stats = [
-    { value: "6+", label: t('about.stats.projectsDelivered') },
-    { value: "4+", label: t('about.stats.satisfiedClients') },
-    { value: "100%", label: t('about.stats.clientRetention') },
-    { value: t('about.stats.location'), label: t('about.stats.basedIn'), icon: FaMapMarkerAlt }
+    { value: "10+", label: t('about.stats.projectsCompleted') },
+    { value: "98%", label: t('about.stats.clientSatisfaction') },
+    { value: "24/7", label: t('about.stats.support') },
+    { value: "5+", label: t('about.stats.yearsExperience') }
   ];
 
   const values = [
@@ -77,7 +77,6 @@ const About = () => {
               <Box key={index}>
                 <Text fontSize="3xl" fontWeight="bold" color="#DD6B20">
                   {stat.value}
-                  {stat.icon && <Icon as={stat.icon} ml={2} verticalAlign="middle" />}
                 </Text>
                 <Text color="gray.600">{stat.label}</Text>
               </Box>
