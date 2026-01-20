@@ -196,7 +196,7 @@ export const translations = {
       ai: "AI Solutions",
       cybersecurity: "Cybersecurity",
       contactUs: "Contact Us",
-      address: "203-74 Belmont Street, Moncton, NB E1C 8W4, Canada",
+      address: "74 Belmont Street, Moncton, NB E1C 8W4, Canada",
       phone: "+1 (506) 850-6548",
       email: "contact@m2atech.com",
       followUs: "Follow Us",
@@ -682,6 +682,57 @@ export const translations = {
             "Social Impact Reporting"
           ]
         },
+        fraisChezVous: {
+          title: "Frais Chez Vous",
+          description: "Fresh grocery delivery platform connecting local farmers and producers to consumers. Order fresh fruits, vegetables, and local products with same-day delivery in the Maritimes region",
+          category: "E-commerce Platform",
+          features: [
+            "Local Products Marketplace",
+            "Fresh Produce Categories",
+            "Same-Day Delivery",
+            "Subscription Boxes",
+            "Farmer Profiles",
+            "Secure Payment (Stripe)",
+            "Order Tracking",
+            "Customer Reviews",
+            "Mobile Responsive",
+            "SEO Optimized"
+          ]
+        },
+        m2acrm: {
+          title: "M2A CRM",
+          description: "Comprehensive customer relationship management platform built for small and medium businesses. Manage clients, projects, invoicing, and team collaboration in one unified dashboard",
+          category: "Business CRM Platform",
+          features: [
+            "Client Management",
+            "Project Tracking",
+            "Invoice Generation",
+            "Team Collaboration",
+            "Analytics Dashboard",
+            "Task Management",
+            "Email Integration",
+            "Document Storage",
+            "Real-time Notifications",
+            "Custom Reports"
+          ]
+        },
+        diaspoaffairs: {
+          title: "DiaspoAffairs",
+          description: "Community platform connecting African diaspora worldwide. Share news, events, business opportunities, and cultural content within the global African community",
+          category: "Community Platform",
+          features: [
+            "News & Articles",
+            "Event Calendar",
+            "Business Directory",
+            "Community Forums",
+            "Cultural Content",
+            "Member Profiles",
+            "Multilingual Support",
+            "Social Sharing",
+            "Newsletter Integration",
+            "Mobile Responsive"
+          ]
+        },
         m2adoc: {
           title: "M2A DocAssist",
           description: "AI-powered medical documentation platform for Canadian physicians. Transforms voice consultations into structured SOAP notes in 30 seconds, with provincial billing codes and EMR integration",
@@ -745,7 +796,21 @@ export const translations = {
       subtitle: "Join our team and help build innovative digital solutions for clients around the world.",
       noJobsMessage: "Don't see your dream job? Send us your resume anyway!",
       submitApplication: "Submit General Application",
-      applyNow: "Apply Now"
+      applyNow: "Apply Now",
+      viewDetails: "View Offer",
+      closed: "Closed",
+      openings: {
+        marketingAssistant: {
+          title: "Digital Marketing Assistant",
+          department: "Marketing",
+          type: "Part-time",
+          workMode: "Remote",
+          location: "Niger (Niamey or other city)",
+          hours: "25 hours/week",
+          daysRemaining: "13 days left",
+          shortDescription: "Join our team to manage our social media presence and support prospecting for a Canadian tech company. Flexible hours, 100% remote."
+        }
+      }
     }
   },
 
@@ -1432,6 +1497,57 @@ export const translations = {
             "Rapports d'Impact Social"
           ]
         },
+        fraisChezVous: {
+          title: "Frais Chez Vous",
+          description: "Plateforme de livraison de produits frais connectant les producteurs locaux aux consommateurs. Commandez fruits, légumes et produits locaux avec livraison le jour même dans les Maritimes",
+          category: "Plateforme E-commerce",
+          features: [
+            "Marché Produits Locaux",
+            "Catégories Produits Frais",
+            "Livraison Jour Même",
+            "Boîtes Abonnement",
+            "Profils Agriculteurs",
+            "Paiement Sécurisé (Stripe)",
+            "Suivi de Commande",
+            "Avis Clients",
+            "Design Responsive",
+            "Optimisé SEO"
+          ]
+        },
+        m2acrm: {
+          title: "M2A CRM",
+          description: "Plateforme complète de gestion de la relation client conçue pour les PME. Gérez clients, projets, facturation et collaboration d'équipe dans un tableau de bord unifié",
+          category: "Plateforme CRM Business",
+          features: [
+            "Gestion des Clients",
+            "Suivi de Projets",
+            "Génération de Factures",
+            "Collaboration d'Équipe",
+            "Tableau de Bord Analytique",
+            "Gestion des Tâches",
+            "Intégration Email",
+            "Stockage de Documents",
+            "Notifications Temps Réel",
+            "Rapports Personnalisés"
+          ]
+        },
+        diaspoaffairs: {
+          title: "DiaspoAffairs",
+          description: "Plateforme communautaire connectant la diaspora africaine dans le monde. Partagez actualités, événements, opportunités d'affaires et contenu culturel au sein de la communauté africaine mondiale",
+          category: "Plateforme Communautaire",
+          features: [
+            "Actualités & Articles",
+            "Calendrier d'Événements",
+            "Annuaire d'Entreprises",
+            "Forums Communautaires",
+            "Contenu Culturel",
+            "Profils Membres",
+            "Support Multilingue",
+            "Partage Social",
+            "Intégration Newsletter",
+            "Design Responsive"
+          ]
+        },
         m2adoc: {
           title: "M2A DocAssist",
           description: "Plateforme de documentation médicale alimentée par l'IA pour les médecins canadiens. Transforme les consultations vocales en notes SOAP structurées en 30 secondes, avec codes de facturation provinciaux et intégration DME",
@@ -1495,7 +1611,21 @@ export const translations = {
       subtitle: "Rejoignez notre équipe et aidez à créer des solutions numériques innovantes pour des clients du monde entier.",
       noJobsMessage: "Vous ne voyez pas le poste de vos rêves ? Envoyez-nous quand même votre CV !",
       submitApplication: "Soumettre une Candidature Spontanée",
-      applyNow: "Postuler Maintenant"
+      applyNow: "Postuler Maintenant",
+      viewDetails: "Voir l'offre",
+      closed: "Fermé",
+      openings: {
+        marketingAssistant: {
+          title: "Assistant(e) Marketing Digital",
+          department: "Marketing",
+          type: "Temps partiel",
+          workMode: "Télétravail",
+          location: "Niger (Niamey ou autre ville)",
+          hours: "25 heures/semaine",
+          daysRemaining: "13 jours restants",
+          shortDescription: "Rejoignez notre équipe pour gérer notre présence sur les réseaux sociaux et appuyer la prospection d'une entreprise tech canadienne. Horaires flexibles, 100% télétravail."
+        }
+      }
     }
   }
 };

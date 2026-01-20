@@ -48,6 +48,8 @@ import {
   FaRobot,
   FaMosque,
   FaClipboardList,
+  FaLeaf,
+  FaUsers,
 } from "react-icons/fa";
 import { useTranslation } from "@/hooks/useTranslation";
 import AnimatedSection from "../Partials/AnimatedSection";
@@ -58,6 +60,51 @@ const MotionBox = motion(Box);
 const MotionButton = motion(Button);
 
 const getProjects = (t) => [
+  {
+    key: "fraisChezVous",
+    title: t('projects.projects.fraisChezVous.title'),
+    description: t('projects.projects.fraisChezVous.description'),
+    tags: ["Next.js", "React", "Node.js", "MongoDB", "Stripe", "E-commerce", "Responsive Design", "SEO"],
+    icon: FaLeaf,
+    category: t('projects.projects.fraisChezVous.category'),
+    images: [
+      "/img/projects/fraischezvous1.png",
+      "/img/projects/fraischezvous2.png",
+      "/img/projects/fraischezvous3.png",
+    ],
+    features: t('projects.projects.fraisChezVous.features'),
+    liveUrl: "https://fraischezvous.ca",
+  },
+  {
+    key: "m2acrm",
+    title: t('projects.projects.m2acrm.title'),
+    description: t('projects.projects.m2acrm.description'),
+    tags: ["Next.js", "React", "Node.js", "MongoDB", "CRM", "Dashboard", "Analytics", "Real-time"],
+    icon: FaClipboardList,
+    category: t('projects.projects.m2acrm.category'),
+    images: [
+      "/img/projects/m2acrm1.png",
+      "/img/projects/m2acrm2.png",
+      "/img/projects/m2acrm3.png",
+    ],
+    features: t('projects.projects.m2acrm.features'),
+    liveUrl: "https://m2acrm.com",
+  },
+  {
+    key: "diaspoaffairs",
+    title: t('projects.projects.diaspoaffairs.title'),
+    description: t('projects.projects.diaspoaffairs.description'),
+    tags: ["Next.js", "React", "Node.js", "MongoDB", "Community Platform", "Multilingual", "Social Features", "SEO"],
+    icon: FaUsers,
+    category: t('projects.projects.diaspoaffairs.category'),
+    images: [
+      "/img/projects/diaspoaffairs1.png",
+      "/img/projects/diaspoaffairs2.png",
+      "/img/projects/diaspoaffairs3.png",
+    ],
+    features: t('projects.projects.diaspoaffairs.features'),
+    liveUrl: "https://diaspoaffairs.com",
+  },
   {
     key: "m2adoc",
     title: t('projects.projects.m2adoc.title'),

@@ -4,6 +4,7 @@ import ClientLayout from "@/components/Layout/ClientLayout";
 import GoogleTagManager from "@/components/Analytics/GoogleTagManager";
 import GoogleAnalytics from "@/components/Analytics/GoogleAnalytics";
 import Hotjar from "@/components/Analytics/Hotjar";
+import LinkedInInsight from "@/components/Analytics/LinkedInInsight";
 
 export const metadata = {
   title: "M2ATech Solutions Inc. | Agence Web, Mobile, IA & Cybersécurité à Moncton, NB, Canada",
@@ -217,7 +218,7 @@ export default function RootLayout({ children }) {
                   },
                   address: {
                     "@type": "PostalAddress",
-                    streetAddress: "203-74 Belmont Street",
+                    streetAddress: "74 Belmont Street",
                     addressLocality: "Moncton",
                     addressRegion: "New Brunswick",
                     postalCode: "E1C 8W4",
@@ -385,6 +386,7 @@ export default function RootLayout({ children }) {
           - Plus facile à maintenir, pas besoin de redéployer
         */}
         <GoogleTagManager />
+        <LinkedInInsight />
 
         {/*
           Option 2: Utiliser les composants individuels
