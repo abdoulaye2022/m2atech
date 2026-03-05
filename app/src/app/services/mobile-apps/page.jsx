@@ -5,22 +5,18 @@ import MobileAppsSection from "@/components/Services/MobileAppsSection";
 import ProcessSection from "@/components/Services/ProcessSection";
 import FooterApp from "@/components/Partials/FooterApp";
 import Navbar from "@/components/Partials/Navbar";
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 function MobileAppsPage() {
   return (
     <>
-      <ChakraProvider>
-        <Navbar />
-        <Box pt="102px">
-          <MobileAppsSection />
-
-          <ContactBanner />
-
-          <ProcessSection />
-          <FooterApp />
-        </Box>
-      </ChakraProvider>
+      <Navbar />
+      <Box pt="80px" bg="var(--color-bg-primary)">
+        <MobileAppsSection />
+        <ContactBanner />
+        <ProcessSection />
+        <FooterApp />
+      </Box>
     </>
   );
 }

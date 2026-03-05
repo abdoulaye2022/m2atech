@@ -3,18 +3,16 @@
 import Contact from "@/components/Contact/Contact";
 import FooterApp from "@/components/Partials/FooterApp";
 import Navbar from "@/components/Partials/Navbar";
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 export default function ContactPage() {
   return (
     <>
-      <ChakraProvider>
-        <Navbar />
-        <Box pt="102px">
-          <Contact />
-          <FooterApp />
-        </Box>
-      </ChakraProvider>
+      <Navbar />
+      <Box pt="80px" bg="var(--color-bg-primary)">
+        <Contact />
+        <FooterApp />
+      </Box>
     </>
   );
 }

@@ -69,12 +69,6 @@ export default function sitemap() {
         changeFrequency: "monthly",
         priority: 0.9,
       },
-      {
-        url: `${baseUrl}/services/cybersecurity`,
-        lastModified: currentDate,
-        changeFrequency: "monthly",
-        priority: 0.9,
-      },
     ];
 
     // Pages légales
@@ -93,5 +87,33 @@ export default function sitemap() {
       },
     ];
 
-    return [...mainPages, ...servicePages, ...legalPages];
+    // Blog pages
+    const blogPages = [
+      {
+        url: `${baseUrl}/blog`,
+        lastModified: currentDate,
+        changeFrequency: "weekly",
+        priority: 0.7,
+      },
+      {
+        url: `${baseUrl}/blog/investir-application-mobile-2025`,
+        lastModified: currentDate,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      },
+      {
+        url: `${baseUrl}/blog/ia-transforme-developpement-logiciel`,
+        lastModified: currentDate,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      },
+      {
+        url: `${baseUrl}/blog/seo-local-nouveau-brunswick`,
+        lastModified: currentDate,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      },
+    ];
+
+    return [...mainPages, ...servicePages, ...blogPages, ...legalPages];
   }

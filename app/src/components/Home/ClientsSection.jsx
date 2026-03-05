@@ -9,51 +9,53 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useTranslation } from "@/hooks/useTranslation";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 const clients = [
-  { name: "M2A DocAssist", logo: "/img/clients/m2adoc.png", url: "https://m2adoc.com", darkBg: false },
-  { name: "DIO Cleaning", logo: "/img/clients/diocleaning.png", url: "https://crmdiocleaning.com", darkBg: false },
-  { name: "Masta Barber", logo: "/img/clients/mastabarber.png", url: "https://mastabarber.com", darkBg: false },
-  { name: "Kane Eco Construction", logo: "/img/clients/kaneeco.png", url: "https://kane-eco-construction.com", darkBg: false },
-  { name: "Trio Pro Move", logo: "/img/clients/triopro.png", url: "https://triopromovecleanservice.com", darkBg: true },
-  { name: "Maelo Studio", logo: "/img/clients/maelostudio.png", url: "https://maelostudio.com", darkBg: true },
-  { name: "OPTEN Niger", logo: "/img/clients/opten.png", url: "https://ongopten.com", darkBg: false },
+  { name: "M2A DocAssist", logo: "/img/clients/m2adoc.png", url: "https://m2adoc.com" },
+  { name: "DIO Cleaning", logo: "/img/clients/diocleaning.png", url: "https://crmdiocleaning.com" },
+  { name: "Masta Barber", logo: "/img/clients/mastabarber.png", url: "https://mastabarber.com" },
+  { name: "Kane Eco Construction", logo: "/img/clients/kaneeco.png", url: "https://kane-eco-construction.com" },
+  { name: "Trio Pro Move", logo: "/img/clients/triopro.png", url: "https://triopromovecleanservice.com" },
+  { name: "Maelo Studio", logo: "/img/clients/maelostudio.png", url: "https://maelostudio.com" },
+  { name: "OPTEN Niger", logo: "/img/clients/opten.png", url: "https://ongopten.com" },
 ];
 
 const ClientsSection = () => {
   const { t } = useTranslation();
-
-  // Double the clients array for seamless infinite scroll
   const duplicatedClients = [...clients, ...clients];
 
   return (
-    <Box py={16} bg="white" overflow="hidden">
-      <Container maxW="container.xl" mb={10}>
+    <Box py={20} bg="var(--color-bg-tertiary)" overflow="hidden">
+      <Container maxW="1280px" mb={10}>
         <VStack spacing={4} textAlign="center">
-          <Heading as="h2" size="xl" color="gray.800">
+          <Heading
+            as="h2"
+            fontSize={{ base: "3xl", md: "4xl" }}
+            fontFamily="var(--font-display)"
+            fontWeight="800"
+            color="var(--color-text-primary)"
+          >
             {t('home.clients.title')}{" "}
-            <Box as="span" color="orange.500">
+            <Text as="span" className="gradient-text">
               {t('home.clients.titleHighlight')}
-            </Box>
+            </Text>
           </Heading>
-          <Text color="gray.600" maxW="600px" fontSize="lg">
+          <Text color="var(--color-text-secondary)" maxW="600px" fontSize="lg">
             {t('home.clients.subtitle')}
           </Text>
         </VStack>
       </Container>
 
-      {/* Scrolling container */}
       <Box position="relative" w="100%" overflow="hidden">
-        {/* Gradient overlays for fade effect */}
+        {/* Gradient overlays */}
         <Box
           position="absolute"
           left="0"
           top="0"
           bottom="0"
           w="150px"
-          bgGradient="linear(to-r, white, transparent)"
+          bgGradient="linear(to-r, var(--color-bg-tertiary), transparent)"
           zIndex={2}
           pointerEvents="none"
         />
@@ -63,30 +65,17 @@ const ClientsSection = () => {
           top="0"
           bottom="0"
           w="150px"
-          bgGradient="linear(to-l, white, transparent)"
+          bgGradient="linear(to-l, var(--color-bg-tertiary), transparent)"
           zIndex={2}
           pointerEvents="none"
         />
 
-        {/* Scrolling logos */}
-        <motion.div
-          style={{
-            display: "flex",
-            gap: "60px",
-            paddingLeft: "30px",
-            paddingRight: "30px",
-          }}
-          animate={{
-            x: [0, -50 * clients.length * 3.5],
-          }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 30,
-              ease: "linear",
-            },
-          }}
+        <Box
+          display="flex"
+          gap="60px"
+          px="30px"
+          className="infinite-scroll"
+          w="max-content"
         >
           {duplicatedClients.map((client, index) => (
             <Box
@@ -102,32 +91,29 @@ const ClientsSection = () => {
               h="80px"
               w="150px"
               p={4}
-              bg={client.darkBg ? "gray.800" : "gray.50"}
+              bg="white"
               borderRadius="xl"
               border="1px solid"
-              borderColor={client.darkBg ? "gray.700" : "gray.100"}
+              borderColor="var(--color-border)"
               transition="all 0.3s ease"
               _hover={{
                 transform: "scale(1.05)",
-                boxShadow: "md",
-                borderColor: "orange.400",
-                bg: client.darkBg ? "gray.700" : "white",
+                borderColor: "var(--color-border-hover)",
+                bg: "var(--color-bg-card-hover)",
               }}
             >
               <Box position="relative" w="100%" h="100%">
                 <Image
                   src={client.logo}
-                  alt={client.name}
+                  alt={`${client.name} - Client M2ATech Solutions Moncton`}
                   fill
-                  style={{
-                    objectFit: "contain",
-                  }}
+                  style={{ objectFit: "contain" }}
                   sizes="150px"
                 />
               </Box>
             </Box>
           ))}
-        </motion.div>
+        </Box>
       </Box>
     </Box>
   );

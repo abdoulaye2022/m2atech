@@ -8,195 +8,244 @@ import {
   Heading,
   Text,
   Button,
-  Image,
-  useBreakpointValue,
+  HStack,
+  VStack,
+  Badge,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "@/hooks/useTranslation";
-import AnimatedSection from "../Partials/AnimatedSection";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 
-const MotionButton = motion(Button);
-const MotionImage = motion(Image);
+const MotionBox = motion(Box);
+
+const AnimatedCounter = ({ end, suffix = "", label }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      let startTime;
+      const animate = (currentTime) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / 2000, 1);
+        setCount(Math.floor(progress * end));
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
+    }
+  }, [isInView, end]);
+
+  return (
+    <VStack ref={ref} spacing={0} align="center">
+      <Text
+        fontSize={{ base: "2xl", md: "3xl" }}
+        fontWeight="800"
+        fontFamily="var(--font-display)"
+        color="var(--color-text-primary)"
+      >
+        {count}{suffix}
+      </Text>
+      <Text fontSize="xs" color="var(--color-text-muted)" textTransform="uppercase" letterSpacing="wider">
+        {label}
+      </Text>
+    </VStack>
+  );
+};
 
 function MainBanner() {
-  const flexDirection = useBreakpointValue({ base: "column", lg: "row" });
-  const headingSize = useBreakpointValue({ base: "xl", md: "2xl" });
-  const textSize = useBreakpointValue({ base: "lg", md: "xl" });
   const { t } = useTranslation();
 
-  const buttonVariants = {
-    hover: {
-      y: -3,
-      scale: 1.05,
-      transition: {
-        duration: 0.2,
-        ease: "easeOut"
-      }
+  const stagger = {
+    animate: {
+      transition: { staggerChildren: 0.15 },
     },
-    tap: {
-      scale: 0.95
-    }
   };
 
-  const imageVariants = {
-    initial: { scale: 0.8, opacity: 0 },
-    animate: { 
-      scale: 1, 
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        delay: 0.4,
-        ease: "easeOut"
-      }
-    },
-    hover: {
-      scale: 1.02,
-      transition: {
-        duration: 0.3
-      }
-    }
+  const fadeUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
     <Box
-      bgGradient="linear(to-r, #f8f9fa, #e9ecef)"
+      bg="var(--color-bg-primary)"
       position="relative"
       overflow="hidden"
-      minH="calc(100vh - 103px)"
+      minH="100vh"
       display="flex"
       alignItems="center"
-      pt="103px"
-      boxSizing="border-box"
+      className="grain-bg"
     >
-      {/* Decorative shape - Globe en arrière-plan */}
+      {/* Gradient radial orange subtil */}
       <Box
         position="absolute"
-        right={{ base: "-150px", md: "-100px", lg: "0" }}
-        top={{ base: "auto", lg: "50%" }}
-        bottom={{ base: "-100px", lg: "auto" }}
-        transform={{ base: "none", lg: "translateY(-50%)" }}
-        w={{ base: "400px", md: "500px", lg: "600px" }}
-        h={{ base: "400px", md: "500px", lg: "600px" }}
-        opacity={0.35}
-        zIndex={0}
+        bottom="-200px"
+        right="-200px"
+        w="600px"
+        h="600px"
+        bg="radial-gradient(circle, rgba(255, 93, 34, 0.06) 0%, transparent 70%)"
         pointerEvents="none"
-      >
-        <Image
-          src="/img/shape/circle-shape1.png"
-          alt=""
-          w="100%"
-          h="100%"
-          objectFit="contain"
-        />
-      </Box>
+      />
 
-      {/* Decorative shape - Network en haut à gauche */}
-      <Box
-        position="absolute"
-        left={{ base: "-100px", md: "-50px" }}
-        top={{ base: "-50px", md: "50px" }}
-        w={{ base: "250px", md: "350px" }}
-        h={{ base: "250px", md: "350px" }}
-        opacity={0.25}
-        zIndex={0}
-        pointerEvents="none"
-        display={{ base: "none", md: "block" }}
-      >
-        <Image
-          src="/img/shape/vector-shape1.png"
-          alt=""
-          w="100%"
-          h="100%"
-          objectFit="contain"
+      {/* Floating particles */}
+      {[...Array(5)].map((_, i) => (
+        <Box
+          key={i}
+          position="absolute"
+          w="4px"
+          h="4px"
+          borderRadius="full"
+          bg="rgba(255, 93, 34, 0.3)"
+          left={`${15 + i * 18}%`}
+          bottom="20%"
+          sx={{
+            animation: `float-particle ${6 + i * 2}s ease-in-out infinite`,
+            animationDelay: `${i * 1.5}s`,
+          }}
+          pointerEvents="none"
         />
-      </Box>
+      ))}
 
-      <Container maxW="container.xl" py={8} position="relative" zIndex={1}>
+      <Container maxW="1280px" py={{ base: 20, md: 8 }} pt={{ base: "120px", md: "100px" }} position="relative" zIndex={1}>
         <Flex
-          direction={flexDirection}
+          direction={{ base: "column", lg: "row" }}
           align="center"
           justify="space-between"
-          gap={12}
-          h="100%"
+          gap={{ base: 12, lg: 16 }}
+          minH={{ base: "auto", lg: "80vh" }}
         >
-          <AnimatedSection
-            flex="1"
-            delay={0.1}
-            direction="left"
-            distance={50}
+          <MotionBox
+            flex={{ base: "1", lg: "0 0 58%" }}
+            variants={stagger}
+            initial="initial"
+            animate="animate"
           >
-            <Heading
-              as="h1"
-              size={headingSize}
-              mb={6}
-              fontWeight="bold"
-              lineHeight="1.2"
-              color="gray.800"
-            >
-              {t('home.mainBanner.title')}{" "}
-              <Text as="span" color="orange.500">
-                {t('home.mainBanner.titleHighlight')}
-              </Text>
-            </Heading>
+            <MotionBox variants={fadeUp}>
+              <Badge
+                bg="#fff3ee"
+                color="#ff5d22"
+                px={4}
+                py={2}
+                borderRadius="full"
+                fontSize="sm"
+                fontWeight={600}
+                border="1px solid"
+                borderColor="rgba(255, 93, 34, 0.15)"
+                mb={6}
+                fontFamily="var(--font-body)"
+              >
+                {t('home.mainBanner.badge')}
+              </Badge>
+            </MotionBox>
 
-            <AnimatedSection delay={0.2} distance={30}>
+            <MotionBox variants={fadeUp}>
+              <Heading
+                as="h1"
+                fontSize={{ base: "3xl", md: "4xl", lg: "5xl", xl: "6xl" }}
+                fontWeight="800"
+                lineHeight="1.1"
+                fontFamily="var(--font-display)"
+                color="var(--color-text-primary)"
+                mb={6}
+              >
+                {t('home.mainBanner.title')}{" "}
+                <Text as="span" className="gradient-text">
+                  {t('home.mainBanner.titleHighlight')}
+                </Text>
+              </Heading>
+            </MotionBox>
+
+            <MotionBox variants={fadeUp}>
               <Text
-                fontSize={textSize}
-                mb={8}
-                color="gray.600"
+                fontSize={{ base: "lg", md: "xl" }}
+                mb={10}
+                color="var(--color-text-secondary)"
+                maxW="540px"
+                lineHeight="1.7"
               >
                 {t('home.mainBanner.subtitle')}
               </Text>
-            </AnimatedSection>
+            </MotionBox>
 
-            <AnimatedSection delay={0.3} distance={20}>
-              <Link href="/contact" passHref>
-                <MotionButton
-                  colorScheme="orange"
-                  size="lg"
-                  px={8}
-                  py={6}
-                  borderRadius="full"
-                  boxShadow="md"
-                  variants={buttonVariants}
-                  whileHover="hover"
-                  whileTap="tap"
-                  _hover={{
-                    boxShadow: "0 8px 25px rgba(221, 107, 32, 0.3)",
-                  }}
-                  transition="all 0.3s ease"
-                >
-                  {t('home.mainBanner.cta')}
-                </MotionButton>
-              </Link>
-            </AnimatedSection>
-          </AnimatedSection>
+            <MotionBox variants={fadeUp}>
+              <HStack spacing={4} flexWrap="wrap">
+                <Link href="/projects" passHref>
+                  <Button
+                    size="lg"
+                    bg="#ff5d22"
+                    color="white"
+                    px={8}
+                    py={7}
+                    borderRadius="xl"
+                    fontFamily="var(--font-display)"
+                    fontWeight={700}
+                    _hover={{
+                      bg: "#e04d15",
+                      transform: "translateY(-3px)",
+                      boxShadow: "0 8px 30px rgba(255, 93, 34, 0.3)",
+                    }}
+                    transition="all 0.3s ease"
+                  >
+                    {t('home.mainBanner.cta')}
+                  </Button>
+                </Link>
+                <Link href="/contact" passHref>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    borderColor="var(--color-text-primary)"
+                    color="var(--color-text-primary)"
+                    px={8}
+                    py={7}
+                    borderRadius="xl"
+                    fontFamily="var(--font-display)"
+                    fontWeight={700}
+                    _hover={{
+                      bg: "var(--color-text-primary)",
+                      color: "white",
+                      transform: "translateY(-3px)",
+                    }}
+                    transition="all 0.3s ease"
+                  >
+                    {t('home.mainBanner.ctaSecondary')}
+                  </Button>
+                </Link>
+              </HStack>
+            </MotionBox>
 
-          <AnimatedSection
-            flex="1"
-            delay={0.4}
-            direction="right"
-            distance={50}
+            <MotionBox variants={fadeUp} mt={12}>
+              <HStack
+                spacing={{ base: 6, md: 10 }}
+                divider={<Box h="40px" w="1px" bg="rgba(0, 0, 0, 0.1)" />}
+              >
+                <AnimatedCounter end={11} suffix="+" label={t('home.stats.projectsCompleted')} />
+                <AnimatedCounter end={98} suffix="%" label={t('home.stats.clientSatisfaction')} />
+                <AnimatedCounter end={6} suffix="+" label={t('home.stats.yearsLabel')} />
+              </HStack>
+            </MotionBox>
+          </MotionBox>
+
+          <MotionBox
+            flex={{ base: "1", lg: "0 0 38%" }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            display={{ base: "none", lg: "block" }}
           >
-            <Box
-              position="relative"
-              minH={{ base: "300px", md: "500px" }}
-              w="100%"
-            >
-              <MotionImage
-                src="/img/banner-img1.png"
-                alt="M2ATech Digital Solutions"
-                w="100%"
-                h="100%"
-                objectFit="contain"
-                variants={imageVariants}
-                initial="initial"
-                animate="animate"
-                whileHover="hover"
+            <Box position="relative" w="100%" h="500px" borderRadius="2xl" overflow="hidden">
+              <Image
+                src="/img/hero-banner.jpg"
+                alt="M2ATech team working on digital solutions"
+                fill
+                style={{ objectFit: "cover", borderRadius: "1rem" }}
+                sizes="(max-width: 1024px) 100vw, 38vw"
+                priority
               />
             </Box>
-          </AnimatedSection>
+          </MotionBox>
         </Flex>
       </Container>
     </Box>

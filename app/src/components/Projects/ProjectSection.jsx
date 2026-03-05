@@ -61,6 +61,21 @@ const MotionButton = motion(Button);
 
 const getProjects = (t) => [
   {
+    key: "kidsecure",
+    title: t('projects.projects.kidsecure.title'),
+    description: t('projects.projects.kidsecure.description'),
+    tags: ["Next.js", "React", "Bilingual", "SEO", "Responsive Design", "Accessibility", "Child Safety"],
+    icon: FaHeart,
+    category: t('projects.projects.kidsecure.category'),
+    images: [
+      "/img/projects/kidsecure1.png",
+      "/img/projects/kidsecure2.png",
+      "/img/projects/kidsecure3.png",
+    ],
+    features: t('projects.projects.kidsecure.features'),
+    liveUrl: "https://www.kidsecure.ca/en",
+  },
+  {
     key: "fraisChezVous",
     title: t('projects.projects.fraisChezVous.title'),
     description: t('projects.projects.fraisChezVous.description'),
@@ -435,7 +450,7 @@ const ProjectSection = () => {
   return (
     <Box
       py={20}
-      bgGradient="linear(to-br, gray.50, white)"
+      bg="var(--color-bg-primary)"
       id="projects"
       minH="100vh"
     >
@@ -446,19 +461,19 @@ const ProjectSection = () => {
             as="h1"
             size="2xl"
             textAlign="center"
-            color="gray.800"
+            color="var(--color-text-primary)"
             fontSize={{ base: "3xl", md: "5xl" }}
+            fontFamily="var(--font-display)"
           >
             {t('projects.title')}{" "}
             <Box
               as="span"
-              bgGradient="linear(to-r, orange.400, orange.600)"
-              bgClip="text"
+              className="gradient-text"
             >
               {t('projects.titleHighlight')}
             </Box>
           </Heading>
-          <Text fontSize="xl" color="gray.600" textAlign="center" maxW="3xl">
+          <Text fontSize="xl" color="var(--color-text-secondary)" textAlign="center" maxW="3xl">
             {t('projects.subtitle')}
           </Text>
           </VStack>
@@ -471,17 +486,16 @@ const ProjectSection = () => {
               <MotionBox
               key={projectIndex}
               bg="white"
+              boxShadow="0 2px 20px rgba(0,0,0,0.06)"
               borderRadius="2xl"
               overflow="hidden"
-              boxShadow="lg"
               borderWidth="1px"
-              borderColor="gray.100"
+              borderColor="var(--color-border)"
               position="relative"
               transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
               _hover={{
                 transform: "translateY(-8px)",
-                boxShadow: "2xl",
-                borderColor: "orange.200",
+                borderColor: "var(--color-border-hover)",
               }}
               role="group"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -494,7 +508,7 @@ const ProjectSection = () => {
             >
               <Box position="relative" overflow="hidden">
                 <AspectRatio ratio={16 / 9}>
-                  <Box position="relative" bg="gray.100">
+                  <Box position="relative" bg="var(--color-bg-secondary)">
                     <Image
                       src={project.images[currentImageIndices[projectIndex]]}
                       alt={`${project.title} - Image ${
@@ -541,7 +555,7 @@ const ProjectSection = () => {
                       target="_blank"
                       size="lg"
                       borderRadius="full"
-                      bg="orange.500"
+                      bg="#ff5d22"
                       color="white"
                       _hover={{ bg: "orange.600", transform: "scale(1.1)" }}
                       transition="all 0.2s"
@@ -612,10 +626,10 @@ const ProjectSection = () => {
                       as={project.icon}
                       w={5}
                       h={5}
-                      color="orange.500"
+                      color="#ff5d22"
                       mr={2}
                     />
-                    <Text fontSize="sm" color="gray.500" fontWeight="medium">
+                    <Text fontSize="sm" color="var(--color-text-muted)" fontWeight="medium">
                       {t('projects.category')}: {project.category}
                     </Text>
                   </Flex>
@@ -623,11 +637,11 @@ const ProjectSection = () => {
                     href={project.liveUrl}
                     isExternal
                     fontSize="sm"
-                    color="orange.500"
+                    color="#ff5d22"
                     fontWeight="medium"
                     display="flex"
                     alignItems="center"
-                    _hover={{ color: "orange.600" }}
+                    _hover={{ color: "orange.300" }}
                     transition="color 0.2s"
                   >
                     {t('projects.viewLive')} <Icon as={FaExternalLinkAlt} ml={1} />
@@ -638,14 +652,15 @@ const ProjectSection = () => {
                   as="h3"
                   size="lg"
                   mb={3}
-                  color="gray.800"
-                  _groupHover={{ color: "orange.600" }}
+                  color="var(--color-text-primary)"
+                  fontFamily="var(--font-display)"
+                  _groupHover={{ color: "#ff5d22" }}
                   transition="color 0.2s"
                 >
                   {project.title}
                 </Heading>
 
-                <Text color="gray.600" mb={4} noOfLines={3}>
+                <Text color="var(--color-text-secondary)" mb={4} noOfLines={3}>
                   {project.description}
                 </Text>
 
@@ -671,7 +686,7 @@ const ProjectSection = () => {
                         py={1}
                         fontSize="xs"
                       >
-                        +{project.features.length - 3} more
+                        +{project.features.length - 3} {t('projects.moreFeatures')}
                       </Badge>
                     </WrapItem>
                   )}
@@ -685,7 +700,7 @@ const ProjectSection = () => {
                         colorScheme="gray"
                         variant="solid"
                         borderRadius="md"
-                        _hover={{ bg: "gray.300" }}
+                        _hover={{ bg: "rgba(0, 0, 0, 0.12)" }}
                         transition="background 0.2s"
                       >
                         {tag}
@@ -718,7 +733,7 @@ const ProjectSection = () => {
               <VStack spacing={4}>
                 <Box position="relative" w="full">
                   <AspectRatio ratio={16 / 9} w="full">
-                    <Box bg="gray.900" borderRadius="lg" overflow="hidden">
+                    <Box bg="var(--color-bg-tertiary)" borderRadius="lg" overflow="hidden">
                       <Image
                         src={selectedProject.images[selectedImageIndex]}
                         alt={`${selectedProject.title} - Image ${

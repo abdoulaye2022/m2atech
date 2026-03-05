@@ -171,7 +171,7 @@ const Contact = () => {
       if (!recaptchaToken && recaptchaSiteKey && recaptchaSiteKey !== 'your-recaptcha-site-key') {
         toast({
           title: t('contact.form.errors.recaptchaRequired'),
-          description: "reCAPTCHA verification failed. Please try again.",
+          description: t('contact.form.errors.recaptchaFailed'),
           status: "error",
           duration: 5000,
           isClosable: true,
@@ -192,8 +192,8 @@ const Contact = () => {
       }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "An error occurred while sending your message.",
+        title: t('contact.form.errors.errorTitle'),
+        description: t('contact.form.errors.sendFailed'),
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -225,7 +225,7 @@ const Contact = () => {
   };
 
   return (
-    <Box py={16} bg="white" id="contact" position="relative" overflow="hidden">
+    <Box py={16} bg="var(--color-bg-primary)" id="contact" position="relative" overflow="hidden">
       {/* Decorative shape - Globe map en arrière-plan */}
       <Box
         position="absolute"
@@ -270,9 +270,9 @@ const Contact = () => {
 
       <Container maxW="container.xl" position="relative" zIndex={1}>
         <AnimatedSection>
-          <Heading as="h1" size="2xl" mb={16} textAlign="center" color="gray.800">
+          <Heading as="h1" size="2xl" mb={16} textAlign="center" color="var(--color-text-primary)" fontFamily="var(--font-display)">
             {t('contact.title')}{" "}
-            <Box as="span" color="#DD6B20">
+            <Box as="span" className="gradient-text">
               {t('contact.titleHighlight')}
             </Box>
           </Heading>
@@ -282,19 +282,18 @@ const Contact = () => {
           {/* Contact Form */}
           <AnimatedSection flex={1} w="100%" delay={0.2}>
             <MotionBox
-              bg="gray.50"
+              bg="white"
+              boxShadow="0 2px 20px rgba(0,0,0,0.06)"
               p={8}
               borderRadius="2xl"
-              boxShadow="sm"
               border="1px solid"
-              borderColor="orange.100"
+              borderColor="var(--color-border)"
               whileHover={{
-                boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
-                borderColor: "orange.200"
+                borderColor: "var(--color-border-hover)"
               }}
               transition={{ duration: 0.3 }}
             >
-              <Heading as="h2" size="lg" mb={6} color="gray.800">
+              <Heading as="h2" size="lg" mb={6} color="var(--color-text-primary)" fontFamily="var(--font-display)">
                 {t('contact.form.title')}
               </Heading>
 
@@ -302,7 +301,7 @@ const Contact = () => {
                 <StaggeredContainer staggerDelay={0.1}>
                   <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                     <Box>
-                      <Text mb={2} fontWeight="medium">
+                      <Text mb={2} fontWeight="medium" color="var(--color-text-primary)">
                         {t('contact.form.name')}
                       </Text>
                       <motion.div variants={inputVariants} whileFocus="focus">
@@ -310,13 +309,16 @@ const Contact = () => {
                           name="name"
                           placeholder={t('contact.form.namePlaceholder')}
                           bg="white"
+                          borderColor="var(--color-border)"
+                          color="var(--color-text-primary)"
                           size="lg"
-                          focusBorderColor="#DD6B20"
+                          focusBorderColor="#ff5d22"
                           isInvalid={!!errors.name}
                           _focus={{
-                            borderColor: "#DD6B20",
-                            boxShadow: "0 0 0 1px #DD6B20"
+                            borderColor: "#ff5d22",
+                            boxShadow: "0 0 0 1px #ff5d22"
                           }}
+                          _placeholder={{ color: "var(--color-text-muted)" }}
                           transition="all 0.2s ease"
                         />
                       </motion.div>
@@ -336,7 +338,7 @@ const Contact = () => {
 
                   <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                     <Box>
-                      <Text mb={2} fontWeight="medium">
+                      <Text mb={2} fontWeight="medium" color="var(--color-text-primary)">
                         {t('contact.form.email')}
                       </Text>
                       <motion.div variants={inputVariants} whileFocus="focus">
@@ -344,13 +346,16 @@ const Contact = () => {
                           name="email"
                           placeholder={t('contact.form.emailPlaceholder')}
                           bg="white"
+                          borderColor="var(--color-border)"
+                          color="var(--color-text-primary)"
                           size="lg"
-                          focusBorderColor="#DD6B20"
+                          focusBorderColor="#ff5d22"
                           isInvalid={!!errors.email}
                           _focus={{
-                            borderColor: "#DD6B20",
-                            boxShadow: "0 0 0 1px #DD6B20"
+                            borderColor: "#ff5d22",
+                            boxShadow: "0 0 0 1px #ff5d22"
                           }}
+                          _placeholder={{ color: "var(--color-text-muted)" }}
                           transition="all 0.2s ease"
                         />
                       </motion.div>
@@ -370,7 +375,7 @@ const Contact = () => {
 
                   <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                     <Box>
-                      <Text mb={2} fontWeight="medium">
+                      <Text mb={2} fontWeight="medium" color="var(--color-text-primary)">
                         {t('contact.form.subject')}
                       </Text>
                       <motion.div variants={inputVariants} whileFocus="focus">
@@ -378,13 +383,16 @@ const Contact = () => {
                           name="subject"
                           placeholder={t('contact.form.subjectPlaceholder')}
                           bg="white"
+                          borderColor="var(--color-border)"
+                          color="var(--color-text-primary)"
                           size="lg"
-                          focusBorderColor="#DD6B20"
+                          focusBorderColor="#ff5d22"
                           isInvalid={!!errors.subject}
                           _focus={{
-                            borderColor: "#DD6B20",
-                            boxShadow: "0 0 0 1px #DD6B20"
+                            borderColor: "#ff5d22",
+                            boxShadow: "0 0 0 1px #ff5d22"
                           }}
+                          _placeholder={{ color: "var(--color-text-muted)" }}
                           transition="all 0.2s ease"
                         />
                       </motion.div>
@@ -404,7 +412,7 @@ const Contact = () => {
 
                   <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                     <Box>
-                      <Text mb={2} fontWeight="medium">
+                      <Text mb={2} fontWeight="medium" color="var(--color-text-primary)">
                         {t('contact.form.message')}
                       </Text>
                       <motion.div variants={inputVariants} whileFocus="focus">
@@ -412,14 +420,17 @@ const Contact = () => {
                           name="message"
                           placeholder={t('contact.form.messagePlaceholder')}
                           bg="white"
+                          borderColor="var(--color-border)"
+                          color="var(--color-text-primary)"
                           size="lg"
                           rows={6}
-                          focusBorderColor="#DD6B20"
+                          focusBorderColor="#ff5d22"
                           isInvalid={!!errors.message}
                           _focus={{
-                            borderColor: "#DD6B20",
-                            boxShadow: "0 0 0 1px #DD6B20"
+                            borderColor: "#ff5d22",
+                            boxShadow: "0 0 0 1px #ff5d22"
                           }}
+                          _placeholder={{ color: "var(--color-text-muted)" }}
                           transition="all 0.2s ease"
                         />
                       </motion.div>
@@ -441,7 +452,7 @@ const Contact = () => {
                     <MotionButton
                       type="submit"
                       rightIcon={<FaPaperPlane />}
-                      bg="#DD6B20"
+                      bg="#ff5d22"
                       color="white"
                       size="lg"
                       width="full"
@@ -451,7 +462,7 @@ const Contact = () => {
                       whileTap="tap"
                       _hover={{
                         bg: "orange.600",
-                        boxShadow: "0 8px 25px rgba(221, 107, 32, 0.3)"
+                        boxShadow: "0 8px 25px rgba(255, 93, 34, 0.3)"
                       }}
                       isLoading={isSubmitting}
                       loadingText={t('contact.form.sending')}
@@ -461,7 +472,7 @@ const Contact = () => {
                       {t('contact.form.submit')}
                     </MotionButton>
                     {/* reCAPTCHA Enterprise badge info */}
-                    <Text fontSize="xs" color="gray.500" mt={2} textAlign="center">
+                    <Text fontSize="xs" color="var(--color-text-muted)" mt={2} textAlign="center">
                       {t('contact.form.recaptchaNotice')}
                     </Text>
                   </motion.div>
@@ -474,22 +485,21 @@ const Contact = () => {
           <AnimatedSection flex={1} w="100%" delay={0.4} direction="right">
             <MotionBox
               bg="white"
+              boxShadow="0 2px 20px rgba(0,0,0,0.06)"
               p={8}
               borderRadius="2xl"
-              boxShadow="sm"
               border="1px solid"
-              borderColor="gray.100"
+              borderColor="var(--color-border)"
               whileHover={{
-                boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
-                borderColor: "orange.100"
+                borderColor: "var(--color-border-hover)"
               }}
               transition={{ duration: 0.3 }}
             >
-              <Heading as="h2" size="lg" mb={6} color="gray.800">
+              <Heading as="h2" size="lg" mb={6} color="var(--color-text-primary)" fontFamily="var(--font-display)">
                 {t('contact.info.title')}
               </Heading>
 
-              <Text fontSize="lg" color="gray.600" mb={8} lineHeight="1.6">
+              <Text fontSize="lg" color="var(--color-text-secondary)" mb={8} lineHeight="1.6">
                 {t('contact.info.description')}
               </Text>
 
@@ -509,15 +519,14 @@ const Contact = () => {
                       target={method.icon === FaMapMarkerAlt ? "_blank" : "_self"}
                       display="flex"
                       alignItems="center"
-                      bg="gray.50"
+                      bg="var(--color-bg-secondary)"
                       p={6}
                       borderRadius="xl"
                       border="1px solid"
-                      borderColor="gray.100"
+                      borderColor="var(--color-border)"
                       whileHover={{
                         y: -3,
-                        boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
-                        borderColor: "orange.200",
+                        borderColor: "var(--color-border-hover)",
                       }}
                       transition={{ duration: 0.3 }}
                       cursor="pointer"
@@ -528,15 +537,15 @@ const Contact = () => {
                         whileHover={{ rotate: [0, -10, 10, 0] }}
                         transition={{ duration: 0.5 }}
                       >
-                        <Icon as={method.icon} w={6} h={6} color="#DD6B20" mr={4} />
+                        <Icon as={method.icon} w={6} h={6} color="#ff5d22" mr={4} />
                       </motion.div>
                       <Box>
-                        <Heading as="h3" size="sm" mb={1} color="gray.800">
+                        <Heading as="h3" size="sm" mb={1} color="var(--color-text-primary)" fontFamily="var(--font-display)">
                           {method.title}
                         </Heading>
                         <Text
-                          color="gray.600"
-                          _hover={{ color: "#DD6B20" }}
+                          color="var(--color-text-secondary)"
+                          _hover={{ color: "#ff5d22" }}
                           transition="color 0.2s"
                         >
                           {method.description}
@@ -550,7 +559,7 @@ const Contact = () => {
 
               <AnimatedSection delay={0.6}>
                 <Box>
-                  <Text fontWeight="medium" mb={4} fontSize="lg" color="gray.800">
+                  <Text fontWeight="medium" mb={4} fontSize="lg" color="var(--color-text-primary)">
                     {t('contact.info.socialMedia')}
                   </Text>
                   <Stack direction={{ base: "column", md: "row" }} spacing={3}>
@@ -632,7 +641,7 @@ const Contact = () => {
           <Box
             mt={16}
             position="relative"
-            bg="white"
+            bg="var(--color-bg-primary)"
             textAlign="center"
             overflow="hidden"
           >
@@ -642,14 +651,11 @@ const Contact = () => {
                 h={isDesktop ? "500px" : "300px"}
                 borderRadius="xl"
                 overflow="hidden"
-                boxShadow="md"
                 border="1px solid"
-                borderColor="gray.200"
-                whileHover={{
-                  boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
-                  borderColor: "orange.200"
+                borderColor="var(--color-border)"
+                _hover={{
+                  borderColor: "var(--color-border-hover)"
                 }}
-                transition={{ duration: 0.3 }}
               >
                 <iframe
                   title="Google Maps"
@@ -677,9 +683,10 @@ const Contact = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
           <ModalContent
-            border="2px solid #DD6B20"
+            border="2px solid #ff5d22"
             borderRadius="lg"
-            boxShadow="xl"
+            bg="white"
+            boxShadow="0 2px 20px rgba(0,0,0,0.06)"
           >
             <ModalHeader
               display="flex"
@@ -687,14 +694,14 @@ const Contact = () => {
               justifyContent="center"
               fontSize="xl"
               fontWeight="bold"
-              color="#DD6B20"
+              color="#ff5d22"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
               >
-                <Icon as={FaCheckCircle} w={8} h={8} color="#DD6B20" mr={2} />
+                <Icon as={FaCheckCircle} w={8} h={8} color="#ff5d22" mr={2} />
               </motion.div>
               {t('contact.success.title')}
             </ModalHeader>
@@ -705,10 +712,10 @@ const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.4 }}
               >
-                <Text fontSize="lg" mb={4}>
+                <Text fontSize="lg" mb={4} color="var(--color-text-primary)">
                   {t('contact.success.message')}
                 </Text>
-                <Text fontSize="md" color="gray.600">
+                <Text fontSize="md" color="var(--color-text-secondary)">
                   {t('contact.success.subtitle')}
                 </Text>
               </motion.div>

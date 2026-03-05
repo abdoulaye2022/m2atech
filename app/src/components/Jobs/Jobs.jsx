@@ -68,16 +68,16 @@ const Jobs = () => {
   };
 
   return (
-    <Box py={16} bg="white" id="jobs">
+    <Box py={16} bg="var(--color-bg-primary)" id="jobs">
       <Container maxW="container.xl">
-        <Heading as="h1" size="2xl" mb={16} textAlign="center" color="gray.800">
+        <Heading as="h1" size="2xl" mb={16} textAlign="center" color="var(--color-text-primary)" fontFamily="var(--font-display)">
           {t('jobs.pageTitle')}{" "}
-          <Box as="span" color="#DD6B20">
+          <Box as="span" className="gradient-text">
             {t('jobs.pageTitleHighlight')}
           </Box>
         </Heading>
 
-        <Text fontSize="xl" textAlign="center" color="gray.600" mb={16} maxW="2xl" mx="auto">
+        <Text fontSize="xl" textAlign="center" color="var(--color-text-secondary)" mb={16} maxW="2xl" mx="auto">
           {t('jobs.subtitle')}
         </Text>
 
@@ -90,15 +90,16 @@ const Jobs = () => {
                 key={job.id}
                 borderWidth="1px"
                 borderRadius="xl"
-                borderColor={status.isClosed ? "gray.300" : "gray.200"}
+                borderColor={status.isClosed ? "rgba(0, 0, 0, 0.06)" : "var(--color-border)"}
                 p={6}
                 transition="all 0.3s"
                 _hover={status.isClosed ? {} : {
                   transform: 'translateY(-5px)',
-                  boxShadow: 'xl',
-                  borderColor: '#DD6B20'
+                  borderColor: 'var(--color-border-hover)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
                 }}
-                bg={status.isClosed ? "gray.50" : "white"}
+                bg={status.isClosed ? "var(--color-bg-secondary)" : "white"}
+                boxShadow="0 2px 20px rgba(0,0,0,0.06)"
                 cursor={status.isClosed ? "not-allowed" : "pointer"}
                 opacity={status.isClosed ? 0.7 : 1}
                 onClick={() => !status.isClosed && window.open(job.applyUrl, '_blank')}
@@ -110,8 +111,8 @@ const Jobs = () => {
                     position="absolute"
                     top={4}
                     right={4}
-                    bg="gray.700"
-                    color="white"
+                    bg="rgba(0, 0, 0, 0.06)"
+                    color="var(--color-text-secondary)"
                     px={3}
                     py={1}
                     borderRadius="md"
@@ -140,7 +141,7 @@ const Jobs = () => {
                 </Flex>
 
                 {/* Title */}
-                <Heading as="h3" size="md" color={status.isClosed ? "gray.500" : "gray.800"} mb={3}>
+                <Heading as="h3" size="md" color={status.isClosed ? "var(--color-text-muted)" : "var(--color-text-primary)"} mb={3} fontFamily="var(--font-display)">
                   {job.title}
                 </Heading>
 
@@ -158,21 +159,21 @@ const Jobs = () => {
                 {/* Key Info */}
                 <Flex direction="column" gap={2} mb={4}>
                   <Flex align="center">
-                    <Icon as={FaMapMarkerAlt} color={status.isClosed ? "gray.400" : "#DD6B20"} mr={2} boxSize={3} />
-                    <Text fontSize="sm" color="gray.600">{job.location}</Text>
+                    <Icon as={FaMapMarkerAlt} color={status.isClosed ? "var(--color-text-muted)" : "#ff5d22"} mr={2} boxSize={3} />
+                    <Text fontSize="sm" color="var(--color-text-secondary)">{job.location}</Text>
                   </Flex>
                   <Flex align="center">
-                    <Icon as={FaClock} color={status.isClosed ? "gray.400" : "#DD6B20"} mr={2} boxSize={3} />
-                    <Text fontSize="sm" color="gray.600">{job.hours}</Text>
+                    <Icon as={FaClock} color={status.isClosed ? "var(--color-text-muted)" : "#ff5d22"} mr={2} boxSize={3} />
+                    <Text fontSize="sm" color="var(--color-text-secondary)">{job.hours}</Text>
                   </Flex>
                   <Flex align="center">
-                    <Icon as={FaDollarSign} color={status.isClosed ? "gray.400" : "#DD6B20"} mr={2} boxSize={3} />
-                    <Text fontSize="sm" color={status.isClosed ? "gray.500" : "gray.800"} fontWeight="bold">{job.salary}/mois</Text>
+                    <Icon as={FaDollarSign} color={status.isClosed ? "var(--color-text-muted)" : "#ff5d22"} mr={2} boxSize={3} />
+                    <Text fontSize="sm" color={status.isClosed ? "var(--color-text-muted)" : "var(--color-text-primary)"} fontWeight="bold">{job.salary}/mois</Text>
                   </Flex>
                 </Flex>
 
                 {/* Short Description */}
-                <Text fontSize="sm" color="gray.600" mb={4} noOfLines={3}>
+                <Text fontSize="sm" color="var(--color-text-secondary)" mb={4} noOfLines={3}>
                   {job.shortDescription}
                 </Text>
 
@@ -195,7 +196,7 @@ const Jobs = () => {
                   as={status.isClosed ? Button : Link}
                   href={status.isClosed ? undefined : job.applyUrl}
                   target={status.isClosed ? undefined : "_blank"}
-                  bg={status.isClosed ? "gray.400" : "#DD6B20"}
+                  bg={status.isClosed ? "gray.400" : "#ff5d22"}
                   color="white"
                   size="md"
                   width="full"
@@ -215,7 +216,7 @@ const Jobs = () => {
         </SimpleGrid>
 
         <Box textAlign="center" mt={16}>
-          <Text fontSize="lg" color="gray.600" mb={4}>
+          <Text fontSize="lg" color="var(--color-text-secondary)" mb={4}>
             {t('jobs.noJobsMessage')}
           </Text>
           <Button

@@ -6,7 +6,8 @@ import {
   Container,
   Heading,
   Text,
-  SimpleGrid,
+  Grid,
+  GridItem,
   Avatar,
   VStack,
   HStack,
@@ -43,86 +44,121 @@ const TestimonialsSection = () => {
       avatar: "/img/testimonials/avatar3.png",
       rating: 5,
     },
+    {
+      name: t('home.testimonials.testimonial4.name'),
+      role: t('home.testimonials.testimonial4.role'),
+      content: t('home.testimonials.testimonial4.content'),
+      avatar: "/img/testimonials/avatar4.png",
+      rating: 5,
+    },
   ];
 
   return (
-    <Box py={20} bg="gray.50">
-      <Container maxW="container.xl">
+    <Box py={24} bg="var(--color-bg-primary)" position="relative" overflow="hidden">
+      {/* Giant decorative quote */}
+      <Box
+        position="absolute"
+        top="10%"
+        left="5%"
+        opacity={0.03}
+        pointerEvents="none"
+      >
+        <Icon as={FaQuoteLeft} w="300px" h="300px" color="#ff5d22" />
+      </Box>
+
+      <Container maxW="1280px" position="relative" zIndex={1}>
         <VStack spacing={4} mb={16} textAlign="center">
-          <Heading as="h2" size="xl" color="gray.800">
+          <Heading
+            as="h2"
+            fontSize={{ base: "3xl", md: "4xl" }}
+            fontFamily="var(--font-display)"
+            fontWeight="800"
+            color="var(--color-text-primary)"
+          >
             {t('home.testimonials.title')}{" "}
-            <Box as="span" color="orange.500">
+            <Text as="span" className="gradient-text">
               {t('home.testimonials.titleHighlight')}
-            </Box>
+            </Text>
           </Heading>
-          <Text color="gray.600" maxW="600px" fontSize="lg">
+          <Text color="var(--color-text-secondary)" maxW="600px" fontSize="lg">
             {t('home.testimonials.subtitle')}
           </Text>
         </VStack>
 
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
+        <Grid
+          templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }}
+          gap={6}
+          alignItems="center"
+        >
           {testimonials.map((testimonial, index) => (
-            <MotionBox
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              viewport={{ once: true }}
-            >
-              <Box
-                bg="white"
-                p={8}
-                borderRadius="2xl"
-                boxShadow="md"
-                position="relative"
-                transition="all 0.3s ease"
-                _hover={{
-                  transform: "translateY(-5px)",
-                  boxShadow: "xl",
-                }}
+            <GridItem key={index}>
+              <MotionBox
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                viewport={{ once: true }}
               >
-                <Icon
-                  as={FaQuoteLeft}
-                  w={8}
-                  h={8}
-                  color="orange.100"
-                  position="absolute"
-                  top={6}
-                  right={6}
-                />
+                <Box
+                  className="glass-card"
+                  p={8}
+                  borderRadius="xl"
+                  position="relative"
+                  transition="all 0.3s ease"
+                  bg="white"
+                  boxShadow="0 2px 20px rgba(0,0,0,0.06)"
+                  _hover={{
+                    transform: "translateY(-5px)",
+                    borderColor: "rgba(255, 93, 34, 0.3)",
+                  }}
+                >
+                  {/* Stars */}
+                  <HStack spacing={1} mb={5}>
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <MotionBox
+                        key={i}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.3, delay: index * 0.15 + i * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <Icon as={FaStar} w={4} h={4} color="#ff5d22" />
+                      </MotionBox>
+                    ))}
+                  </HStack>
 
-                <HStack spacing={1} mb={4}>
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Icon key={i} as={FaStar} w={4} h={4} color="yellow.400" />
-                  ))}
-                </HStack>
+                  <Text
+                    color="var(--color-text-secondary)"
+                    mb={6}
+                    fontStyle="italic"
+                    lineHeight="1.8"
+                    fontSize="sm"
+                  >
+                    &ldquo;{testimonial.content}&rdquo;
+                  </Text>
 
-                <Text color="gray.600" mb={6} fontStyle="italic" lineHeight="1.8">
-                  "{testimonial.content}"
-                </Text>
-
-                <HStack spacing={4}>
-                  <Avatar
-                    size="md"
-                    name={testimonial.name}
-                    bg="white"
-                    color="orange.500"
-                    border="2px solid"
-                    borderColor="orange.400"
-                  />
-                  <VStack align="start" spacing={0}>
-                    <Text fontWeight="bold" color="gray.800">
-                      {testimonial.name}
-                    </Text>
-                    <Text fontSize="sm" color="gray.500">
-                      {testimonial.role}
-                    </Text>
-                  </VStack>
-                </HStack>
-              </Box>
-            </MotionBox>
+                  <HStack spacing={4}>
+                    <Avatar
+                      size="md"
+                      name={testimonial.name}
+                      bg="var(--color-bg-card)"
+                      color="#ff5d22"
+                      border="2px solid"
+                      borderColor="#ff5d22"
+                    />
+                    <VStack align="start" spacing={0}>
+                      <Text fontWeight="bold" color="var(--color-text-primary)" fontSize="sm">
+                        {testimonial.name}
+                      </Text>
+                      <Text fontSize="xs" color="var(--color-text-muted)">
+                        {testimonial.role}
+                      </Text>
+                    </VStack>
+                  </HStack>
+                </Box>
+              </MotionBox>
+            </GridItem>
           ))}
-        </SimpleGrid>
+        </Grid>
       </Container>
     </Box>
   );

@@ -9,341 +9,297 @@ import {
   Stack,
   IconButton,
   Collapse,
-  useColorModeValue,
   useDisclosure,
   Link,
   HStack,
   Icon,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
+  Grid,
+  GridItem,
   Image,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
-  PhoneIcon,
-  EmailIcon,
 } from "@chakra-ui/icons";
+import { FaGlobe, FaMobileAlt, FaCode, FaSearch, FaRobot, FaShieldAlt } from "react-icons/fa";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "@/hooks/useTranslation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MotionBox = motion(Box);
-const MotionFlex = motion(Flex);
+
+const serviceItems = (t) => [
+  { label: t('nav.webApps'), href: "/services/web-apps", icon: FaGlobe, desc: t('nav.webAppsDesc') },
+  { label: t('nav.mobileApps'), href: "/services/mobile-apps", icon: FaMobileAlt, desc: t('nav.mobileAppsDesc') },
+  { label: t('nav.customSoftware'), href: "/services/custom-software", icon: FaCode, desc: t('nav.customSoftwareDesc') },
+  { label: t('nav.seo'), href: "/services/seo", icon: FaSearch, desc: t('nav.seoDesc') },
+  { label: t('nav.ai'), href: "/services/ai", icon: FaRobot, desc: t('nav.aiDesc') },
+];
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = "#ff5d22";
   const { t } = useTranslation();
+  const [servicesOpen, setServicesOpen] = useState(false);
 
-  const getNavItems = () => [
-    {
-      label: t('nav.services'),
-      href: null,
-      children: [
-        {
-          label: t('nav.webApps'),
-          href: "/services/web-apps",
-        },
-        {
-          label: t('nav.mobileApps'),
-          href: "/services/mobile-apps",
-        },
-        {
-          label: t('nav.customSoftware'),
-          href: "/services/custom-software",
-        },
-        {
-          label: t('nav.seo'),
-          href: "/services/seo",
-        },
-        {
-          label: t('nav.ai'),
-          href: "/services/ai",
-        },
-        {
-          label: t('nav.cybersecurity'),
-          href: "/services/cybersecurity",
-        },
-      ],
-    },
-    {
-      label: t('nav.projects'),
-      href: "/projects",
-    },
-    {
-      label: t('nav.jobs'),
-      href: "/jobs",
-    },
-    {
-      label: t('nav.contact'),
-      href: "/contact",
-    },
+  const navLinks = [
+    { label: t('nav.projects'), href: "/projects" },
+    { label: t('nav.jobs'), href: "/jobs" },
+    { label: t('nav.contact'), href: "/contact" },
   ];
 
   return (
-    <Stack direction={"row"} spacing={8} align="center">
-      {getNavItems().map((navItem) => (
-        <Box key={navItem.label}>
-          <Popover trigger={"hover"} placement={"bottom-start"}>
-            <PopoverTrigger>
-              {navItem.children ? (
-                <Box
-                  as="button"
-                  p={2}
-                  fontSize={"md"}
-                  fontWeight={500}
-                  color={linkColor}
-                  position="relative"
-                  cursor="pointer"
-                  _hover={{
-                    textDecoration: "none",
-                    color: linkHoverColor,
-                    "&::after": {
-                      content: '""',
-                      position: "absolute",
-                      bottom: "0",
-                      left: "0",
-                      width: "100%",
-                      height: "2px",
-                      backgroundColor: "#ff5d22",
-                      transform: "scaleX(1)",
-                      transition: "transform 0.3s ease",
-                    },
-                  }}
-                  _after={{
-                    content: '""',
-                    position: "absolute",
-                    bottom: "0",
-                    left: "0",
-                    width: "100%",
-                    height: "2px",
-                    backgroundColor: "#ff5d22",
-                    transform: "scaleX(0)",
-                    transition: "transform 0.3s ease",
-                  }}
-                >
-                  {navItem.label}
-                </Box>
-              ) : (
-                <Link
-                  p={2}
-                  href={navItem.href ?? "#"}
-                  fontSize={"md"}
-                  fontWeight={500}
-                  color={linkColor}
-                  position="relative"
-                  _hover={{
-                    textDecoration: "none",
-                    color: linkHoverColor,
-                    "&::after": {
-                      content: '""',
-                      position: "absolute",
-                      bottom: "0",
-                      left: "0",
-                      width: "100%",
-                      height: "2px",
-                      backgroundColor: "#ff5d22",
-                      transform: "scaleX(1)",
-                      transition: "transform 0.3s ease",
-                    },
-                  }}
-                  _after={{
-                    content: '""',
-                    position: "absolute",
-                    bottom: "0",
-                    left: "0",
-                    width: "100%",
-                    height: "2px",
-                    backgroundColor: "#ff5d22",
-                    transform: "scaleX(0)",
-                    transition: "transform 0.3s ease",
-                  }}
-                >
-                  {navItem.label}
-                </Link>
-              )}
-            </PopoverTrigger>
+    <HStack spacing={8} align="center">
+      <Box
+        position="relative"
+        onMouseEnter={() => setServicesOpen(true)}
+        onMouseLeave={() => setServicesOpen(false)}
+      >
+        <Box
+          as="button"
+          px={2}
+          py={2}
+          fontSize="md"
+          fontWeight={500}
+          color="var(--color-text-secondary)"
+          position="relative"
+          cursor="pointer"
+          fontFamily="var(--font-body)"
+          display="flex"
+          alignItems="center"
+          gap={1}
+          transition="color 0.2s"
+          _hover={{ color: "#ff5d22" }}
+          _after={{
+            content: '""',
+            position: "absolute",
+            bottom: "0",
+            left: "0",
+            width: "100%",
+            height: "2px",
+            bg: "#ff5d22",
+            transform: servicesOpen ? "scaleX(1)" : "scaleX(0)",
+            transition: "transform 0.3s ease",
+            transformOrigin: "left",
+          }}
+        >
+          {t('nav.services')}
+          <Icon
+            as={ChevronDownIcon}
+            transition="transform 0.2s"
+            transform={servicesOpen ? "rotate(180deg)" : ""}
+            fontSize="sm"
+          />
+        </Box>
 
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={"xl"}
-                bg={useColorModeValue("white", "gray.800")}
-                p={4}
-                rounded={"xl"}
-                minW={"sm"}
+        <AnimatePresence>
+          {servicesOpen && (
+            <MotionBox
+              position="absolute"
+              top="100%"
+              left="50%"
+              transform="translateX(-50%)"
+              pt={4}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              zIndex={100}
+            >
+              <Box
+                bg="white"
+                border="1px solid"
+                borderColor="rgba(0, 0, 0, 0.08)"
+                borderRadius="xl"
+                p={6}
+                minW="580px"
+                boxShadow="0 20px 60px rgba(0, 0, 0, 0.1)"
               >
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
+                <Grid templateColumns="repeat(2, 1fr)" gap={3}>
+                  {serviceItems(t).map((item) => (
+                    <GridItem key={item.href}>
+                      <Link
+                        href={item.href}
+                        _hover={{ textDecoration: "none" }}
+                      >
+                        <Flex
+                          p={4}
+                          borderRadius="lg"
+                          align="center"
+                          gap={4}
+                          transition="all 0.2s"
+                          _hover={{ bg: "#fdf5f1" }}
+                          role="group"
+                        >
+                          <Flex
+                            w={10}
+                            h={10}
+                            borderRadius="lg"
+                            bg="#fff3ee"
+                            align="center"
+                            justify="center"
+                            flexShrink={0}
+                            transition="all 0.2s"
+                            _groupHover={{ bg: "rgba(255, 93, 34, 0.15)" }}
+                          >
+                            <Icon
+                              as={item.icon}
+                              w={5}
+                              h={5}
+                              color="var(--color-text-muted)"
+                              _groupHover={{ color: "#ff5d22" }}
+                              transition="color 0.2s"
+                            />
+                          </Flex>
+                          <Box>
+                            <Text
+                              fontWeight={600}
+                              fontSize="sm"
+                              color="var(--color-text-primary)"
+                              _groupHover={{ color: "#ff5d22" }}
+                              transition="color 0.2s"
+                            >
+                              {item.label}
+                            </Text>
+                            <Text fontSize="xs" color="var(--color-text-muted)" mt={0.5}>
+                              {item.desc}
+                            </Text>
+                          </Box>
+                        </Flex>
+                      </Link>
+                    </GridItem>
                   ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
-        </Box>
-      ))}
-    </Stack>
-  );
-};
+                </Grid>
+              </Box>
+            </MotionBox>
+          )}
+        </AnimatePresence>
+      </Box>
 
-const DesktopSubNav = ({ label, href, subLabel }) => {
-  return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("orange.50", "gray.900") }}
-    >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
-            transition={"all .3s ease"}
-            _groupHover={{ color: "#ff5d22" }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
-        </Box>
-      </Stack>
-    </Link>
+      {navLinks.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          px={2}
+          py={2}
+          fontSize="md"
+          fontWeight={500}
+          color="var(--color-text-secondary)"
+          position="relative"
+          _hover={{
+            textDecoration: "none",
+            color: "#ff5d22",
+          }}
+          _after={{
+            content: '""',
+            position: "absolute",
+            bottom: "0",
+            left: "0",
+            width: "100%",
+            height: "2px",
+            bg: "#ff5d22",
+            transform: "scaleX(0)",
+            transition: "transform 0.3s ease",
+            transformOrigin: "left",
+          }}
+          sx={{
+            "&:hover::after": {
+              transform: "scaleX(1)",
+            },
+          }}
+        >
+          {item.label}
+        </Link>
+      ))}
+    </HStack>
   );
 };
 
 const MobileNav = () => {
   const { t } = useTranslation();
+  const { isOpen: servicesExpanded, onToggle: toggleServices } = useDisclosure();
 
-  const getNavItems = () => [
-    {
-      label: t('nav.services'),
-      href: null,
-      children: [
-        {
-          label: t('nav.webApps'),
-          href: "/services/web-apps",
-        },
-        {
-          label: t('nav.mobileApps'),
-          href: "/services/mobile-apps",
-        },
-        {
-          label: t('nav.customSoftware'),
-          href: "/services/custom-software",
-        },
-        {
-          label: t('nav.seo'),
-          href: "/services/seo",
-        },
-        {
-          label: t('nav.ai'),
-          href: "/services/ai",
-        },
-        {
-          label: t('nav.cybersecurity'),
-          href: "/services/cybersecurity",
-        },
-      ],
-    },
-    {
-      label: t('nav.projects'),
-      href: "/projects",
-    },
-    {
-      label: t('nav.jobs'),
-      href: "/jobs",
-    },
-    {
-      label: t('nav.contact'),
-      href: "/contact",
-    },
+  const navLinks = [
+    { label: t('nav.projects'), href: "/projects" },
+    { label: t('nav.jobs'), href: "/jobs" },
+    { label: t('nav.contact'), href: "/contact" },
   ];
 
   return (
-    <Stack
-      bg={useColorModeValue("white", "gray.800")}
-      p={4}
-      display={{ md: "none" }}
-    >
-      {getNavItems().map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+    <Stack bg="white" p={6} spacing={4} display={{ md: "none" }} borderTop="1px solid" borderColor="rgba(0,0,0,0.06)">
+      <Box>
+        <Flex
+          py={2}
+          justify="space-between"
+          align="center"
+          cursor="pointer"
+          onClick={toggleServices}
+        >
+          <Text fontWeight={600} color="var(--color-text-primary)">
+            {t('nav.services')}
+          </Text>
+          <Icon
+            as={ChevronDownIcon}
+            transition="all .25s ease-in-out"
+            transform={servicesExpanded ? "rotate(180deg)" : ""}
+            w={5}
+            h={5}
+            color="var(--color-text-muted)"
+          />
+        </Flex>
+        <Collapse in={servicesExpanded} animateOpacity>
+          <Stack
+            mt={2}
+            pl={4}
+            borderLeft="2px solid"
+            borderColor="rgba(255, 93, 34, 0.3)"
+            spacing={3}
+          >
+            {serviceItems(t).map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                py={1}
+                color="var(--color-text-secondary)"
+                _hover={{ color: "#ff5d22" }}
+                fontSize="sm"
+              >
+                <HStack spacing={3}>
+                  <Icon as={item.icon} w={4} h={4} color="var(--color-text-muted)" />
+                  <Text>{item.label}</Text>
+                </HStack>
+              </Link>
+            ))}
+          </Stack>
+        </Collapse>
+      </Box>
+
+      {navLinks.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          py={2}
+          fontWeight={600}
+          color="var(--color-text-primary)"
+          _hover={{ color: "#ff5d22" }}
+        >
+          {item.label}
+        </Link>
       ))}
+
       <Button
         as="a"
         href="/contact"
         w="full"
-        color={"#ff5d22"}
-        bg={"white"}
-        _hover={{
-          bg: "gray.100",
-        }}
+        bg="#ff5d22"
+        color="white"
+        _hover={{ bg: "#e04d15" }}
         mt={2}
+        size="lg"
+        fontFamily="var(--font-display)"
+        fontWeight={700}
       >
         {t('nav.workWithUs')}
       </Button>
-    </Stack>
-  );
-};
-
-const MobileNavItem = ({ label, children, href }) => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
-        py={2}
-        as={children ? "div" : Link}
-        href={children ? undefined : (href ?? "#")}
-        justify={"space-between"}
-        align={"center"}
-        _hover={{
-          textDecoration: "none",
-        }}
-        cursor={children ? "pointer" : "default"}
-      >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-        >
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={"all .25s ease-in-out"}
-            transform={isOpen ? "rotate(180deg)" : ""}
-            w={6}
-            h={6}
-          />
-        )}
-      </Flex>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={"solid"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
-          align={"start"}
-        >
-          {children &&
-            children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Link>
-            ))}
-        </Stack>
-      </Collapse>
     </Stack>
   );
 };
@@ -357,7 +313,6 @@ const ModernNavbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -366,77 +321,28 @@ const ModernNavbar = () => {
     <MotionBox
       position="fixed"
       width="full"
-      zIndex="sticky"
+      zIndex="1400"
       top={0}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      {/* Bandeau supérieur */}
-      <AnimatePresence>
-        {!scrolled && (
-          <MotionBox
-            bg="#ff5d22"
-            color="white"
-            py={1}
-            px={4}
-            initial={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Flex justify="space-between" align="center" maxW="1200px" mx="auto">
-              <HStack spacing={4}>
-                <HStack spacing={2}>
-                  <Icon as={EmailIcon} fontSize="xs" />
-                  <Link
-                    href="mailto:contact@m2atech.com"
-                    fontSize="xs"
-                    _hover={{ textDecoration: "none", opacity: 0.8 }}
-                  >
-                    contact@m2atech.com
-                  </Link>
-                </HStack>
-                <HStack
-                  spacing={2}
-                  as="a"
-                  href="tel:+15068506548"
-                  _hover={{
-                    color: "#DD6B20",
-                    cursor: "pointer",
-                    textDecoration: "underline",
-                  }}
-                  transition="color 0.2s"
-                >
-                  <Icon as={PhoneIcon} fontSize="xs" />
-                  <Text fontSize="xs">+1 (506) 850-6548</Text>
-                </HStack>
-              </HStack>
+      <Box h="2px" bg="#ff5d22" />
 
-              <LanguageSwitcher variant="icon" />
-            </Flex>
-          </MotionBox>
-        )}
-      </AnimatePresence>
-
-      {/* Navbar principal */}
-      <MotionBox
-        borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
-        bg={useColorModeValue("white", "gray.800")}
-        boxShadow={scrolled ? "lg" : "none"}
-        animate={{
-          boxShadow: scrolled ? "0 4px 6px -1px rgba(0, 0, 0, 0.1)" : "none"
-        }}
-        transition={{ duration: 0.3 }}
+      <Box
+        bg={scrolled ? "rgba(255, 255, 255, 0.98)" : "rgba(255, 255, 255, 0.85)"}
+        backdropFilter="blur(20px)"
+        borderBottom="1px solid"
+        borderColor={scrolled ? "rgba(0, 0, 0, 0.08)" : "transparent"}
+        boxShadow={scrolled ? "0 2px 20px rgba(0, 0, 0, 0.06)" : "none"}
+        transition="all 0.3s ease"
       >
         <Flex
-          color={useColorModeValue("gray.600", "white")}
-          minH={"70px"}
-          py={{ base: 2 }}
-          px={{ base: 4 }}
-          align={"center"}
-          maxW="1200px"
+          minH="70px"
+          py={2}
+          px={{ base: 4, md: 8 }}
+          align="center"
+          maxW="1280px"
           mx="auto"
         >
           <Flex
@@ -453,9 +359,10 @@ const ModernNavbar = () => {
                   <HamburgerIcon w={5} h={5} />
                 )
               }
-              variant={"ghost"}
-              color={"inherit"}
-              aria-label={"Toggle Navigation"}
+              variant="ghost"
+              color="var(--color-text-primary)"
+              _hover={{ bg: "rgba(0, 0, 0, 0.05)" }}
+              aria-label="Toggle Navigation"
             />
           </Flex>
 
@@ -465,24 +372,25 @@ const ModernNavbar = () => {
             align="center"
           >
             <Link href="/" _hover={{ textDecoration: "none" }}>
-              {/* Logo pour desktop */}
-              <Image
-                src="/logo.png"
-                alt="M2ATech Logo"
-                height="40px"
-                objectFit="contain"
-                display={{ base: "none", md: "block" }}
-              />
-
-              {/* Logo pour mobile - version centrée */}
-              <Image
-                src="/logo4.png"
-                alt="M2ATech Logo"
-                height="40px"
-                objectFit="contain"
-                display={{ base: "block", md: "none" }}
-                mx="auto"
-              />
+              <HStack spacing={2}>
+                <Image
+                  src="/logo.png"
+                  alt="M2ATech Solutions - Agence web Moncton"
+                  height="36px"
+                  objectFit="contain"
+                  display={{ base: "none", md: "block" }}
+                  loading="eager"
+                />
+                <Image
+                  src="/logo4.png"
+                  alt="M2ATech Solutions"
+                  height="36px"
+                  objectFit="contain"
+                  display={{ base: "block", md: "none" }}
+                  mx="auto"
+                  loading="eager"
+                />
+              </HStack>
             </Link>
 
             <Flex display={{ base: "none", md: "flex" }} ml={10} align="center">
@@ -490,41 +398,40 @@ const ModernNavbar = () => {
             </Flex>
           </Flex>
 
-          <Stack
+          <HStack
             flex={{ base: 1, md: 0 }}
-            justify={"flex-end"}
-            direction={"row"}
-            spacing={6}
-            align="center"
+            justify="flex-end"
+            spacing={4}
           >
-            {scrolled && (
-              <LanguageSwitcher variant="icon" />
-            )}
+            <LanguageSwitcher variant="icon" />
             <Button
-              as={"a"}
-              fontSize={"sm"}
-              fontWeight={600}
-              color={"white"}
-              bg={"black"}
-              href={"/contact"}
+              as="a"
+              fontSize="sm"
+              fontWeight={700}
+              fontFamily="var(--font-display)"
+              color="white"
+              bg="#ff5d22"
+              href="/contact"
+              display={{ base: "none", md: "flex" }}
               _hover={{
-                bg: "gray.800",
+                bg: "#e04d15",
                 transform: "translateY(-2px)",
-                boxShadow: "lg",
+                boxShadow: "0 4px 20px rgba(255, 93, 34, 0.3)",
               }}
               transition="all 0.3s ease"
               px={6}
-              py={4}
+              py={5}
+              borderRadius="lg"
             >
               {t('nav.workWithUs')}
             </Button>
-          </Stack>
+          </HStack>
         </Flex>
 
         <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
-      </MotionBox>
+      </Box>
     </MotionBox>
   );
 };

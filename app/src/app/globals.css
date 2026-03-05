@@ -1,13 +1,21 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f8f6;
+  --color-bg-tertiary: #f2f1ee;
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #fdf5f1;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(255, 93, 34, 0.5);
+  --color-orange-primary: #ff5d22;
+  --color-orange-light: #ff7a45;
+  --color-orange-glow: rgba(255, 93, 34, 0.10);
+  --color-text-primary: #0f0f0f;
+  --color-text-secondary: #4a4a52;
+  --color-text-muted: #9090a0;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
 }
 
 html,
@@ -17,9 +25,9 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,8 +43,137 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f8f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-orange-primary);
+}
+
+/* Subtle grain texture for hero */
+.grain-bg {
+  position: relative;
+}
+
+.grain-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  z-index: 0;
+}
+
+/* Glassmorphism card - light version */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 93, 34, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Orange glow effect */
+.orange-glow {
+  box-shadow: 0 4px 20px rgba(255, 93, 34, 0.12);
+}
+
+.orange-glow:hover {
+  box-shadow: 0 8px 30px rgba(255, 93, 34, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff5d22, #ff7a45);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section number styling - light version */
+.section-number {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 10vw, 120px);
+  font-weight: 800;
+  color: #e8e8e8;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Infinite scroll animation */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
   }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.infinite-scroll {
+  animation: scroll-left 30s linear infinite;
+}
+
+.infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Floating particles */
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-100px) translateX(50px);
+  }
+}
+
+/* Orange accent bar */
+.accent-bar {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-orange-primary), transparent);
+}
+
+/* Section accent line under H2 titles */
+.section-accent {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--color-orange-primary);
+  margin-bottom: 16px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(255, 93, 34, 0.15);
+  color: #0f0f0f;
 }

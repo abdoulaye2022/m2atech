@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, useBreakpointValue } from '@chakra-ui/react';
 import { FaSearch, FaChartLine, FaMobile, FaPenFancy, FaGlobe, FaLink } from 'react-icons/fa';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -43,63 +44,54 @@ const SeoSection = () => {
   ];
 
   return (
-    <Box py={16} bg="white" id="seo">
+    <Box py={16} bg="var(--color-bg-primary)" id="seo">
       <Container maxW="container.xl">
-        <Heading as="h1" size="2xl" mb={16} textAlign="center" color="gray.800">
+        <Heading as="h1" size="2xl" mb={16} textAlign="center" color="var(--color-text-primary)" fontFamily="var(--font-display)">
           {t('servicesPage.seo.title')}{" "}
-          <Box as="span" color="#DD6B20">
+          <Box as="span" className="gradient-text">
             {t('servicesPage.seo.titleHighlight')}
           </Box>
         </Heading>
 
         <Flex direction={{ base: 'column', lg: 'row' }} gap={12} align="center">
           <Box flex={1}>
-            <Heading as="h2" size="xl" mb={6} color="gray.800" lineHeight="1.2">
-              {t('servicesPage.seo.heading')} <Box as="span" color="#DD6B20">{t('servicesPage.seo.headingHighlight')}</Box>
+            <Heading as="h2" size="xl" mb={6} color="var(--color-text-primary)" lineHeight="1.2" fontFamily="var(--font-display)">
+              {t('servicesPage.seo.heading')} <Box as="span" className="gradient-text">{t('servicesPage.seo.headingHighlight')}</Box>
             </Heading>
 
-            <Text fontSize="lg" color="gray.600" mb={8}>
+            <Text fontSize="lg" color="var(--color-text-secondary)" mb={8}>
               {t('servicesPage.seo.description')}
             </Text>
 
             <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={4} mb={8}>
               <Flex align="center">
-                <Icon as={FaSearch} color="#DD6B20" mr={3} />
-                <Text>{t('servicesPage.seo.bullets.technicalAudits')}</Text>
+                <Icon as={FaSearch} color="#ff5d22" mr={3} />
+                <Text color="var(--color-text-primary)">{t('servicesPage.seo.bullets.technicalAudits')}</Text>
               </Flex>
               <Flex align="center">
-                <Icon as={FaChartLine} color="#DD6B20" mr={3} />
-                <Text>{t('servicesPage.seo.bullets.competitorAnalysis')}</Text>
+                <Icon as={FaChartLine} color="#ff5d22" mr={3} />
+                <Text color="var(--color-text-primary)">{t('servicesPage.seo.bullets.competitorAnalysis')}</Text>
               </Flex>
               <Flex align="center">
-                <Icon as={FaPenFancy} color="#DD6B20" mr={3} />
-                <Text>{t('servicesPage.seo.bullets.contentStrategy')}</Text>
+                <Icon as={FaPenFancy} color="#ff5d22" mr={3} />
+                <Text color="var(--color-text-primary)">{t('servicesPage.seo.bullets.contentStrategy')}</Text>
               </Flex>
               <Flex align="center">
-                <Icon as={FaGlobe} color="#DD6B20" mr={3} />
-                <Text>{t('servicesPage.seo.bullets.googleBusiness')}</Text>
+                <Icon as={FaGlobe} color="#ff5d22" mr={3} />
+                <Text color="var(--color-text-primary)">{t('servicesPage.seo.bullets.googleBusiness')}</Text>
               </Flex>
             </SimpleGrid>
           </Box>
 
           {isDesktop && (
-            <Box flex={1} bg="orange.50" p={8} borderRadius="2xl" boxShadow="inner">
-              <Box
-                bg="white"
-                h="400px"
-                borderRadius="xl"
-                border="1px solid"
-                borderColor="gray.200"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                flexDirection="column"
-                p={6}
-              >
-                <Icon as={FaSearch} w={12} h={12} color="#DD6B20" mb={4} />
-                <Text fontWeight="bold" mb={2} textAlign="center">{t('servicesPage.seo.preview')}</Text>
-                <Text textAlign="center" color="gray.500">{t('servicesPage.seo.previewDescription')}</Text>
-              </Box>
+            <Box flex={1} borderRadius="2xl" overflow="hidden" position="relative" h="450px">
+              <Image
+                src="/img/services/seo.png"
+                alt={t('servicesPage.seo.preview')}
+                fill
+                style={{ objectFit: "cover", borderRadius: "1rem" }}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </Box>
           )}
         </Flex>
@@ -108,23 +100,24 @@ const SeoSection = () => {
           {features.map((feature, index) => (
             <Box
               key={index}
-              bg="gray.50"
+              bg="white"
               p={8}
               borderRadius="xl"
+              boxShadow="0 2px 20px rgba(0,0,0,0.06)"
               border="1px solid"
-              borderColor="gray.100"
+              borderColor="var(--color-border)"
               transition="all 0.3s"
               _hover={{
                 transform: 'translateY(-5px)',
-                boxShadow: 'md',
-                borderColor: 'orange.200'
+                borderColor: "var(--color-border-hover)",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.1)"
               }}
             >
-              <Icon as={feature.icon} w={8} h={8} color="#DD6B20" mb={4} />
-              <Heading as="h3" size="md" mb={3} color="gray.800">
+              <Icon as={feature.icon} w={8} h={8} color="#ff5d22" mb={4} />
+              <Heading as="h3" size="md" mb={3} color="var(--color-text-primary)" fontFamily="var(--font-display)">
                 {feature.title}
               </Heading>
-              <Text color="gray.600">{feature.description}</Text>
+              <Text color="var(--color-text-secondary)">{feature.description}</Text>
             </Box>
           ))}
         </SimpleGrid>

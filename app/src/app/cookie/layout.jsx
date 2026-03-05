@@ -22,10 +22,10 @@ export const metadata = {
     "conformité RGPD Canada",
   ],
   alternates: {
-    canonical: "https://www.m2atech.com/cookie-policy",
+    canonical: "https://www.m2atech.com/cookie",
     languages: {
-      "en-CA": "https://www.m2atech.com/cookie-policy",
-      "fr-CA": "https://www.m2atech.com/cookie-policy",
+      "en-CA": "https://www.m2atech.com/cookie",
+      "fr-CA": "https://www.m2atech.com/cookie",
     },
   },
 };

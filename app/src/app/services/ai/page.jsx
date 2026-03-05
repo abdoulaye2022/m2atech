@@ -5,22 +5,18 @@ import ProcessSection from "@/components/Services/ProcessSection";
 import AiSection from "@/components/Services/AiSection";
 import FooterApp from "@/components/Partials/FooterApp";
 import Navbar from "@/components/Partials/Navbar";
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 function AiPage() {
   return (
     <>
-      <ChakraProvider>
-        <Navbar />
-        <Box pt="102px">
-          <AiSection />
-
-          <ContactBanner />
-
-          <ProcessSection />
-          <FooterApp />
-        </Box>
-      </ChakraProvider>
+      <Navbar />
+      <Box pt="80px" bg="var(--color-bg-primary)">
+        <AiSection />
+        <ContactBanner />
+        <ProcessSection />
+        <FooterApp />
+      </Box>
     </>
   );
 }

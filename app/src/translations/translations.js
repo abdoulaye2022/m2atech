@@ -14,7 +14,13 @@ export const translations = {
       customSoftware: "Custom Software",
       seo: "SEO",
       ai: "AI Solutions",
-      cybersecurity: "Cybersecurity"
+      cybersecurity: "Cybersecurity",
+      webAppsDesc: "Websites & high-performance applications",
+      mobileAppsDesc: "iOS & Android apps with Flutter",
+      customSoftwareDesc: "Custom software for your business",
+      seoDesc: "Search engine optimization",
+      aiDesc: "Chatbots, ML & AI automation",
+      cybersecurityDesc: "Audits, testing & data protection"
     },
 
     // Home Page
@@ -24,7 +30,8 @@ export const translations = {
         titleHighlight: "Modern Businesses",
         subtitle: "We specialize in web development, mobile applications, custom software, and SEO services to help your business grow in the digital world.",
         cta: "Get Started",
-        ctaSecondary: "Learn More"
+        ctaSecondary: "Learn More",
+        badge: "Your Digital Partner in Atlantic Canada"
       },
       services: {
         title: "Our Services",
@@ -54,7 +61,10 @@ export const translations = {
         cybersecurity: {
           title: "Cybersecurity",
           description: "Protect your digital assets. Security audits, penetration testing, and comprehensive protection strategies."
-        }
+        },
+        longDescription: "From design to deployment, M2ATech Solutions supports businesses in New Brunswick and Atlantic Canada in their digital transformation with high-performance web, mobile and AI solutions.",
+        popularBadge: "Popular",
+        learnMore: "Learn more"
       },
       tools: {
         title: "Our Technology Stack",
@@ -103,7 +113,9 @@ export const translations = {
         projectsCompleted: "Projects Completed",
         clientSatisfaction: "Client Satisfaction",
         support: "Support Available",
-        yearsExperience: "Years Experience"
+        yearsExperience: "Years Experience",
+        technologiesMastered: "Technologies Mastered",
+        yearsLabel: "Years"
       },
       clients: {
         title: "They Trust",
@@ -128,6 +140,40 @@ export const translations = {
           name: "Aboubacar Salou",
           role: "CEO, Trio Pro Move & Clean",
           content: "Working with M2ATech was a pleasure. They understood our needs perfectly and created a solution that exceeded our expectations."
+        },
+        testimonial4: {
+          name: "Steve",
+          role: "CEO, Frais Chez Vous",
+          content: "Professional service, available and very helpful team. My website was built quickly and with care. I recommend."
+        }
+      },
+      blog: {
+        title: "Insights &",
+        titleHighlight: "Expertise",
+        subtitle: "Our latest articles on web development, mobile and emerging technologies.",
+        viewAll: "View all articles"
+      },
+      faq: {
+        title: "Frequently Asked",
+        titleHighlight: "Questions",
+        subtitle: "Everything you need to know about our web, mobile and AI development services in Moncton, New Brunswick.",
+        questions: {
+          q1: "How much does a professional website cost?",
+          a1: "The cost of a professional website varies depending on project complexity. At M2ATech Solutions in Moncton, we offer solutions adapted to your budget, from showcase sites to complex web applications. Contact us for a free 30-minute consultation to evaluate your project.",
+          q2: "What are your delivery timelines?",
+          a2: "Our timelines vary by project type: 2 weeks for a website, 2-3 weeks for a mobile app, and 4 weeks for custom software. We commit to meeting agreed deadlines and keep you informed at every stage.",
+          q3: "Do you work with clients outside New Brunswick?",
+          a3: "Absolutely! Although our headquarters is in Moncton, NB, we collaborate with clients throughout Atlantic Canada (Nova Scotia, Prince Edward Island) and beyond. Our team masters remote work through modern collaboration tools.",
+          q4: "Do you offer maintenance after delivery?",
+          a4: "Yes, we offer maintenance and ongoing support plans to ensure your digital solution runs smoothly. This includes security updates, bug fixes, and adding new features as needed.",
+          q5: "Do you offer iOS and Android mobile apps?",
+          a5: "Yes, we develop cross-platform mobile applications with Flutter, targeting both iOS and Android with a single codebase. This significantly reduces costs and accelerates time to market.",
+          q6: "How does a collaboration with M2ATech work?",
+          a6: "Our process follows 4 clear steps: 1) Free consultation to understand your needs, 2) Detailed strategy and planning with quote, 3) Agile development with regular progress updates, 4) Delivery, training and ongoing support.",
+          q7: "Do you use artificial intelligence in your developments?",
+          a7: "Yes, we integrate AI solutions (intelligent chatbots, process automation, machine learning) into our projects. We use technologies like OpenAI and LLM models to maximize the efficiency and innovation of your solutions.",
+          q8: "What technologies do you use?",
+          a8: "We use the most modern and proven technologies: React and Next.js for web, Flutter for mobile, Node.js and Laravel for backend, Python and OpenAI for AI, as well as Docker, PostgreSQL and Firebase for cloud infrastructure."
         }
       }
     },
@@ -162,7 +208,10 @@ export const translations = {
           emailInvalid: "Invalid email address",
           subjectRequired: "Subject is required",
           messageRequired: "Message is required",
-          recaptchaRequired: "Please verify that you are not a robot"
+          recaptchaRequired: "Please verify that you are not a robot",
+          recaptchaFailed: "reCAPTCHA verification failed. Please try again.",
+          errorTitle: "Error",
+          sendFailed: "An error occurred while sending your message."
         }
       },
       info: {
@@ -202,7 +251,27 @@ export const translations = {
       followUs: "Follow Us",
       copyright: "M2ATech Solutions Inc. All rights reserved.",
       privacyPolicy: "Privacy Policy",
-      cookiePolicy: "Cookie Policy"
+      cookiePolicy: "Cookie Policy",
+      partnerDesc: "Your digital partner in Atlantic Canada. Web, mobile, AI and cybersecurity solutions.",
+      newsletterTitle: "Stay informed of our news",
+      emailPlaceholder: "Your email",
+      subscribeButton: "OK",
+      blog: "Blog"
+    },
+
+    ctaBanner: {
+      title1: "Free consultation of",
+      titleHighlight: "30 minutes",
+      title2: "for your digital project",
+      subtitle: "Let's discuss your project and find the best solution for your business together.",
+      button: "Book my consultation"
+    },
+
+    notFound: {
+      title: "404 - Page Not Found",
+      description: "The page you're looking for doesn't exist or has been moved.",
+      returnHome: "Return Home",
+      contactUs: "Contact Us"
     },
 
     // About
@@ -539,6 +608,7 @@ export const translations = {
       viewLive: "View Live",
       workWithUs: "Work With Us",
       imageOf: "Image",
+      moreFeatures: "more",
       projects: {
         mastaBarber: {
           title: "Masta Barber",
@@ -783,6 +853,21 @@ export const translations = {
             "Mobile Responsive",
             "Analytics & Reports"
           ]
+        },
+        kidsecure: {
+          title: "KidSecure",
+          description: "Bilingual child safety platform for Canadian families. Emergency contact management, safety tips, resources and tools to protect children in everyday situations.",
+          category: "Safety Web Platform",
+          features: [
+            "Bilingual Platform (EN/FR)",
+            "Emergency Contact Management",
+            "Child Safety Resources",
+            "Educational Safety Tips",
+            "Responsive Design",
+            "SEO Optimized",
+            "Accessibility Compliant",
+            "Modern UI/UX"
+          ]
         }
       }
     },
@@ -829,7 +914,13 @@ export const translations = {
       customSoftware: "Logiciels Personnalisés",
       seo: "SEO",
       ai: "Solutions IA",
-      cybersecurity: "Cybersécurité"
+      cybersecurity: "Cybersécurité",
+      webAppsDesc: "Sites web & applications performantes",
+      mobileAppsDesc: "Apps iOS & Android avec Flutter",
+      customSoftwareDesc: "Logiciels sur mesure pour votre entreprise",
+      seoDesc: "Optimisation moteurs de recherche",
+      aiDesc: "Chatbots, ML & automatisation IA",
+      cybersecurityDesc: "Audits, tests & protection des donnees"
     },
 
     // Home Page
@@ -839,7 +930,8 @@ export const translations = {
         titleHighlight: "Entreprises Modernes",
         subtitle: "Nous nous spécialisons dans le développement web, les applications mobiles, les logiciels personnalisés et les services SEO pour aider votre entreprise à croître dans le monde numérique.",
         cta: "Commencer",
-        ctaSecondary: "En Savoir Plus"
+        ctaSecondary: "En Savoir Plus",
+        badge: "Votre partenaire digital au Canada Atlantique"
       },
       services: {
         title: "Nos Services",
@@ -869,7 +961,10 @@ export const translations = {
         cybersecurity: {
           title: "Cybersécurité",
           description: "Protégez vos actifs numériques. Audits de sécurité, tests de pénétration et stratégies de protection complètes."
-        }
+        },
+        longDescription: "De la conception au deploiement, M2ATech Solutions accompagne les entreprises du Nouveau-Brunswick et du Canada Atlantique dans leur transformation digitale avec des solutions web, mobile et IA performantes.",
+        popularBadge: "Populaire",
+        learnMore: "En savoir plus"
       },
       tools: {
         title: "Notre Stack Technologique",
@@ -918,7 +1013,9 @@ export const translations = {
         projectsCompleted: "Projets Réalisés",
         clientSatisfaction: "Satisfaction Client",
         support: "Support Disponible",
-        yearsExperience: "Années d'Expérience"
+        yearsExperience: "Années d'Expérience",
+        technologiesMastered: "Technologies maitrisees",
+        yearsLabel: "Ans"
       },
       clients: {
         title: "Ils Nous Font",
@@ -943,6 +1040,40 @@ export const translations = {
           name: "Aboubacar Salou",
           role: "PDG, Trio Pro Move & Clean",
           content: "Travailler avec M2ATech a été un plaisir. Ils ont parfaitement compris nos besoins et créé une solution qui a dépassé nos attentes."
+        },
+        testimonial4: {
+          name: "Steve",
+          role: "PDG, Frais Chez Vous",
+          content: "Service professionnel, équipe disponible et très aidante. Mon site web a été réalisé dans peu de temps et avec soin. Je recommande."
+        }
+      },
+      blog: {
+        title: "Insights &",
+        titleHighlight: "Expertise",
+        subtitle: "Nos derniers articles sur le developpement web, mobile et les technologies emergentes.",
+        viewAll: "Voir tous les articles"
+      },
+      faq: {
+        title: "Questions",
+        titleHighlight: "frequentes",
+        subtitle: "Tout ce que vous devez savoir sur nos services de developpement web, mobile et IA a Moncton, Nouveau-Brunswick.",
+        questions: {
+          q1: "Combien coute un site web professionnel ?",
+          a1: "Le cout d'un site web professionnel varie selon la complexite du projet. Chez M2ATech Solutions a Moncton, nous proposons des solutions adaptees a votre budget, allant de sites vitrines a des applications web complexes. Contactez-nous pour une consultation gratuite de 30 minutes afin d'evaluer votre projet.",
+          q2: "Quels sont vos delais de livraison ?",
+          a2: "Nos delais varient selon le type de projet : 2 semaines pour un site web, 2-3 semaines pour une application mobile, et 4 semaines pour un logiciel sur mesure. Nous nous engageons a respecter les echeances convenues et vous tenons informes a chaque etape.",
+          q3: "Travaillez-vous avec des clients hors du Nouveau-Brunswick ?",
+          a3: "Absolument ! Bien que notre siege soit a Moncton, NB, nous collaborons avec des clients partout au Canada Atlantique (Nouvelle-Ecosse, Ile-du-Prince-Edouard) et au-dela. Notre equipe maitrise le travail a distance grace a des outils de collaboration modernes.",
+          q4: "Offrez-vous de la maintenance apres livraison ?",
+          a4: "Oui, nous offrons des plans de maintenance et de support continu pour assurer le bon fonctionnement de votre solution digitale. Cela inclut les mises a jour de securite, les corrections de bugs, et l'ajout de nouvelles fonctionnalites selon vos besoins.",
+          q5: "Proposez-vous des applications mobiles iOS et Android ?",
+          a5: "Oui, nous developpons des applications mobiles cross-platform avec Flutter, ce qui permet de cibler a la fois iOS et Android avec un seul code source. Cela reduit significativement les couts et accelere le temps de mise sur le marche.",
+          q6: "Comment se deroule une collaboration avec M2ATech ?",
+          a6: "Notre processus se deroule en 4 etapes claires : 1) Consultation gratuite pour comprendre vos besoins, 2) Strategie et planification detaillee avec devis, 3) Developpement agile avec des points d'avancement reguliers, 4) Livraison, formation et support continu.",
+          q7: "Utilisez-vous l'intelligence artificielle dans vos developpements ?",
+          a7: "Oui, nous integrons des solutions d'IA (chatbots intelligents, automatisation de processus, machine learning) dans nos projets. Nous utilisons des technologies comme OpenAI et des modeles LLM pour maximiser l'efficacite et l'innovation de vos solutions.",
+          q8: "Quelles technologies utilisez-vous ?",
+          a8: "Nous utilisons les technologies les plus modernes et eprouvees : React et Next.js pour le web, Flutter pour le mobile, Node.js et Laravel pour le backend, Python et OpenAI pour l'IA, ainsi que Docker, PostgreSQL et Firebase pour l'infrastructure cloud."
         }
       }
     },
@@ -977,7 +1108,10 @@ export const translations = {
           emailInvalid: "Adresse courriel invalide",
           subjectRequired: "Le sujet est requis",
           messageRequired: "Le message est requis",
-          recaptchaRequired: "Veuillez vérifier que vous n'êtes pas un robot"
+          recaptchaRequired: "Veuillez vérifier que vous n'êtes pas un robot",
+          recaptchaFailed: "La verification reCAPTCHA a echoue. Veuillez reessayer.",
+          errorTitle: "Erreur",
+          sendFailed: "Une erreur est survenue lors de l'envoi de votre message."
         }
       },
       info: {
@@ -1011,13 +1145,33 @@ export const translations = {
       ai: "Solutions IA",
       cybersecurity: "Cybersécurité",
       contactUs: "Nous Contacter",
-      address: "203-74 Rue Belmont, Moncton, NB E1C 8W4, Canada",
+      address: "74 Rue Belmont, Moncton, NB E1C 8W4, Canada",
       phone: "+1 (506) 850-6548",
       email: "contact@m2atech.com",
       followUs: "Suivez-nous",
       copyright: "M2ATech Solutions Inc. Tous droits réservés.",
       privacyPolicy: "Politique de Confidentialité",
-      cookiePolicy: "Politique des Cookies"
+      cookiePolicy: "Politique des Cookies",
+      partnerDesc: "Votre partenaire digital au Canada Atlantique. Solutions web, mobile, IA et cybersecurite.",
+      newsletterTitle: "Restez informe de nos actualites",
+      emailPlaceholder: "Votre email",
+      subscribeButton: "OK",
+      blog: "Blog"
+    },
+
+    ctaBanner: {
+      title1: "Consultation gratuite de",
+      titleHighlight: "30 minutes",
+      title2: "pour votre projet digital",
+      subtitle: "Discutons de votre projet et trouvons ensemble la meilleure solution pour votre entreprise.",
+      button: "Reserver ma consultation"
+    },
+
+    notFound: {
+      title: "404 - Page Non Trouvee",
+      description: "La page que vous recherchez n'existe pas ou a ete deplacee.",
+      returnHome: "Retour a l'accueil",
+      contactUs: "Nous Contacter"
     },
 
     // About
@@ -1354,6 +1508,7 @@ export const translations = {
       viewLive: "Voir en Direct",
       workWithUs: "Travaillez Avec Nous",
       imageOf: "Image",
+      moreFeatures: "de plus",
       projects: {
         mastaBarber: {
           title: "Masta Barber",
@@ -1597,6 +1752,21 @@ export const translations = {
             "Thèmes Personnalisables",
             "Responsive Mobile",
             "Analyses & Rapports"
+          ]
+        },
+        kidsecure: {
+          title: "KidSecure",
+          description: "Plateforme bilingue de sécurité infantile pour les familles canadiennes. Gestion des contacts d'urgence, conseils de sécurité, ressources et outils pour protéger les enfants au quotidien.",
+          category: "Plateforme Web Sécurité",
+          features: [
+            "Plateforme Bilingue (EN/FR)",
+            "Gestion Contacts d'Urgence",
+            "Ressources Sécurité Enfants",
+            "Conseils de Sécurité Éducatifs",
+            "Design Responsive",
+            "Optimisé SEO",
+            "Conformité Accessibilité",
+            "UI/UX Moderne"
           ]
         }
       }

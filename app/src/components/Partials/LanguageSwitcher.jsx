@@ -89,11 +89,10 @@ const LanguageSwitcher = ({ variant = "button" }) => {
           variant="ghost"
           size="sm"
           onClick={() => setIsOpen(!isOpen)}
-          bg="whiteAlpha.200"
-          backdropFilter="blur(10px)"
+          bg="var(--color-bg-tertiary)"
           border="1px solid"
-          borderColor="whiteAlpha.300"
-          color="white"
+          borderColor="var(--color-border)"
+          color="var(--color-text-primary)"
           fontWeight="bold"
           fontSize="xs"
           px={3}
@@ -101,13 +100,13 @@ const LanguageSwitcher = ({ variant = "button" }) => {
           minH="32px"
           borderRadius="full"
           _hover={{
-            bg: "whiteAlpha.300",
-            borderColor: "whiteAlpha.400",
+            bg: "var(--color-bg-secondary)",
+            borderColor: "var(--color-border-hover)",
             transform: "translateY(-1px)",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
+            boxShadow: "0 4px 12px rgba(0,0,0,0.08)"
           }}
           _active={{
-            bg: "whiteAlpha.400",
+            bg: "var(--color-bg-tertiary)",
             transform: "translateY(0)"
           }}
           transition="all 0.2s ease"

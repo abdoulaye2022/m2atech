@@ -1,30 +1,30 @@
 export const metadata = {
   title: {
-    default: "About M2ATech | Web & Mobile Development Experts in Moncton",
-    fr: "À propos de M2ATech | Experts en développement web et mobile à Moncton",
+    default: "Careers at M2ATech | Join Our Tech Team in Moncton",
+    fr: "Carrières chez M2ATech | Rejoignez notre équipe tech à Moncton",
   },
   description: {
     default:
-      "M2ATech is a leading software development company in Moncton, specializing in custom web & mobile apps, SEO, and innovative digital solutions for Atlantic Canada.",
-    fr: "M2ATech est une entreprise spécialisée en développement logiciel à Moncton, offrant des applications web/mobiles sur mesure, du SEO et des solutions digitales innovantes pour le Canada Atlantique.",
+      "Join M2ATech Solutions! Explore career opportunities in web development, mobile apps, AI, and SEO. Work with a dynamic tech team in Moncton, New Brunswick.",
+    fr: "Rejoignez M2ATech Solutions ! Découvrez nos offres d'emploi en développement web, applications mobiles, IA et SEO. Travaillez avec une équipe tech dynamique à Moncton, Nouveau-Brunswick.",
   },
   keywords: [
-    "web development company Moncton",
-    "about M2ATech team",
-    "New Brunswick tech experts",
-    "software development story",
-    "Atlantic Canada IT company",
-    "entreprise développement web Moncton",
-    "équipe M2ATech",
-    "experts technologiques NB",
-    "histoire développement logiciel",
-    "entreprise informatique Canada Atlantique",
+    "tech jobs Moncton",
+    "web developer jobs New Brunswick",
+    "M2ATech careers",
+    "software engineer Atlantic Canada",
+    "IT jobs Moncton NB",
+    "emplois tech Moncton",
+    "développeur web Nouveau-Brunswick",
+    "carrières M2ATech",
+    "ingénieur logiciel Canada Atlantique",
+    "emplois informatique Moncton NB",
   ],
   alternates: {
-    canonical: "https://www.m2atech.com/about",
+    canonical: "https://www.m2atech.com/jobs",
     languages: {
-      "en-CA": "https://www.m2atech.com/about",
-      "fr-CA": "https://www.m2atech.com/about",
+      "en-CA": "https://www.m2atech.com/jobs",
+      "fr-CA": "https://www.m2atech.com/jobs",
     },
   },
 };

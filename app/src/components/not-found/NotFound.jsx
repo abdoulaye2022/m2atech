@@ -13,10 +13,14 @@ import {
 import Link from "next/link";
 import FooterApp from "@/components/Partials/FooterApp";
 import Navbar from "@/components/Partials/Navbar";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { useTranslation } from "@/hooks/useTranslation";
 
-export default function NotFound() {
+function NotFoundContent() {
+  const { t } = useTranslation();
+
   return (
-    <ChakraProvider>
+    <>
       <Navbar />
       <Box pt="102px">
         <Container
@@ -27,21 +31,15 @@ export default function NotFound() {
           py={10}
         >
           <VStack spacing={6} textAlign="center" w="full">
-            {/* M2ATech Logo */}
             <Box mb={6}>
               <Image src="/logo.png" alt="M2ATech Logo" h="45px" w="auto" />
             </Box>
-
-            {/* Error Message */}
-            <Heading as="h1" size="xl" color="orange.500">
-              404 - Page Not Found
+            <Heading as="h1" size="xl" color="#ff5d22" fontFamily="var(--font-display)">
+              {t('notFound.title')}
             </Heading>
-
-            <Text fontSize="lg" color="gray.600">
-              The page you're looking for doesn't exist or has been moved.
+            <Text fontSize="lg" color="var(--color-text-secondary)">
+              {t('notFound.description')}
             </Text>
-
-            {/* Action Buttons */}
             <VStack spacing={3} mt={6}>
               <Button
                 as={Link}
@@ -52,9 +50,8 @@ export default function NotFound() {
                 _hover={{ transform: "scale(1.03)" }}
                 transition="all 0.2s"
               >
-                Return Home
+                {t('notFound.returnHome')}
               </Button>
-
               <Button
                 as={Link}
                 href="/contact"
@@ -63,13 +60,23 @@ export default function NotFound() {
                 size="md"
                 px={6}
               >
-                Contact Us
+                {t('notFound.contactUs')}
               </Button>
             </VStack>
           </VStack>
         </Container>
         <FooterApp />
       </Box>
+    </>
+  );
+}
+
+export default function NotFound() {
+  return (
+    <ChakraProvider>
+      <LanguageProvider>
+        <NotFoundContent />
+      </LanguageProvider>
     </ChakraProvider>
   );
 }

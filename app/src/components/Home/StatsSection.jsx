@@ -4,7 +4,7 @@ import React from "react";
 import {
   Box,
   Container,
-  SimpleGrid,
+  Flex,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -26,16 +26,21 @@ const AnimatedCounter = ({ end, suffix = "", duration = 2 }) => {
         if (!startTime) startTime = currentTime;
         const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
         setCount(Math.floor(progress * end));
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
+        if (progress < 1) requestAnimationFrame(animate);
       };
       requestAnimationFrame(animate);
     }
   }, [isInView, end, duration]);
 
   return (
-    <Text ref={ref} fontSize={{ base: "4xl", md: "5xl" }} fontWeight="bold" color="white">
+    <Text
+      ref={ref}
+      fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
+      fontWeight="800"
+      fontFamily="var(--font-display)"
+      color="white"
+      lineHeight="1"
+    >
       {count}{suffix}
     </Text>
   );
@@ -45,48 +50,22 @@ const StatsSection = () => {
   const { t } = useTranslation();
 
   const stats = [
-    {
-      value: 10,
-      suffix: "+",
-      label: t('home.stats.projectsCompleted'),
-    },
-    {
-      value: 98,
-      suffix: "%",
-      label: t('home.stats.clientSatisfaction'),
-    },
-    {
-      value: 24,
-      suffix: "/7",
-      label: t('home.stats.support'),
-    },
-    {
-      value: 5,
-      suffix: "+",
-      label: t('home.stats.yearsExperience'),
-    },
+    { value: 11, suffix: "+", label: t('home.stats.projectsCompleted') },
+    { value: 98, suffix: "%", label: t('home.stats.clientSatisfaction') },
+    { value: 24, suffix: "/7", label: t('home.stats.support') },
+    { value: 6, suffix: "+", label: t('home.stats.yearsExperience') },
+    { value: 15, suffix: "+", label: t('home.stats.technologiesMastered') },
   ];
 
   return (
-    <Box
-      py={20}
-      bgGradient="linear(135deg, #ff5d22 0%, #dd6b20 50%, #c05621 100%)"
-      position="relative"
-      overflow="hidden"
-    >
-      {/* Background pattern */}
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        opacity="0.1"
-        bgImage={`url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
-      />
-
-      <Container maxW="container.xl" position="relative" zIndex={1}>
-        <SimpleGrid columns={{ base: 2, md: 4 }} spacing={{ base: 8, md: 12 }}>
+    <Box py={20} bgGradient="linear(135deg, #ff5d22 0%, #dd6b20 50%, #c05621 100%)" position="relative">
+      <Container maxW="1280px">
+        <Flex
+          justify="space-between"
+          align="center"
+          flexWrap="wrap"
+          gap={{ base: 8, md: 4 }}
+        >
           {stats.map((stat, index) => (
             <MotionBox
               key={index}
@@ -94,22 +73,39 @@ const StatsSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              flex={{ base: "0 0 45%", md: "1" }}
+              position="relative"
+              _after={
+                index < stats.length - 1
+                  ? {
+                      content: '""',
+                      position: "absolute",
+                      right: "0",
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      height: "50px",
+                      width: "1px",
+                      bg: "rgba(255,255,255,0.2)",
+                      display: { base: "none", md: "block" },
+                    }
+                  : undefined
+              }
             >
-              <VStack spacing={2}>
+              <VStack spacing={2} textAlign="center">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 <Text
-                  color="white"
-                  fontSize={{ base: "sm", md: "md" }}
-                  fontWeight="medium"
-                  textAlign="center"
-                  opacity="0.9"
+                  color="rgba(255,255,255,0.8)"
+                  fontSize={{ base: "xs", md: "sm" }}
+                  fontWeight="500"
+                  textTransform="uppercase"
+                  letterSpacing="wider"
                 >
                   {stat.label}
                 </Text>
               </VStack>
             </MotionBox>
           ))}
-        </SimpleGrid>
+        </Flex>
       </Container>
     </Box>
   );
