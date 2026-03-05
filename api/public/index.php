@@ -12,12 +12,8 @@ use App\Controllers\{
     ContactController
 };
 use App\Middleware\ErrorMiddleware;
-use App\Middleware\JwtMiddleware;
 use App\Middleware\CorsMiddleware;
-use App\Config\Database;
-use App\Services\JwtService;
 use Dotenv\Dotenv;
-use Psr\Http\Message\ResponseFactoryInterface;
 use App\Services\MailSender;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -33,14 +29,6 @@ $dotenv->load();
 // $dbDatabase = $_ENV['DB_DATABASE'];
 // $dbUsername = $_ENV['DB_USERNAME'];
 // $dbPassword = $_ENV['DB_PASSWORD'];
-
-// $jwtSecret = $_ENV['JWT_SECRET'];
-// $jwtAlgorithm = $_ENV['JWT_ALGORITHM'];
-// $jwtExpiration = $_ENV['JWT_EXPIRATION'];
-
-// $jwtRefreshSecret = $_ENV['JWT_REFRESH_SECRET'];
-// $jwtRefreshAlgorithm = $_ENV['JWT_REFRESH_ALGORITHM'];
-// $jwtRefreshExpiration = $_ENV['JWT_REFRESH_EXPIRATION'];
 
 // Initialiser la connexion à la base de données
 // Database::connect(
@@ -67,8 +55,6 @@ if( $_ENV['APP_ENV'] != 'local') {
 // Récupérer la ResponseFactoryInterface depuis le conteneur de Slim
 $responseFactory = $app->getResponseFactory();
 
-// Instancier JwtMiddleware manuellement
-// $jwtMiddleware = new JwtMiddleware($responseFactory);
 $errorMiddleware = new ErrorMiddleware($responseFactory);
 
 $app->add($errorMiddleware);
@@ -81,10 +67,5 @@ $app->addErrorMiddleware(true, true, true);
 
 $app->post('/contact', [ContactController::class, 'send_contact']);
 // $app->post('/quote', [ContactController::class, 'send_quote']);
-
-// $app->group('', function ($group) {
-//     // des route prive
-
-// })->add($jwtMiddleware);
 
 $app->run();

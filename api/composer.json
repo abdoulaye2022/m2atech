@@ -20,7 +20,6 @@
         "dompdf/dompdf": "^3.1",
         "getbrevo/brevo-php": "1.x.x",
         "nesbot/carbon": "^3.8",
-        "firebase/php-jwt": "^7.0",
         "guzzlehttp/guzzle": "^7.9"
     }
 }
