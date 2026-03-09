@@ -53,33 +53,48 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
   # ============================================
-  # Backend - Deploy to LWS via SFTP
+  # Backend - Deploy to LWS via rsync
   # ============================================
   backend-deploy:
-    name: Backend - Deploy via SFTP
+    name: Backend - Deploy via rsync
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Check if backend changed
+        id: changes
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -q '^api/'; then
+            echo "backend_changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "backend_changed=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Set up PHP
+        if: steps.changes.outputs.backend_changed == 'true'
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           tools: composer
 
       - name: Install Composer dependencies
+        if: steps.changes.outputs.backend_changed == 'true'
         working-directory: ./api/
         run: composer install --no-dev --prefer-dist --optimize-autoloader
 
-      - name: Deploy to LWS via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server: ${{ secrets.FTP_SERVER_M2A }}
-          username: ${{ secrets.FTP_USERNAME_M2A }}
-          password: ${{ secrets.FTP_PASSWORD_M2A }}
-          port: 22 
-          local_path: './api/*'
-          remote_path: './www/api.m2atech/'
-          sftpArgs: '-o StrictHostKeyChecking=no'
+      - name: Deploy to LWS via rsync
+        if: steps.changes.outputs.backend_changed == 'true'
+        run: |
+          sudo apt-get install -y sshpass
+          sshpass -p "${{ secrets.FTP_PASSWORD_M2A }}" rsync -avz --delete \
+            -e "ssh -p 22 -o StrictHostKeyChecking=no" \
+            ./api/ \
+            ${{ secrets.FTP_USERNAME_M2A }}@${{ secrets.FTP_SERVER_M2A }}:./www/api.m2atech/
+
+      - name: Skip deploy (no backend changes)
+        if: steps.changes.outputs.backend_changed == 'false'
+        run: echo "No changes in api/ — skipping backend deploy"
