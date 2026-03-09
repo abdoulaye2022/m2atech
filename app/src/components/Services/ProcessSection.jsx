@@ -26,7 +26,7 @@ const ProcessSection = () => {
             as="h2"
             fontSize={{ base: "3xl", md: "4xl" }}
             fontFamily="var(--font-display)"
-            fontWeight="800"
+            fontWeight="700"
             color="var(--color-text-primary)"
             mb={4}
           >
@@ -88,7 +88,7 @@ const ProcessSection = () => {
                 >
                   <Text
                     fontFamily="var(--font-display)"
-                    fontWeight="800"
+                    fontWeight="700"
                     color="#ff5d22"
                     fontSize="lg"
                   >
@@ -136,7 +136,7 @@ const ProcessSection = () => {
                     justify="center"
                     flexShrink={0}
                   >
-                    <Text fontFamily="var(--font-display)" fontWeight="800" color="#ff5d22" fontSize="sm">
+                    <Text fontFamily="var(--font-display)" fontWeight="700" color="#ff5d22" fontSize="sm">
                       {step.num}
                     </Text>
                   </Flex>

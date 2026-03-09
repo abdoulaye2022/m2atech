@@ -42,7 +42,7 @@ const AnimatedCounter = ({ end, suffix = "", label }) => {
     <VStack ref={ref} spacing={0} align="center">
       <Text
         fontSize={{ base: "2xl", md: "3xl" }}
-        fontWeight="800"
+        fontWeight="700"
         fontFamily="var(--font-display)"
         color="var(--color-text-primary)"
       >
@@ -145,7 +145,7 @@ function MainBanner() {
               <Heading
                 as="h1"
                 fontSize={{ base: "3xl", md: "4xl", lg: "5xl", xl: "6xl" }}
-                fontWeight="800"
+                fontWeight="700"
                 lineHeight="1.1"
                 fontFamily="var(--font-display)"
                 color="var(--color-text-primary)"
@@ -196,7 +196,7 @@ function MainBanner() {
                   <Button
                     size="lg"
                     variant="outline"
-                    borderColor="var(--color-text-primary)"
+                    borderColor="var(--color-border)"
                     color="var(--color-text-primary)"
                     px={8}
                     py={7}
@@ -204,7 +204,7 @@ function MainBanner() {
                     fontFamily="var(--font-display)"
                     fontWeight={700}
                     _hover={{
-                      bg: "var(--color-text-primary)",
+                      bg: "#ff5d22",
                       color: "white",
                       transform: "translateY(-3px)",
                     }}
@@ -237,7 +237,7 @@ function MainBanner() {
           >
             <Box position="relative" w="100%" h="500px" borderRadius="2xl" overflow="hidden">
               <Image
-                src="/img/hero-banner.jpg"
+                src="/img/banner-img1.png"
                 alt="M2ATech team working on digital solutions"
                 fill
                 style={{ objectFit: "cover", borderRadius: "1rem" }}

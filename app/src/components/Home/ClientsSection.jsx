@@ -33,7 +33,7 @@ const ClientsSection = () => {
             as="h2"
             fontSize={{ base: "3xl", md: "4xl" }}
             fontFamily="var(--font-display)"
-            fontWeight="800"
+            fontWeight="700"
             color="var(--color-text-primary)"
           >
             {t('home.clients.title')}{" "}

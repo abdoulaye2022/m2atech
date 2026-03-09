@@ -26,7 +26,7 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
     >
       <Box
         borderBottom="1px solid"
-        borderColor="rgba(0, 0, 0, 0.06)"
+        borderColor="var(--color-border)"
         py={5}
       >
         <Flex
@@ -119,7 +119,7 @@ const FAQSection = () => {
             as="h2"
             fontSize={{ base: "3xl", md: "4xl" }}
             fontFamily="var(--font-display)"
-            fontWeight="800"
+            fontWeight="700"
             color="var(--color-text-primary)"
             mb={4}
           >

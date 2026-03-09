@@ -25,7 +25,7 @@ const ContactBanner = () => {
   return (
     <Box
       py={20}
-      bg="#0f0f0f"
+      bg="#1c1c21"
       position="relative"
       overflow="hidden"
     >
@@ -58,7 +58,7 @@ const ContactBanner = () => {
                 as="h3"
                 fontSize={{ base: "2xl", md: "3xl" }}
                 fontFamily="var(--font-display)"
-                fontWeight="800"
+                fontWeight="700"
                 color="white"
                 lineHeight="1.2"
               >

@@ -11,9 +11,9 @@
   --color-orange-primary: #ff5d22;
   --color-orange-light: #ff7a45;
   --color-orange-glow: rgba(255, 93, 34, 0.10);
-  --color-text-primary: #0f0f0f;
-  --color-text-secondary: #4a4a52;
-  --color-text-muted: #9090a0;
+  --color-text-primary: #1c1c21;
+  --color-text-secondary: #55556a;
+  --color-text-muted: #8e8ea0;
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 }
@@ -112,8 +112,8 @@ a {
 .section-number {
   font-family: var(--font-display);
   font-size: clamp(80px, 10vw, 120px);
-  font-weight: 800;
-  color: #e8e8e8;
+  font-weight: 700;
+  color: #ececec;
   position: absolute;
   top: -20px;
   left: 0;

@@ -36,7 +36,7 @@ const AnimatedCounter = ({ end, suffix = "", duration = 2 }) => {
     <Text
       ref={ref}
       fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
-      fontWeight="800"
+      fontWeight="700"
       fontFamily="var(--font-display)"
       color="white"
       lineHeight="1"

@@ -69,7 +69,7 @@ const WhyChooseUsSection = () => {
                 as="h2"
                 fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
                 fontFamily="var(--font-display)"
-                fontWeight="800"
+                fontWeight="700"
                 color="var(--color-text-primary)"
                 mb={4}
                 lineHeight="1.1"

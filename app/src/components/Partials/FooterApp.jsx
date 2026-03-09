@@ -31,7 +31,7 @@ const FooterApp = () => {
   ];
 
   return (
-    <Box bg="#080808" color="white" position="relative">
+    <Box bg="#1c1c21" color="white" position="relative">
       {/* Top separator */}
       <Box className="accent-bar" />
 

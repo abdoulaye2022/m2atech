@@ -278,9 +278,10 @@ const MobileNav = () => {
           key={item.href}
           href={item.href}
           py={2}
+          display="block"
           fontWeight={600}
           color="var(--color-text-primary)"
-          _hover={{ color: "#ff5d22" }}
+          _hover={{ color: "#ff5d22", textDecoration: "none" }}
         >
           {item.label}
         </Link>
