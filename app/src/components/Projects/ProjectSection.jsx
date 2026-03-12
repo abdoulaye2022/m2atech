@@ -50,6 +50,8 @@ import {
   FaClipboardList,
   FaLeaf,
   FaUsers,
+  FaFileInvoiceDollar,
+  FaCar,
 } from "react-icons/fa";
 import { useTranslation } from "@/hooks/useTranslation";
 import AnimatedSection from "../Partials/AnimatedSection";
@@ -60,6 +62,36 @@ const MotionBox = motion(Box);
 const MotionButton = motion(Button);
 
 const getProjects = (t) => [
+  {
+    key: "beydoumAuto",
+    title: t('projects.projects.beydoumAuto.title'),
+    description: t('projects.projects.beydoumAuto.description'),
+    tags: ["Flutter", "Dart", "PHP", "Slim 4", "MySQL", "JWT", "mPDF", "Mobile App"],
+    icon: FaCar,
+    category: t('projects.projects.beydoumAuto.category'),
+    images: [
+      "/img/projects/beydoumauto1.png",
+      "/img/projects/beydoumauto2.png",
+      "/img/projects/beydoumauto3.png",
+    ],
+    features: t('projects.projects.beydoumAuto.features'),
+    liveUrl: "#",
+  },
+  {
+    key: "wasifacture",
+    title: t('projects.projects.wasifacture.title'),
+    description: t('projects.projects.wasifacture.description'),
+    tags: ["Laravel 11", "Flutter", "Docker", "MySQL", "Sanctum", "Multi-tenant", "SaaS"],
+    icon: FaFileInvoiceDollar,
+    category: t('projects.projects.wasifacture.category'),
+    images: [
+      "/img/projects/wasifacture1.png",
+      "/img/projects/wasifacture2.png",
+      "/img/projects/wasifacture3.png",
+    ],
+    features: t('projects.projects.wasifacture.features'),
+    liveUrl: "https://wasifacture.com",
+  },
   {
     key: "kidsecure",
     title: t('projects.projects.kidsecure.title'),

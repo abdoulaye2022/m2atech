@@ -752,6 +752,40 @@ export const translations = {
             "Social Impact Reporting"
           ]
         },
+        wasifacture: {
+          title: "WasiFacture",
+          description: "Web and mobile invoicing platform designed for West African businesses. Multi-tenant SaaS with quotes, invoices, payments tracking, and FCFA currency support for seamless financial management.",
+          category: "SaaS Invoicing Platform",
+          features: [
+            "Multi-tenant Architecture",
+            "Quotes & Invoices Management",
+            "FCFA Currency Support",
+            "Payment Tracking",
+            "PDF Generation & Export",
+            "Mobile App (iOS & Android)",
+            "Role-based Access Control",
+            "Client Management",
+            "Tax Regime Support",
+            "Real-time Dashboard"
+          ]
+        },
+        beydoumAuto: {
+          title: "Beydoum Auto Inc",
+          description: "Mobile invoicing application for auto garages. Mechanics can create and manage invoices directly from their phone with parts catalog, labour tracking, and professional PDF generation.",
+          category: "Mobile Business App",
+          features: [
+            "Mobile Invoice Creation",
+            "Parts Catalog & Search",
+            "Labour Rate Tracking",
+            "PDF Invoice Generation",
+            "Client Management",
+            "Sequential Invoice Numbering",
+            "Tax Calculation (TPS+TVQ)",
+            "CSV Parts Import",
+            "Offline Capable",
+            "JWT Authentication"
+          ]
+        },
         fraisChezVous: {
           title: "Frais Chez Vous",
           description: "Fresh grocery delivery platform connecting local farmers and producers to consumers. Order fresh fruits, vegetables, and local products with same-day delivery in the Maritimes region",
@@ -1650,6 +1684,40 @@ export const translations = {
             "Promotion de l'Entrepreneuriat",
             "Programmes d'Autonomisation Femmes",
             "Rapports d'Impact Social"
+          ]
+        },
+        wasifacture: {
+          title: "WasiFacture",
+          description: "Plateforme web et mobile de facturation conçue pour les entreprises d'Afrique de l'Ouest. SaaS multi-tenant avec devis, factures, suivi des paiements et support du FCFA pour une gestion financière simplifiée.",
+          category: "Plateforme SaaS de Facturation",
+          features: [
+            "Architecture Multi-tenant",
+            "Gestion Devis & Factures",
+            "Support Devise FCFA",
+            "Suivi des Paiements",
+            "Génération & Export PDF",
+            "Application Mobile (iOS & Android)",
+            "Contrôle d'Accès par Rôle",
+            "Gestion des Clients",
+            "Support Régime Fiscal",
+            "Tableau de Bord Temps Réel"
+          ]
+        },
+        beydoumAuto: {
+          title: "Beydoum Auto Inc",
+          description: "Application mobile de facturation pour garages automobiles. Les mécaniciens peuvent créer et gérer des factures directement depuis leur téléphone avec catalogue de pièces, suivi de main-d'œuvre et génération de PDF professionnels.",
+          category: "Application Mobile Business",
+          features: [
+            "Création de Factures Mobile",
+            "Catalogue & Recherche de Pièces",
+            "Suivi Taux Main-d'Œuvre",
+            "Génération PDF Factures",
+            "Gestion des Clients",
+            "Numérotation Séquentielle",
+            "Calcul Taxes (TPS+TVQ)",
+            "Import CSV Pièces",
+            "Mode Hors-ligne",
+            "Authentification JWT"
           ]
         },
         fraisChezVous: {
