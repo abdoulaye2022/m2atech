@@ -15,7 +15,31 @@ class ContactController
     {
         // Récupérer les données du formulaire
         $data = $request->getParsedBody();
-    
+
+        // Vérifier le token reCAPTCHA v3
+        $recaptchaToken = $data['recaptchaToken'] ?? null;
+        $recaptchaSecret = Config::get('RECAPTCHA_SECRET_KEY');
+
+        if ($recaptchaSecret && $recaptchaToken) {
+            $verifyResponse = file_get_contents(
+                'https://www.google.com/recaptcha/api/siteverify?' . http_build_query([
+                    'secret' => $recaptchaSecret,
+                    'response' => $recaptchaToken,
+                ])
+            );
+            $recaptchaResult = json_decode($verifyResponse, true);
+
+            if (!$recaptchaResult['success'] || ($recaptchaResult['score'] ?? 0) < 0.5) {
+                $response->getBody()->write(json_encode([
+                    'status' => 'error',
+                    'message' => 'Vérification reCAPTCHA échouée. Veuillez réessayer.',
+                ]));
+                return $response
+                    ->withHeader('Content-Type', 'application/json')
+                    ->withStatus(403);
+            }
+        }
+
         // Valider les champs
         $errors = [];
         if (empty($data['name'])) {
