@@ -177,3 +177,8 @@ a {
   background: rgba(255, 93, 34, 0.15);
   color: #0f0f0f;
 }
+
+/* Hide reCAPTCHA badge (notice is in the contact form) */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
