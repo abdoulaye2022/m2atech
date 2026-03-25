@@ -377,6 +377,11 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
+        <script
+          src="https://api.m2abot.ai/widget.js"
+          data-token="df4f4808d6976c6d2ad230bd4fbcc79cd19a73d733d7a8b77339453f12547e21"
+          async
+        />
       </head>
       <body suppressHydrationWarning>
         <GoogleTagManager />
