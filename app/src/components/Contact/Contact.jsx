@@ -60,19 +60,18 @@ const Contact = () => {
 
   const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
-  // Load reCAPTCHA Enterprise script
+  // Load reCAPTCHA v3 script
   useEffect(() => {
     if (!recaptchaSiteKey || recaptchaSiteKey === 'your-recaptcha-site-key') return;
 
     const script = document.createElement('script');
-    script.src = `https://www.google.com/recaptcha/enterprise.js?render=${recaptchaSiteKey}`;
+    script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`;
     script.async = true;
     script.onload = () => setRecaptchaLoaded(true);
     document.head.appendChild(script);
 
     return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector(`script[src*="recaptcha/enterprise.js"]`);
+      const existingScript = document.querySelector(`script[src*="recaptcha/api.js"]`);
       if (existingScript) {
         existingScript.remove();
       }
@@ -81,14 +80,14 @@ const Contact = () => {
 
   // Get reCAPTCHA token
   const getRecaptchaToken = useCallback(async () => {
-    if (!recaptchaLoaded || !window.grecaptcha?.enterprise) {
+    if (!recaptchaLoaded || !window.grecaptcha) {
       return null;
     }
 
     return new Promise((resolve) => {
-      window.grecaptcha.enterprise.ready(async () => {
+      window.grecaptcha.ready(async () => {
         try {
-          const token = await window.grecaptcha.enterprise.execute(recaptchaSiteKey, {
+          const token = await window.grecaptcha.execute(recaptchaSiteKey, {
             action: 'CONTACT_FORM'
           });
           resolve(token);
