@@ -12,7 +12,6 @@ import BlogPreviewSection from "@/components/Home/BlogPreviewSection";
 import ContactBanner from "@/components/Partials/ContactBanner";
 import FooterApp from "@/components/Partials/FooterApp";
 import Navbar from "@/components/Partials/Navbar";
-import FloatingCTA from "@/components/Partials/FloatingCTA";
 import ProcessSection from "@/components/Services/ProcessSection";
 import { Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
@@ -52,7 +51,6 @@ export default function Home() {
         <FAQSection />
         <FooterApp />
       </MotionBox>
-      <FloatingCTA />
     </>
   );
 }
