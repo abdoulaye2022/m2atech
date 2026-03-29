@@ -379,7 +379,7 @@ export default function RootLayout({ children }) {
         />
         <script
           src="https://api.m2abot.ai/widget.js"
-          data-token="df4f4808d6976c6d2ad230bd4fbcc79cd19a73d733d7a8b77339453f12547e21"
+          data-token="5974476bbc8fe9f078a7ba9cd1d186a4c6165051fc85d3b5945c08aee7ab46f2"
           async
         />
       </head>
