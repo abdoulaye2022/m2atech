@@ -16,20 +16,39 @@ class ContactController
         // Récupérer les données du formulaire
         $data = $request->getParsedBody();
 
-        // Vérifier le token reCAPTCHA v3
+        // Vérifier le token reCAPTCHA Enterprise
         $recaptchaToken = $data['recaptchaToken'] ?? null;
-        $recaptchaSecret = Config::get('RECAPTCHA_SECRET_KEY');
+        $recaptchaApiKey = Config::get('RECAPTCHA_SECRET_KEY');
+        $recaptchaProjectId = Config::get('RECAPTCHA_PROJECT_ID');
+        $recaptchaSiteKey = Config::get('RECAPTCHA_SITE_KEY');
+        $scoreThreshold = (float) Config::get('RECAPTCHA_SCORE_THRESHOLD', 0.5);
 
-        if ($recaptchaSecret && $recaptchaToken) {
-            $verifyResponse = file_get_contents(
-                'https://www.google.com/recaptcha/api/siteverify?' . http_build_query([
-                    'secret' => $recaptchaSecret,
-                    'response' => $recaptchaToken,
-                ])
-            );
-            $recaptchaResult = json_decode($verifyResponse, true);
+        if ($recaptchaApiKey && $recaptchaProjectId && $recaptchaToken) {
+            $url = "https://recaptchaenterprise.googleapis.com/v1/projects/{$recaptchaProjectId}/assessments?key={$recaptchaApiKey}";
 
-            if (!$recaptchaResult['success'] || ($recaptchaResult['score'] ?? 0) < 0.5) {
+            $payload = json_encode([
+                'event' => [
+                    'token' => $recaptchaToken,
+                    'expectedAction' => 'CONTACT_FORM',
+                    'siteKey' => $recaptchaSiteKey,
+                ],
+            ]);
+
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+            $verifyResponse = curl_exec($ch);
+            curl_close($ch);
+
+            $result = json_decode($verifyResponse, true);
+
+            $tokenValid = ($result['tokenProperties']['valid'] ?? false) === true;
+            $score = $result['riskAnalysis']['score'] ?? 0;
+            $action = $result['tokenProperties']['action'] ?? '';
+
+            if (!$tokenValid || $score < $scoreThreshold || $action !== 'CONTACT_FORM') {
                 $response->getBody()->write(json_encode([
                     'status' => 'error',
                     'message' => 'Vérification reCAPTCHA échouée. Veuillez réessayer.',
