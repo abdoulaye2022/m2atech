@@ -17,38 +17,68 @@ class ContactController
         $data = $request->getParsedBody();
 
         // Vérifier le token reCAPTCHA Enterprise
-        $recaptchaToken = $data['recaptchaToken'] ?? null;
-        $recaptchaApiKey = Config::get('RECAPTCHA_SECRET_KEY');
-        $recaptchaProjectId = Config::get('RECAPTCHA_PROJECT_ID');
-        $recaptchaSiteKey = Config::get('RECAPTCHA_SITE_KEY');
-        $scoreThreshold = (float) Config::get('RECAPTCHA_SCORE_THRESHOLD', 0.5);
+        $recaptchaEnabled = Config::get('RECAPTCHA_ENABLED', 'false') === 'true';
 
-        if ($recaptchaApiKey && $recaptchaProjectId && $recaptchaToken) {
-            $url = "https://recaptchaenterprise.googleapis.com/v1/projects/{$recaptchaProjectId}/assessments?key={$recaptchaApiKey}";
+        if ($recaptchaEnabled) {
+            $recaptchaToken = $data['recaptcha_token'] ?? null;
+            $apiKey = Config::get('RECAPTCHA_SECRET_KEY');
+            $projectId = Config::get('RECAPTCHA_PROJECT_ID');
+            $siteKey = Config::get('RECAPTCHA_SITE_KEY');
+            $threshold = (float) Config::get('RECAPTCHA_SCORE_THRESHOLD', 0.5);
+            $expectedAction = 'CONTACT_FORM';
 
-            $payload = json_encode([
-                'event' => [
-                    'token' => $recaptchaToken,
-                    'expectedAction' => 'CONTACT_FORM',
-                    'siteKey' => $recaptchaSiteKey,
-                ],
-            ]);
+            if (empty($recaptchaToken)) {
+                $response->getBody()->write(json_encode([
+                    'status' => 'error',
+                    'message' => 'Le token reCAPTCHA est requis.',
+                ]));
+                return $response
+                    ->withHeader('Content-Type', 'application/json')
+                    ->withStatus(422);
+            }
+
+            $url = "https://recaptchaenterprise.googleapis.com/v1/projects/{$projectId}/assessments?key={$apiKey}";
 
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+                'event' => [
+                    'token' => $recaptchaToken,
+                    'siteKey' => $siteKey,
+                    'expectedAction' => $expectedAction,
+                ],
+            ]));
             $verifyResponse = curl_exec($ch);
+            $curlError = curl_error($ch);
             curl_close($ch);
+
+            if ($curlError) {
+                error_log('reCAPTCHA curl error: ' . $curlError);
+                $response->getBody()->write(json_encode([
+                    'status' => 'error',
+                    'message' => 'Erreur de vérification reCAPTCHA.',
+                ]));
+                return $response
+                    ->withHeader('Content-Type', 'application/json')
+                    ->withStatus(500);
+            }
 
             $result = json_decode($verifyResponse, true);
 
             $tokenValid = ($result['tokenProperties']['valid'] ?? false) === true;
-            $score = $result['riskAnalysis']['score'] ?? 0;
             $action = $result['tokenProperties']['action'] ?? '';
+            $score = $result['riskAnalysis']['score'] ?? 0.0;
 
-            if (!$tokenValid || $score < $scoreThreshold || $action !== 'CONTACT_FORM') {
+            if (!$tokenValid || $action !== $expectedAction || $score < $threshold) {
+                error_log('reCAPTCHA failed: ' . json_encode([
+                    'tokenValid' => $tokenValid,
+                    'action' => $action,
+                    'score' => $score,
+                    'threshold' => $threshold,
+                    'apiResponse' => $result,
+                ]));
                 $response->getBody()->write(json_encode([
                     'status' => 'error',
                     'message' => 'Vérification reCAPTCHA échouée. Veuillez réessayer.',

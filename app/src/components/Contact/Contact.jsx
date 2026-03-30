@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -42,6 +42,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 import AnimatedSection from "../Partials/AnimatedSection";
 import StaggeredContainer from "../Partials/StaggeredContainer";
 import { motion } from "framer-motion";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -53,51 +54,10 @@ const Contact = () => {
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&q=${encodedAddress}`;
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
   const { t } = useTranslation();
-
-  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-
-  // Load reCAPTCHA Enterprise script
-  useEffect(() => {
-    if (!recaptchaSiteKey || recaptchaSiteKey === 'your-recaptcha-site-key') return;
-
-    const script = document.createElement('script');
-    script.src = `https://www.google.com/recaptcha/enterprise.js?render=${recaptchaSiteKey}`;
-    script.async = true;
-    script.onload = () => setRecaptchaLoaded(true);
-    document.head.appendChild(script);
-
-    return () => {
-      const existingScript = document.querySelector(`script[src*="recaptcha/enterprise.js"]`);
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, [recaptchaSiteKey]);
-
-  // Get reCAPTCHA Enterprise token
-  const getRecaptchaToken = useCallback(async () => {
-    if (!recaptchaLoaded || !window.grecaptcha?.enterprise) {
-      return null;
-    }
-
-    return new Promise((resolve) => {
-      window.grecaptcha.enterprise.ready(async () => {
-        try {
-          const token = await window.grecaptcha.enterprise.execute(recaptchaSiteKey, {
-            action: 'CONTACT_FORM'
-          });
-          resolve(token);
-        } catch (error) {
-          console.error('reCAPTCHA error:', error);
-          resolve(null);
-        }
-      });
-    });
-  }, [recaptchaLoaded, recaptchaSiteKey]);
+  const { executeRecaptcha } = useRecaptcha();
 
   const getContactMethods = () => [
     {
@@ -165,24 +125,12 @@ const Contact = () => {
 
     try {
       // Get reCAPTCHA Enterprise token
-      const recaptchaToken = await getRecaptchaToken();
-
-      if (!recaptchaToken && recaptchaSiteKey && recaptchaSiteKey !== 'your-recaptcha-site-key') {
-        toast({
-          title: t('contact.form.errors.recaptchaRequired'),
-          description: t('contact.form.errors.recaptchaFailed'),
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-        });
-        setIsSubmitting(false);
-        return;
-      }
+      const recaptcha_token = await executeRecaptcha('CONTACT_FORM');
 
       // Include recaptcha token in the request
       const res = await api_contact({
         ...formData,
-        recaptchaToken: recaptchaToken,
+        recaptcha_token,
       });
 
       if (res.status) {
