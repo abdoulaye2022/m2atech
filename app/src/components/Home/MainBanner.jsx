@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaCheckCircle } from "react-icons/fa";
 import { useTranslation } from "@/hooks/useTranslation";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
@@ -172,7 +173,7 @@ function MainBanner() {
 
             <MotionBox variants={fadeUp}>
               <HStack spacing={4} flexWrap="wrap">
-                <Link href="/projects" passHref>
+                <Link href="/contact" passHref>
                   <Button
                     size="lg"
                     bg="#ff5d22"
@@ -192,7 +193,7 @@ function MainBanner() {
                     {t('home.mainBanner.cta')}
                   </Button>
                 </Link>
-                <Link href="/contact" passHref>
+                <Link href="/projects" passHref>
                   <Button
                     size="lg"
                     variant="outline"
@@ -216,12 +217,29 @@ function MainBanner() {
               </HStack>
             </MotionBox>
 
+            <MotionBox variants={fadeUp} mt={5}>
+              <HStack spacing={{ base: 4, md: 6 }} flexWrap="wrap" rowGap={2}>
+                {[
+                  t('home.mainBanner.trustFreeConsult'),
+                  t('home.mainBanner.trustQuote24h'),
+                  t('home.mainBanner.trustNoCommitment'),
+                ].map((item, i) => (
+                  <HStack key={i} spacing={2}>
+                    <Box as={FaCheckCircle} color="#ff5d22" boxSize="16px" />
+                    <Text fontSize="sm" color="var(--color-text-secondary)" fontWeight={500}>
+                      {item}
+                    </Text>
+                  </HStack>
+                ))}
+              </HStack>
+            </MotionBox>
+
             <MotionBox variants={fadeUp} mt={12}>
               <HStack
                 spacing={{ base: 6, md: 10 }}
                 divider={<Box h="40px" w="1px" bg="rgba(0, 0, 0, 0.1)" />}
               >
-                <AnimatedCounter end={11} suffix="+" label={t('home.stats.projectsCompleted')} />
+                <AnimatedCounter end={25} suffix="+" label={t('home.stats.projectsCompleted')} />
                 <AnimatedCounter end={98} suffix="%" label={t('home.stats.clientSatisfaction')} />
                 <AnimatedCounter end={6} suffix="+" label={t('home.stats.yearsLabel')} />
               </HStack>

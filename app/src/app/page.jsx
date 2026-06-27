@@ -6,6 +6,7 @@ import ToolsSection from "@/components/Home/ToolsSection";
 import WhyChooseUsSection from "@/components/Home/WhyChooseUsSection";
 import StatsSection from "@/components/Home/StatsSection";
 import ClientsSection from "@/components/Home/ClientsSection";
+import PromotionBanner from "@/components/Home/PromotionBanner";
 import TestimonialsSection from "@/components/Home/TestimonialsSection";
 import FAQSection from "@/components/Home/FAQSection";
 import BlogPreviewSection from "@/components/Home/BlogPreviewSection";
@@ -42,6 +43,7 @@ export default function Home() {
         <ServicesSection />
         <StatsSection />
         <WhyChooseUsSection />
+        <PromotionBanner />
         <ProcessSection />
         <ToolsSection />
         <ContactBanner />

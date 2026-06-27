@@ -12,7 +12,7 @@ import {
   HStack,
   VStack,
 } from "@chakra-ui/react";
-import { FaEnvelope, FaPhoneAlt, FaArrowRight } from "react-icons/fa";
+import { FaEnvelope, FaPhoneAlt, FaArrowRight, FaCheckCircle } from "react-icons/fa";
 import { useTranslation } from "@/hooks/useTranslation";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -71,6 +71,21 @@ const ContactBanner = () => {
               <Text color="rgba(255, 255, 255, 0.6)" fontSize="lg" maxW="500px">
                 {t('ctaBanner.subtitle')}
               </Text>
+
+              <HStack spacing={{ base: 4, md: 6 }} mt={2} flexWrap="wrap" rowGap={2}>
+                {[
+                  t('home.mainBanner.trustFreeConsult'),
+                  t('home.mainBanner.trustQuote24h'),
+                  t('home.mainBanner.trustNoCommitment'),
+                ].map((item, i) => (
+                  <HStack key={i} spacing={2}>
+                    <Box as={FaCheckCircle} color="#ff5d22" boxSize="16px" />
+                    <Text color="rgba(255, 255, 255, 0.85)" fontSize="sm" fontWeight={500}>
+                      {item}
+                    </Text>
+                  </HStack>
+                ))}
+              </HStack>
 
               <HStack spacing={6} mt={2}>
                 <HStack spacing={2}>

@@ -26,17 +26,20 @@ export const translations = {
     // Home Page
     home: {
       mainBanner: {
-        title: "Digital Solutions for",
-        titleHighlight: "Modern Businesses",
-        subtitle: "We specialize in web development, mobile applications, custom software, and SEO services to help your business grow in the digital world.",
-        cta: "Get Started",
-        ctaSecondary: "Learn More",
-        badge: "Your Digital Partner in Atlantic Canada"
+        title: "We Build Digital Products That",
+        titleHighlight: "Grow Your Business",
+        subtitle: "Web, mobile, and AI solutions that turn visitors into paying customers — launched fast and built to scale. From idea to launch in as little as 2 weeks.",
+        cta: "Get My Free Quote",
+        ctaSecondary: "See Our Work",
+        badge: "Your Digital Growth Partner in Atlantic Canada",
+        trustFreeConsult: "Free 30-min consultation",
+        trustQuote24h: "Quote within 24h",
+        trustNoCommitment: "No commitment"
       },
       services: {
         title: "Our Services",
         titleHighlight: "Services",
-        subtitle: "We offer comprehensive digital solutions to transform your business",
+        subtitle: "From idea to launch, we design and build the web, mobile and AI solutions that grow your revenue — not just your tech stack.",
         viewAll: "View All Services",
         webApps: {
           title: "Web Apps",
@@ -75,15 +78,15 @@ export const translations = {
         toolsPlatforms: "Tools & Platforms"
       },
       promotion: {
-        badge: "NEW LAUNCH",
-        title: "2025 Launch Special!",
-        description: "Get 30% OFF all services until March 31, 2025",
-        button: "View Offers"
+        badge: "LIMITED SPOTS",
+        title: "Start Your Project Risk-Free",
+        description: "Book a free 30-minute strategy consultation and get a detailed quote within 24 hours — no commitment required.",
+        button: "Claim My Free Consultation"
       },
       whyChooseUs: {
         title: "Why Choose",
         titleHighlight: "M2ATech?",
-        subtitle: "We combine technical expertise with a personalized approach to deliver exceptional results for your business.",
+        subtitle: "We don't just write code — we deliver results: faster launches, happier customers, and measurable growth for your business.",
         speed: {
           title: "Fast Delivery",
           description: "We deliver high-quality solutions quickly without compromising on quality."
@@ -260,11 +263,11 @@ export const translations = {
     },
 
     ctaBanner: {
-      title1: "Free consultation of",
-      titleHighlight: "30 minutes",
-      title2: "for your digital project",
-      subtitle: "Let's discuss your project and find the best solution for your business together.",
-      button: "Book my consultation"
+      title1: "Let's turn your idea into",
+      titleHighlight: "measurable growth",
+      title2: "for your business",
+      subtitle: "Book your free 30-minute consultation today and get a detailed quote within 24 hours. No commitment, no pressure — just a clear plan to grow your business.",
+      button: "Get My Free Quote"
     },
 
     notFound: {
@@ -786,6 +789,125 @@ export const translations = {
             "JWT Authentication"
           ]
         },
+        garopro: {
+          title: "GaroPro",
+          description: "All-in-one bilingual garage management SaaS for independent Canadian auto repair shops. From reception to work orders, digital inspections, quotes, invoicing and automated reminders — designed and hosted in Canada.",
+          category: "Garage Management SaaS",
+          features: [
+            "Digital Work Orders & Kanban Board",
+            "Digital Vehicle Inspections (Photo/Video)",
+            "Client-Approvable Online Quotes",
+            "Automated Canadian Tax Invoicing (GST/QST)",
+            "Payments (Stripe, Square, Interac)",
+            "SMS & Email Reminders",
+            "Mobile Apps (iOS & Android)",
+            "Multi-location Management",
+            "QuickBooks Export & VIN Decoder",
+            "Canadian Hosting & PIPEDA Compliant"
+          ]
+        },
+        sahelcode: {
+          title: "SahelCode",
+          description: "AI coding assistant built for West African developers. Generate, explain and refactor code through a web chat and an autonomous CLI, with French/English support and local mobile-money payments.",
+          category: "AI Developer Tool",
+          features: [
+            "AI Chat for Code Q&A",
+            "Autonomous CLI (reads/creates/edits files)",
+            "Tiered Models (Fast / Powerful / Maximum)",
+            "Bilingual Code & Comments (FR/EN)",
+            "Framework Support (Laravel, Flutter, Next.js, Python)",
+            "Local Payments (Nita & Amana Mobile Money)",
+            "Ready-to-use Code Snippets",
+            "Conversation History",
+            "AES-256 Encryption",
+            "Free & Pro Tiers"
+          ]
+        },
+        m2abot: {
+          title: "M2aBot",
+          description: "Bilingual AI chatbot that automates customer service for Atlantic Canada SMEs. It answers website visitors 24/7 in French and English, captures leads and triggers instant notifications.",
+          category: "AI Chatbot SaaS",
+          features: [
+            "24/7 Bilingual Responses (FR/EN)",
+            "Automatic Language Detection",
+            "Lead Capture (Name, Email, Phone)",
+            "Website Content Learning",
+            "One-click Action Buttons",
+            "Instant Email & SMS Alerts",
+            "CMS Integrations (WordPress, Shopify, Wix)",
+            "Canadian Hosting & PIPEDA Compliant",
+            "Consent Management",
+            "Customizable Widget"
+          ]
+        },
+        binbabmakka: {
+          title: "Bin Bab Makka",
+          description: "Website and online booking platform for a Hajj and Umrah travel agency serving Nigerien pilgrims. Showcases pilgrimage packages, flights, hotels near the holy mosques and flexible payment options.",
+          category: "Travel Agency Website",
+          features: [
+            "Umrah & Hajj Package Catalog",
+            "Online Booking System",
+            "Flights & Hotels Showcase",
+            "Flexible Payment (Installments, Transfer, Card)",
+            "Multilingual Guides Info (FR, Hausa, Zarma, Arabic)",
+            "Customer Testimonials",
+            "WhatsApp & Email Contact",
+            "FAQ Section",
+            "Responsive Design",
+            "SEO Optimized"
+          ]
+        },
+        saura: {
+          title: "Saura",
+          description: "AI-powered real-time interpretation platform that makes meetings and events bilingual without human interpreters. Attendees scan a QR code to get live translated audio and subtitles on their own phone.",
+          category: "AI Interpretation SaaS",
+          features: [
+            "Real-time Voice Translation",
+            "Live Audio & Subtitles",
+            "QR Code Access (No Equipment)",
+            "Canadian French & English",
+            "Event-specific Glossaries",
+            "Post-event Transcripts & Recordings",
+            "Self-service Setup in Minutes",
+            "Data Hosted in Canada (Montreal)",
+            "Low-latency Streaming",
+            "Up to 90% Cheaper than Interpreters"
+          ]
+        },
+        lintellectois: {
+          title: "L'Intellectois",
+          description: "Online magazine dedicated to technology, general culture and media news. Features a press review, cultural articles and tech coverage with a custom admin CMS and newsletter.",
+          category: "News & Magazine Platform",
+          features: [
+            "Press Review (African & International)",
+            "General Culture Section",
+            "Technology & Cybersecurity Coverage",
+            "Featured Articles Carousel",
+            "Category Browsing",
+            "Admin CMS",
+            "Newsletter Subscription",
+            "Text Size Accessibility Controls",
+            "Social Media Sharing",
+            "Responsive Design"
+          ]
+        },
+        fourPlusOne: {
+          title: "4 Plus One Contracting",
+          description: "Bilingual business website for a residential and commercial general contractor in New Brunswick. Presents services, service area, a clear 4-step process and client testimonials to convert visitors into quote requests.",
+          category: "Construction Business Website",
+          features: [
+            "Service Offerings (Construction, Renovation, Roofing)",
+            "Service Area Coverage (Greater Moncton & NB)",
+            "4-Step Process Overview",
+            "Project Portfolio Showcase",
+            "Client Testimonials",
+            "Quote Request Forms",
+            "Bilingual Interface (EN/FR)",
+            "Newsletter Signup",
+            "SEO Optimized",
+            "Mobile Responsive Design"
+          ]
+        },
         fraisChezVous: {
           title: "Frais Chez Vous",
           description: "Fresh grocery delivery platform connecting local farmers and producers to consumers. Order fresh fruits, vegetables, and local products with same-day delivery in the Maritimes region",
@@ -960,17 +1082,20 @@ export const translations = {
     // Home Page
     home: {
       mainBanner: {
-        title: "Solutions Numériques pour les",
-        titleHighlight: "Entreprises Modernes",
-        subtitle: "Nous nous spécialisons dans le développement web, les applications mobiles, les logiciels personnalisés et les services SEO pour aider votre entreprise à croître dans le monde numérique.",
-        cta: "Commencer",
-        ctaSecondary: "En Savoir Plus",
-        badge: "Votre partenaire digital au Canada Atlantique"
+        title: "Nous créons des produits numériques qui",
+        titleHighlight: "font croître votre entreprise",
+        subtitle: "Des solutions web, mobiles et IA qui transforment vos visiteurs en clients — livrées vite et conçues pour évoluer. De l'idée au lancement en seulement 2 semaines.",
+        cta: "Obtenir mon devis gratuit",
+        ctaSecondary: "Voir nos réalisations",
+        badge: "Votre partenaire de croissance numérique au Canada Atlantique",
+        trustFreeConsult: "Consultation gratuite 30 min",
+        trustQuote24h: "Devis sous 24h",
+        trustNoCommitment: "Sans engagement"
       },
       services: {
         title: "Nos Services",
         titleHighlight: "Services",
-        subtitle: "Nous offrons des solutions numériques complètes pour transformer votre entreprise",
+        subtitle: "De l'idée au lancement, nous concevons les solutions web, mobiles et IA qui augmentent vos revenus — pas seulement votre stack technique.",
         viewAll: "Voir Tous les Services",
         webApps: {
           title: "Apps Web",
@@ -1009,15 +1134,15 @@ export const translations = {
         toolsPlatforms: "Outils & Plateformes"
       },
       promotion: {
-        badge: "NOUVEAU LANCEMENT",
-        title: "Spécial Lancement 2025 !",
-        description: "Obtenez 30% de réduction sur tous les services jusqu'au 31 mars 2025",
-        button: "Voir les Offres"
+        badge: "PLACES LIMITÉES",
+        title: "Lancez votre projet sans risque",
+        description: "Réservez une consultation stratégique gratuite de 30 minutes et recevez un devis détaillé sous 24 heures — sans engagement.",
+        button: "Réserver ma consultation gratuite"
       },
       whyChooseUs: {
         title: "Pourquoi Choisir",
         titleHighlight: "M2ATech ?",
-        subtitle: "Nous combinons expertise technique et approche personnalisée pour livrer des résultats exceptionnels pour votre entreprise.",
+        subtitle: "Nous ne faisons pas que coder — nous livrons des résultats : des lancements plus rapides, des clients plus satisfaits et une croissance mesurable pour votre entreprise.",
         speed: {
           title: "Livraison Rapide",
           description: "Nous livrons des solutions de haute qualité rapidement sans compromettre la qualité."
@@ -1194,11 +1319,11 @@ export const translations = {
     },
 
     ctaBanner: {
-      title1: "Consultation gratuite de",
-      titleHighlight: "30 minutes",
-      title2: "pour votre projet digital",
-      subtitle: "Discutons de votre projet et trouvons ensemble la meilleure solution pour votre entreprise.",
-      button: "Reserver ma consultation"
+      title1: "Transformons votre idée en",
+      titleHighlight: "croissance mesurable",
+      title2: "pour votre entreprise",
+      subtitle: "Réservez votre consultation gratuite de 30 minutes dès aujourd'hui et recevez un devis détaillé sous 24 heures. Sans engagement, sans pression — juste un plan clair pour développer votre entreprise.",
+      button: "Obtenir mon devis gratuit"
     },
 
     notFound: {
@@ -1718,6 +1843,125 @@ export const translations = {
             "Import CSV Pièces",
             "Mode Hors-ligne",
             "Authentification JWT"
+          ]
+        },
+        garopro: {
+          title: "GaroPro",
+          description: "SaaS bilingue de gestion de garage tout-en-un pour les ateliers de réparation automobile indépendants au Canada. De la réception aux bons de travail, inspections numériques, devis, facturation et rappels automatisés — conçu et hébergé au Canada.",
+          category: "SaaS de Gestion de Garage",
+          features: [
+            "Bons de Travail & Tableau Kanban",
+            "Inspections Véhicule Numériques (Photo/Vidéo)",
+            "Devis en Ligne Approuvables par le Client",
+            "Facturation avec Taxes Canadiennes (TPS/TVQ)",
+            "Paiements (Stripe, Square, Interac)",
+            "Rappels SMS & Email",
+            "Applications Mobiles (iOS & Android)",
+            "Gestion Multi-établissements",
+            "Export QuickBooks & Décodeur NIV",
+            "Hébergement Canadien & Conforme LPRPDE"
+          ]
+        },
+        sahelcode: {
+          title: "SahelCode",
+          description: "Assistant de codage IA conçu pour les développeurs d'Afrique de l'Ouest. Générez, expliquez et refactorisez du code via un chat web et une CLI autonome, avec support français/anglais et paiements mobile money locaux.",
+          category: "Outil de Développement IA",
+          features: [
+            "Chat IA pour Questions de Code",
+            "CLI Autonome (lit/crée/modifie les fichiers)",
+            "Modèles par Palier (Rapide / Puissant / Maximum)",
+            "Code & Commentaires Bilingues (FR/EN)",
+            "Support Frameworks (Laravel, Flutter, Next.js, Python)",
+            "Paiements Locaux (Nita & Amana Mobile Money)",
+            "Extraits de Code Prêts à l'Emploi",
+            "Historique des Conversations",
+            "Chiffrement AES-256",
+            "Offres Gratuite & Pro"
+          ]
+        },
+        m2abot: {
+          title: "M2aBot",
+          description: "Chatbot IA bilingue qui automatise le service client des PME du Canada atlantique. Il répond aux visiteurs du site 24/7 en français et en anglais, capture les prospects et déclenche des notifications instantanées.",
+          category: "SaaS Chatbot IA",
+          features: [
+            "Réponses Bilingues 24/7 (FR/EN)",
+            "Détection Automatique de la Langue",
+            "Capture de Prospects (Nom, Email, Téléphone)",
+            "Apprentissage du Contenu du Site",
+            "Boutons d'Action en Un Clic",
+            "Alertes Instantanées Email & SMS",
+            "Intégrations CMS (WordPress, Shopify, Wix)",
+            "Hébergement Canadien & Conforme LPRPDE",
+            "Gestion du Consentement",
+            "Widget Personnalisable"
+          ]
+        },
+        binbabmakka: {
+          title: "Bin Bab Makka",
+          description: "Site web et plateforme de réservation en ligne pour une agence de voyage Hajj et Omra au service des pèlerins nigériens. Présente les forfaits de pèlerinage, vols, hôtels près des mosquées saintes et options de paiement flexibles.",
+          category: "Site d'Agence de Voyage",
+          features: [
+            "Catalogue de Forfaits Omra & Hajj",
+            "Système de Réservation en Ligne",
+            "Présentation Vols & Hôtels",
+            "Paiement Flexible (Échelonné, Virement, Carte)",
+            "Infos Guides Multilingues (FR, Haoussa, Zarma, Arabe)",
+            "Témoignages Clients",
+            "Contact WhatsApp & Email",
+            "Section FAQ",
+            "Design Responsive",
+            "Optimisé SEO"
+          ]
+        },
+        saura: {
+          title: "Saura",
+          description: "Plateforme d'interprétation en temps réel propulsée par l'IA qui rend réunions et événements bilingues sans interprète humain. Les participants scannent un QR code pour recevoir l'audio traduit et les sous-titres en direct sur leur téléphone.",
+          category: "SaaS d'Interprétation IA",
+          features: [
+            "Traduction Vocale en Temps Réel",
+            "Audio & Sous-titres en Direct",
+            "Accès par QR Code (Sans Équipement)",
+            "Français Canadien & Anglais",
+            "Glossaires Spécifiques à l'Événement",
+            "Transcriptions & Enregistrements Post-événement",
+            "Configuration Autonome en Minutes",
+            "Données Hébergées au Canada (Montréal)",
+            "Diffusion à Faible Latence",
+            "Jusqu'à 90% Moins Cher qu'un Interprète"
+          ]
+        },
+        lintellectois: {
+          title: "L'Intellectois",
+          description: "Revue en ligne dédiée à la technologie, la culture générale et l'actualité des médias. Propose une revue de presse, des articles culturels et une couverture tech avec CMS d'administration sur mesure et newsletter.",
+          category: "Plateforme d'Actualités & Magazine",
+          features: [
+            "Revue de Presse (Africaine & Internationale)",
+            "Section Culture Générale",
+            "Couverture Technologie & Cybersécurité",
+            "Carrousel d'Articles à la Une",
+            "Navigation par Catégorie",
+            "CMS d'Administration",
+            "Abonnement Newsletter",
+            "Contrôles d'Accessibilité (Taille du Texte)",
+            "Partage sur Réseaux Sociaux",
+            "Design Responsive"
+          ]
+        },
+        fourPlusOne: {
+          title: "4 Plus One Contracting",
+          description: "Site web bilingue pour un entrepreneur général résidentiel et commercial au Nouveau-Brunswick. Présente les services, la zone desservie, un processus clair en 4 étapes et des témoignages clients pour convertir les visiteurs en demandes de devis.",
+          category: "Site Web d'Entreprise de Construction",
+          features: [
+            "Offres de Services (Construction, Rénovation, Toiture)",
+            "Zone Desservie (Grand Moncton & N.-B.)",
+            "Processus en 4 Étapes",
+            "Vitrine de Portfolio de Projets",
+            "Témoignages Clients",
+            "Formulaires de Demande de Devis",
+            "Interface Bilingue (EN/FR)",
+            "Inscription Newsletter",
+            "Optimisé SEO",
+            "Design Responsive Mobile"
           ]
         },
         fraisChezVous: {

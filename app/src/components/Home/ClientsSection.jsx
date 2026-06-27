@@ -12,6 +12,8 @@ import { useTranslation } from "@/hooks/useTranslation";
 import Image from "next/image";
 
 const clients = [
+  { name: "4 Plus One Contracting", logo: "/img/clients/4plusone.png", url: "https://www.4plusone.ca" },
+  { name: "Bin Bab Makka", logo: "/img/clients/binbabmakka.webp", url: "https://www.binbabmakka.com" },
   { name: "M2A DocAssist", logo: "/img/clients/m2adoc.png", url: "https://m2adoc.com" },
   { name: "DIO Cleaning", logo: "/img/clients/diocleaning.png", url: "https://crmdiocleaning.com" },
   { name: "Masta Barber", logo: "/img/clients/mastabarber.png", url: "https://mastabarber.com" },
