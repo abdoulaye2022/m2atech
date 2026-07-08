@@ -35,11 +35,11 @@ const Jobs = () => {
       workMode: t('jobs.openings.marketingAssistant.workMode'),
       location: t('jobs.openings.marketingAssistant.location'),
       hours: t('jobs.openings.marketingAssistant.hours'),
-      salary: "50 000 - 80 000 FCFA",
-      deadline: "2026-01-23", // Date limite: vendredi 23 janvier 2026
+      salary: "60 000 - 120 000 FCFA",
+      deadline: "2026-07-14", // Date limite: mardi 14 juillet 2026
       shortDescription: t('jobs.openings.marketingAssistant.shortDescription'),
       skills: ["LinkedIn", "Facebook", "Instagram", "Canva", "CRM"],
-      applyUrl: "https://www.m2acrm.com/careers/ac323989-eb09-4d72-b427-8933bc7cc442"
+      applyUrl: "https://www.m2acrm.com/careers/ebf02156-6870-4eef-a678-5d6428f831a3"
     }
   ];
 
