@@ -120,6 +120,8 @@ function MainBanner() {
         >
           <MotionBox
             flex={{ base: "1", lg: "0 0 58%" }}
+            minW={0}
+            maxW="100%"
             variants={stagger}
             initial="initial"
             animate="animate"
@@ -131,12 +133,16 @@ function MainBanner() {
                 px={4}
                 py={2}
                 borderRadius="full"
-                fontSize="sm"
+                fontSize={{ base: "xs", md: "sm" }}
                 fontWeight={600}
                 border="1px solid"
                 borderColor="rgba(255, 93, 34, 0.15)"
                 mb={6}
                 fontFamily="var(--font-body)"
+                maxW="100%"
+                whiteSpace="normal"
+                textAlign="center"
+                lineHeight="1.4"
               >
                 {t('home.mainBanner.badge')}
               </Badge>
