@@ -245,7 +245,7 @@ function MainBanner() {
                 spacing={{ base: 6, md: 10 }}
                 divider={<Box h="40px" w="1px" bg="rgba(0, 0, 0, 0.1)" />}
               >
-                <AnimatedCounter end={25} suffix="+" label={t('home.stats.projectsCompleted')} />
+                <AnimatedCounter end={27} suffix="+" label={t('home.stats.projectsCompleted')} />
                 <AnimatedCounter end={98} suffix="%" label={t('home.stats.clientSatisfaction')} />
                 <AnimatedCounter end={6} suffix="+" label={t('home.stats.yearsLabel')} />
               </HStack>

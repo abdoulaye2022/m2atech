@@ -70,6 +70,36 @@ const MotionButton = motion(Button);
 
 const getProjects = (t) => [
   {
+    key: "dossiera",
+    title: t('projects.projects.dossiera.title'),
+    description: t('projects.projects.dossiera.description'),
+    tags: ["Next.js", "React", "SaaS", "OCR / AI", "QuickBooks", "Xero", "Bilingual", "Cloud"],
+    icon: FaFileInvoiceDollar,
+    category: t('projects.projects.dossiera.category'),
+    images: [
+      "/img/projects/dossiera1.png",
+      "/img/projects/dossiera2.png",
+      "/img/projects/dossiera3.png",
+    ],
+    features: t('projects.projects.dossiera.features'),
+    liveUrl: "https://dossiera.ca",
+  },
+  {
+    key: "bkexpert",
+    title: t('projects.projects.bkexpert.title'),
+    description: t('projects.projects.bkexpert.description'),
+    tags: ["Next.js", "React", "Bilingual", "SEO", "Quote System", "Recruitment", "Responsive Design"],
+    icon: FaBroom,
+    category: t('projects.projects.bkexpert.category'),
+    images: [
+      "/img/projects/bkexpert1.png",
+      "/img/projects/bkexpert2.png",
+      "/img/projects/bkexpert3.png",
+    ],
+    features: t('projects.projects.bkexpert.features'),
+    liveUrl: "https://bkexpert.ca",
+  },
+  {
     key: "lintellectois",
     title: t('projects.projects.lintellectois.title'),
     description: t('projects.projects.lintellectois.description'),

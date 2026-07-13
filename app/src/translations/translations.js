@@ -874,6 +874,42 @@ export const translations = {
             "Up to 90% Cheaper than Interpreters"
           ]
         },
+        dossiera: {
+          title: "Dossiera",
+          description: "Canadian accounting SaaS platform that sits on top of QuickBooks and Xero. Users capture receipts, invoices and bank statements, and AI-powered OCR extracts the data and pushes it to their accounting software — without their data ever leaving Canada. Built for accounting firms, bookkeepers and SMEs, fully bilingual (FR/EN) with native Canadian tax support.",
+          category: "Accounting SaaS Platform",
+          features: [
+            "AI-powered OCR Document Capture",
+            "Receipt, Invoice & Bank Statement Processing",
+            "Real-time Push to QuickBooks & Xero",
+            "Native Canadian Tax Codes (GST / HST / QST)",
+            "White-label Client Portal for Document Collection",
+            "Side-by-side OCR Review Interface",
+            "Bank Statement Reconciliation & Balance Verification",
+            "Client Task Tracking Dashboard",
+            "Role-based Access & Audit Logging",
+            "Data Residency in Canada (Montreal)",
+            "Law 25 / PIPEDA Compliance",
+            "Bilingual Interface (FR / EN)"
+          ]
+        },
+        bkexpert: {
+          title: "BK Expert Services",
+          description: "Bilingual business website for a commercial cleaning and staffing company in Greater Moncton and southeastern New Brunswick. Showcases seven cleaning service categories and a recruitment hub, with a free quote request system and a job application portal designed to convert visitors into leads and candidates.",
+          category: "Cleaning & Staffing Website",
+          features: [
+            "Seven Cleaning Service Categories",
+            "Free, No-obligation Quote Request System",
+            "Recruitment Hub with Job Listings",
+            "Online CV Submission Portal",
+            "Service Area Coverage (Moncton, Dieppe, Riverview…)",
+            "Client Reviews & 4.9/5 Rating Display",
+            "FAQ Section",
+            "Bilingual Interface (FR / EN)",
+            "SEO Optimized",
+            "Responsive Design"
+          ]
+        },
         lintellectois: {
           title: "L'Intellectois",
           description: "Online magazine dedicated to technology, general culture and media news. Features a press review, cultural articles and tech coverage with a custom admin CMS and newsletter.",
@@ -1928,6 +1964,42 @@ export const translations = {
             "Données Hébergées au Canada (Montréal)",
             "Diffusion à Faible Latence",
             "Jusqu'à 90% Moins Cher qu'un Interprète"
+          ]
+        },
+        dossiera: {
+          title: "Dossiera",
+          description: "Plateforme SaaS comptable canadienne qui se superpose à QuickBooks et Xero. Les utilisateurs numérisent reçus, factures et relevés bancaires, et l'OCR propulsé par l'IA extrait les données et les envoie vers leur logiciel comptable — sans que leurs données ne quittent jamais le Canada. Conçue pour les cabinets comptables, les teneurs de livres et les PME, entièrement bilingue (FR/EN) avec prise en charge native de la fiscalité canadienne.",
+          category: "Plateforme SaaS Comptable",
+          features: [
+            "Numérisation de Documents par OCR IA",
+            "Traitement des Reçus, Factures & Relevés Bancaires",
+            "Envoi en Temps Réel vers QuickBooks & Xero",
+            "Codes de Taxes Canadiens Natifs (TPS / TVH / TVQ)",
+            "Portail Client en Marque Blanche",
+            "Interface de Révision OCR Côte à Côte",
+            "Rapprochement Bancaire & Vérification des Totaux",
+            "Tableau de Bord de Suivi par Client",
+            "Accès par Rôle & Journalisation d'Audit",
+            "Hébergement des Données au Canada (Montréal)",
+            "Conformité Loi 25 / PIPEDA",
+            "Interface Bilingue (FR / EN)"
+          ]
+        },
+        bkexpert: {
+          title: "BK Expert Services",
+          description: "Site vitrine bilingue pour une entreprise de nettoyage commercial et de placement de personnel du Grand Moncton et du sud-est du Nouveau-Brunswick. Présente sept catégories de services de nettoyage et un pôle recrutement, avec un système de demande de devis gratuit et un portail de candidature conçus pour convertir les visiteurs en clients et en candidats.",
+          category: "Site Nettoyage & Recrutement",
+          features: [
+            "Sept Catégories de Services de Nettoyage",
+            "Système de Demande de Devis Gratuit & Sans Engagement",
+            "Pôle Recrutement avec Offres d'Emploi",
+            "Portail de Soumission de CV en Ligne",
+            "Zone de Service (Moncton, Dieppe, Riverview…)",
+            "Avis Clients & Note de 4,9/5",
+            "Section FAQ",
+            "Interface Bilingue (FR / EN)",
+            "Optimisé pour le SEO",
+            "Design Responsive"
           ]
         },
         lintellectois: {

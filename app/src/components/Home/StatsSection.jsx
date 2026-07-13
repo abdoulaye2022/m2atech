@@ -50,7 +50,7 @@ const StatsSection = () => {
   const { t } = useTranslation();
 
   const stats = [
-    { value: 25, suffix: "+", label: t('home.stats.projectsCompleted') },
+    { value: 27, suffix: "+", label: t('home.stats.projectsCompleted') },
     { value: 98, suffix: "%", label: t('home.stats.clientSatisfaction') },
     { value: 24, suffix: "/7", label: t('home.stats.support') },
     { value: 6, suffix: "+", label: t('home.stats.yearsExperience') },
