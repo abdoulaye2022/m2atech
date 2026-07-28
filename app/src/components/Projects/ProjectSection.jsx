@@ -59,6 +59,8 @@ import {
   FaLanguage,
   FaNewspaper,
   FaHardHat,
+  FaShippingFast,
+  FaCalculator,
 } from "react-icons/fa";
 import { useTranslation } from "@/hooks/useTranslation";
 import AnimatedSection from "../Partials/AnimatedSection";
@@ -69,6 +71,36 @@ const MotionBox = motion(Box);
 const MotionButton = motion(Button);
 
 const getProjects = (t) => [
+  {
+    key: "dhglobalsupply",
+    title: t('projects.projects.dhglobalsupply.title'),
+    description: t('projects.projects.dhglobalsupply.description'),
+    tags: ["Next.js", "React", "Bilingual", "SEO", "Quote System", "Logistics", "Responsive Design"],
+    icon: FaShippingFast,
+    category: t('projects.projects.dhglobalsupply.category'),
+    images: [
+      "/img/projects/dhglobalsupply1.png",
+      "/img/projects/dhglobalsupply2.png",
+      "/img/projects/dhglobalsupply3.png",
+    ],
+    features: t('projects.projects.dhglobalsupply.features'),
+    liveUrl: "https://www.dhglobalsupply.com",
+  },
+  {
+    key: "axxesbusiness",
+    title: t('projects.projects.axxesbusiness.title'),
+    description: t('projects.projects.axxesbusiness.description'),
+    tags: ["Next.js", "React", "Bilingual", "SEO", "Lead Generation", "Business Services", "Responsive Design"],
+    icon: FaCalculator,
+    category: t('projects.projects.axxesbusiness.category'),
+    images: [
+      "/img/projects/axxesbusiness1.png",
+      "/img/projects/axxesbusiness2.png",
+      "/img/projects/axxesbusiness3.png",
+    ],
+    features: t('projects.projects.axxesbusiness.features'),
+    liveUrl: "https://www.axxesbusiness.com",
+  },
   {
     key: "dossiera",
     title: t('projects.projects.dossiera.title'),

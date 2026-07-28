@@ -874,6 +874,40 @@ export const translations = {
             "Up to 90% Cheaper than Interpreters"
           ]
         },
+        dhglobalsupply: {
+          title: "D&H Global Supply",
+          description: "Bilingual corporate website for a Canadian import-export company based in Moncton, connecting Canada with West African markets. Showcases logistics and sourcing services, nine product categories and a Canada → West Africa trade corridor, with a quote request system designed to convert businesses into leads.",
+          category: "Import-Export & Logistics Website",
+          features: [
+            "Import & Export Service Pages",
+            "Multimodal Transport & Logistics",
+            "Customs Compliance & Documentation",
+            "Custom Sourcing & Procurement",
+            "Nine Product Categories",
+            "Canada → West Africa Corridor Mapping",
+            "Quote Request System",
+            "Bilingual Interface (FR / EN)",
+            "SEO Optimized",
+            "Responsive Design"
+          ]
+        },
+        axxesbusiness: {
+          title: "AxxesBusiness",
+          description: "Bilingual business website for a Canadian business administration center offering accounting, payroll, tax, finance and marketing services to SMEs and non-profits. Presents service offerings, industry expertise, team and client testimonials, with clear calls to action to drive contact and lead generation.",
+          category: "Business Services Website",
+          features: [
+            "Accounting & Bookkeeping Services",
+            "Payroll Management",
+            "Tax & Compliance Services",
+            "Financial Consulting & Risk Management",
+            "Marketing Support",
+            "Industry-specific Expertise Areas",
+            "Team & Client Testimonials",
+            "Contact & Lead Generation",
+            "Bilingual Interface (FR / EN)",
+            "Responsive Design"
+          ]
+        },
         dossiera: {
           title: "Dossiera",
           description: "Canadian accounting SaaS platform that sits on top of QuickBooks and Xero. Users capture receipts, invoices and bank statements, and AI-powered OCR extracts the data and pushes it to their accounting software — without their data ever leaving Canada. Built for accounting firms, bookkeepers and SMEs, fully bilingual (FR/EN) with native Canadian tax support.",
@@ -1964,6 +1998,40 @@ export const translations = {
             "Données Hébergées au Canada (Montréal)",
             "Diffusion à Faible Latence",
             "Jusqu'à 90% Moins Cher qu'un Interprète"
+          ]
+        },
+        dhglobalsupply: {
+          title: "D&H Global Supply",
+          description: "Site vitrine bilingue pour une entreprise canadienne d'import-export basée à Moncton, reliant le Canada aux marchés d'Afrique de l'Ouest. Présente les services de logistique et d'approvisionnement, neuf catégories de produits et un corridor commercial Canada → Afrique de l'Ouest, avec un système de demande de soumission conçu pour convertir les entreprises en prospects.",
+          category: "Site Import-Export & Logistique",
+          features: [
+            "Pages Services Import & Export",
+            "Transport Multimodal & Logistique",
+            "Conformité Douanière & Documentation",
+            "Approvisionnement & Sourcing sur Mesure",
+            "Neuf Catégories de Produits",
+            "Cartographie du Corridor Canada → Afrique de l'Ouest",
+            "Système de Demande de Soumission",
+            "Interface Bilingue (FR / EN)",
+            "Optimisé pour le SEO",
+            "Design Responsive"
+          ]
+        },
+        axxesbusiness: {
+          title: "AxxesBusiness",
+          description: "Site vitrine bilingue pour un centre d'administration d'entreprise canadien offrant des services de comptabilité, paie, fiscalité, finance et marketing aux PME et OBNL. Présente l'offre de services, les domaines d'expertise, l'équipe et les témoignages clients, avec des appels à l'action clairs pour générer contacts et prospects.",
+          category: "Site de Services aux Entreprises",
+          features: [
+            "Comptabilité & Tenue de Livres",
+            "Gestion de la Paie",
+            "Services Fiscaux & Conformité",
+            "Conseil Financier & Gestion des Risques",
+            "Soutien Marketing",
+            "Domaines d'Expertise par Secteur",
+            "Équipe & Témoignages Clients",
+            "Contact & Génération de Prospects",
+            "Interface Bilingue (FR / EN)",
+            "Design Responsive"
           ]
         },
         dossiera: {
