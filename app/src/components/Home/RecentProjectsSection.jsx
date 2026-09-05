@@ -19,7 +19,8 @@ import { FaChevronLeft, FaChevronRight, FaExternalLinkAlt, FaArrowRight } from "
 import { useTranslation } from "@/hooks/useTranslation";
 import { getProjects } from "@/components/Projects/ProjectSection";
 
-const CARD_WIDTH = 380;
+const GAP = 24; // px, matches gap={6}
+const VISIBLE = 4;
 
 const RecentProjectsSection = () => {
   const { t } = useTranslation();
@@ -27,8 +28,11 @@ const RecentProjectsSection = () => {
   const projects = getProjects(t).slice(0, 8);
 
   const scrollBy = (direction) => {
-    if (!scrollerRef.current) return;
-    scrollerRef.current.scrollBy({ left: direction * (CARD_WIDTH + 24), behavior: "smooth" });
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const card = scroller.querySelector("[data-project-card]");
+    const step = card ? card.offsetWidth + GAP : scroller.clientWidth;
+    scroller.scrollBy({ left: direction * step, behavior: "smooth" });
   };
 
   return (
@@ -98,23 +102,30 @@ const RecentProjectsSection = () => {
         </Flex>
       </Container>
 
+      <Container maxW="1280px" position="relative" zIndex={1}>
       <Box
         ref={scrollerRef}
         overflowX="auto"
-        px={{ base: 4, md: "calc((100vw - 1280px) / 2 + 16px)" }}
-        pb={4}
+        py={3}
+        mx={-3}
+        px={3}
         sx={{
           scrollSnapType: "x mandatory",
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
         }}
       >
-        <Flex gap={6} w="max-content">
+        <Flex gap={`${GAP}px`}>
           {projects.map((project) => (
             <Box
               key={project.key}
-              w={{ base: "300px", md: `${CARD_WIDTH}px` }}
-              flexShrink={0}
+              data-project-card
+              flex={{
+                base: "0 0 85%",
+                sm: `0 0 calc((100% - ${GAP}px) / 2)`,
+                lg: `0 0 calc((100% - ${GAP * (VISIBLE - 1)}px) / ${VISIBLE})`,
+              }}
+              minW={0}
               bg="white"
               borderRadius="2xl"
               border="1px solid"
@@ -128,13 +139,13 @@ const RecentProjectsSection = () => {
                 borderColor: "var(--color-border-hover)",
               }}
             >
-              <Box position="relative" h="220px" bg="var(--color-bg-tertiary)">
+              <Box position="relative" h="190px" bg="var(--color-bg-tertiary)">
                 <Image
                   src={project.images[0]}
                   alt={`${project.title} - ${project.category}`}
                   fill
                   style={{ objectFit: "cover", objectPosition: "top" }}
-                  sizes="(max-width: 768px) 300px, 380px"
+                  sizes="(max-width: 480px) 85vw, (max-width: 992px) 50vw, 310px"
                 />
                 <Flex
                   position="absolute"
@@ -155,10 +166,10 @@ const RecentProjectsSection = () => {
                 </Flex>
               </Box>
 
-              <Box p={6}>
+              <Box p={5}>
                 <Heading
                   as="h3"
-                  fontSize="lg"
+                  fontSize="md"
                   fontFamily="var(--font-display)"
                   color="var(--color-text-primary)"
                   mb={2}
@@ -214,6 +225,7 @@ const RecentProjectsSection = () => {
           ))}
         </Flex>
       </Box>
+      </Container>
     </Box>
   );
 };
