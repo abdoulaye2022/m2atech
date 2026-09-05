@@ -1,13 +1,6 @@
 export const metadata = {
-  title: {
-    default: "Careers at M2ATech | Join Our Tech Team in Moncton",
-    fr: "Carrières chez M2ATech | Rejoignez notre équipe tech à Moncton",
-  },
-  description: {
-    default:
-      "Join M2ATech Solutions! Explore career opportunities in web development, mobile apps, AI, and SEO. Work with a dynamic tech team in Moncton, New Brunswick.",
-    fr: "Rejoignez M2ATech Solutions ! Découvrez nos offres d'emploi en développement web, applications mobiles, IA et SEO. Travaillez avec une équipe tech dynamique à Moncton, Nouveau-Brunswick.",
-  },
+  title: "Careers at M2ATech | Join Our Tech Team in Moncton",
+  description: "Join M2ATech Solutions! Explore career opportunities in web development, mobile apps, AI, and SEO. Work with a dynamic tech team in Moncton, New Brunswick.",
   keywords: [
     "tech jobs Moncton",
     "web developer jobs New Brunswick",

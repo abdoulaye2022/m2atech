@@ -1,13 +1,6 @@
 export const metadata = {
-  title: {
-    default: "Mobile App Development | M2ATech - iOS & Android Apps Moncton",
-    fr: "Developpement d'Applications Mobiles | M2ATech - Apps iOS & Android Moncton",
-  },
-  description: {
-    default:
-      "Professional mobile app development for iOS and Android. M2ATech builds cross-platform apps with Flutter and React Native in Moncton, New Brunswick.",
-    fr: "Developpement professionnel d'applications mobiles pour iOS et Android. M2ATech cree des apps cross-platform avec Flutter et React Native a Moncton, Nouveau-Brunswick.",
-  },
+  title: "Mobile App Development | M2ATech - iOS & Android Apps Moncton",
+  description: "Professional mobile app development for iOS and Android. M2ATech builds cross-platform apps with Flutter and React Native in Moncton, New Brunswick.",
   keywords: [
     "mobile app development Moncton",
     "iOS Android app developer NB",

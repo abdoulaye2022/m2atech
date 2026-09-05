@@ -1,13 +1,6 @@
 export const metadata = {
-  title: {
-    default: "SEO & Digital Marketing | M2ATech - Boost Your Visibility Moncton",
-    fr: "SEO & Marketing Digital | M2ATech - Boostez Votre Visibilite Moncton",
-  },
-  description: {
-    default:
-      "Professional SEO and digital marketing services by M2ATech. Keyword strategy, local SEO, content optimization, and performance analytics in Moncton, New Brunswick.",
-    fr: "Services professionnels de SEO et marketing digital par M2ATech. Strategie de mots-cles, SEO local, optimisation de contenu et analyses de performance a Moncton, Nouveau-Brunswick.",
-  },
+  title: "SEO & Digital Marketing | M2ATech - Boost Your Visibility Moncton",
+  description: "Professional SEO and digital marketing services by M2ATech. Keyword strategy, local SEO, content optimization, and performance analytics in Moncton, New Brunswick.",
   keywords: [
     "SEO services Moncton",
     "local SEO New Brunswick",

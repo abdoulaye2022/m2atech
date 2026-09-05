@@ -1,13 +1,6 @@
 export const metadata = {
-  title: {
-    default: "Contact M2ATech | Web & App Development Experts in Moncton",
-    fr: "Contactez M2ATech | Experts en développement web et mobile à Moncton",
-  },
-  description: {
-    default:
-      "Get in touch with our Moncton team for custom software, web and mobile app development. Fast response guaranteed.",
-    fr: "Contactez notre équipe à Moncton pour des solutions logicielles, sites web et applications mobiles. Réponse rapide garantie.",
-  },
+  title: "Contact M2ATech | Web & App Development Experts in Moncton",
+  description: "Get in touch with our Moncton team for custom software, web and mobile app development. Fast response guaranteed.",
   keywords: [
     "contact web developer Moncton",
     "mobile app developer New Brunswick",

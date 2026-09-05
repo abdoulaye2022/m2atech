@@ -1,13 +1,6 @@
 export const metadata = {
-  title: {
-    default: "Projects | M2ATech Portfolio - Moncton Web & App Development",
-    fr: "Nos Réalisations | Portfolio M2ATech - Développement Web & Mobile à Moncton",
-  },
-  description: {
-    default:
-      "Explore M2ATech's portfolio of successful projects: custom web applications, mobile apps and software solutions for businesses in Atlantic Canada.",
-    fr: "Découvrez le portfolio de M2ATech : applications web sur mesure, solutions mobiles et logicielles pour entreprises du Canada Atlantique.",
-  },
+  title: "Projects | M2ATech Portfolio - Moncton Web & App Development",
+  description: "Explore M2ATech's portfolio of successful projects: custom web applications, mobile apps and software solutions for businesses in Atlantic Canada.",
   keywords: [
     "web development portfolio Moncton",
     "mobile app projects New Brunswick",

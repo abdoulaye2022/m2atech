@@ -1,13 +1,6 @@
 export const metadata = {
-  title: {
-    default: "Privacy Policy | M2ATech Web & Mobile Development Moncton",
-    fr: "Politique de confidentialité | M2ATech Développement web et mobile Moncton",
-  },
-  description: {
-    default:
-      "Read M2ATech's Privacy Policy. We are committed to protecting your personal information as a leading software development company in Moncton, New Brunswick.",
-    fr: "Consultez la politique de confidentialité de M2ATech. Nous protégeons vos informations personnelles en tant qu'entreprise spécialisée en développement logiciel à Moncton, Nouveau-Brunswick.",
-  },
+  title: "Privacy Policy | M2ATech Web & Mobile Development Moncton",
+  description: "Read M2ATech's Privacy Policy. We are committed to protecting your personal information as a leading software development company in Moncton, New Brunswick.",
   keywords: [
     "privacy policy tech company",
     "data protection Moncton",

@@ -1,14 +1,6 @@
 export const metadata = {
-  title: {
-    default: "Services | M2ATech - Web & Mobile Development Experts in Moncton",
-    fr: "Services | M2ATech - Experts en développement web et mobile à Moncton",
-  },
-  description: {
-    default:
-      "Discover our professional services: custom web & mobile apps development, SEO optimization and tailored software solutions in Atlantic Canada.",
-    fr:
-      "Découvrez nos services professionnels : développement d'applications web et mobiles, optimisation SEO et solutions logicielles sur mesure dans le Canada Atlantique.",
-  },
+  title: "Services | M2ATech - Web & Mobile Development Experts in Moncton",
+  description: "Discover our professional services: custom web & mobile apps development, SEO optimization and tailored software solutions in Atlantic Canada.",
   keywords: [
     "web development services Moncton",
     "mobile app development New Brunswick",

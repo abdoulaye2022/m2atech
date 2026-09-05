@@ -1,13 +1,6 @@
 export const metadata = {
-  title: {
-    default: "AI & Machine Learning Solutions | M2ATech - Moncton, NB",
-    fr: "Solutions IA & Machine Learning | M2ATech - Moncton, NB",
-  },
-  description: {
-    default:
-      "AI and machine learning solutions by M2ATech. Custom chatbots, process automation, NLP, and computer vision for businesses in Moncton, New Brunswick.",
-    fr: "Solutions d'intelligence artificielle et machine learning par M2ATech. Chatbots personnalises, automatisation des processus, NLP et vision par ordinateur pour les entreprises a Moncton, Nouveau-Brunswick.",
-  },
+  title: "AI & Machine Learning Solutions | M2ATech - Moncton, NB",
+  description: "AI and machine learning solutions by M2ATech. Custom chatbots, process automation, NLP, and computer vision for businesses in Moncton, New Brunswick.",
   keywords: [
     "AI solutions Moncton",
     "machine learning New Brunswick",

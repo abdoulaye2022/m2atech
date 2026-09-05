@@ -1,13 +1,6 @@
 export const metadata = {
-  title: {
-    default: "Web Application Development | M2ATech - Moncton, NB",
-    fr: "Developpement d'Applications Web | M2ATech - Moncton, NB",
-  },
-  description: {
-    default:
-      "Custom web application development services by M2ATech. We build responsive, high-performance web apps using React, Next.js, and modern technologies in Moncton, New Brunswick.",
-    fr: "Services de developpement d'applications web sur mesure par M2ATech. Nous creons des applications web responsives et performantes avec React, Next.js et les technologies modernes a Moncton, Nouveau-Brunswick.",
-  },
+  title: "Web Application Development | M2ATech - Moncton, NB",
+  description: "Custom web application development services by M2ATech. We build responsive, high-performance web apps using React, Next.js, and modern technologies in Moncton, New Brunswick.",
   keywords: [
     "web application development Moncton",
     "custom web apps New Brunswick",

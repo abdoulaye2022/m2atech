@@ -4,9 +4,9 @@ import GoogleTagManager from "@/components/Analytics/GoogleTagManager";
 import LinkedInInsight from "@/components/Analytics/LinkedInInsight";
 
 export const metadata = {
-  title: "M2ATech Solutions Inc. | Agence Web, Mobile, IA & SEO a Moncton, NB",
+  title: "Web & Mobile App Development Company in Moncton, NB | M2ATech",
   description:
-    "Agence technologique leader au Canada Atlantique. Developpement web, applications mobiles, logiciels sur mesure, solutions IA et SEO a Moncton, Nouveau-Brunswick. Votre partenaire digital.",
+    "Moncton IT company building custom websites, web & mobile apps, AI solutions and SEO for New Brunswick businesses. Free consultation, quote within 24 hours.",
   keywords: [
     "web development Moncton",
     "web developer Moncton NB",
@@ -97,7 +97,7 @@ export const metadata = {
     alternateLocale: ["fr_CA"],
     url: "https://www.m2atech.com",
     siteName: "M2ATech Solutions Inc.",
-    title: "M2ATech Solutions Inc. | Web, Mobile, AI & SEO Experts - Moncton",
+    title: "Web & Mobile App Development Company in Moncton, NB | M2ATech",
     description:
       "Your partner for high-performance web, mobile, AI and SEO solutions in the Maritimes. Transforming businesses through innovative technology.",
     images: [
