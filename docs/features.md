@@ -155,8 +155,8 @@
 | Forfait | Prix | Pour qui |
 |---------|------|----------|
 | Essentiel | 49 $/mois | Sites vitrines |
-| Pro (mis en avant) | 99 $/mois | Entreprises qui mettent à jour régulièrement |
-| Premium | 199 $/mois | E-commerce, SaaS, fort trafic |
+| Pro (mis en avant) | 129 $/mois | Entreprises qui mettent à jour régulièrement |
+| Premium | 249 $/mois | E-commerce, SaaS, fort trafic |
 
 - Contenu de chaque forfait (liste `included`) dans `servicesPage.maintenance.plans.*` en EN et FR
 - Bouton "Choisir ce forfait" → `/contact?plan=<clé>`

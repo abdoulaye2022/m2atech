@@ -40,8 +40,8 @@ const MotionBox = motion(Box);
 // Tarifs mensuels en dollars canadiens. À ajuster ici : rien d'autre à changer.
 const PLANS = [
   { key: "essential", price: 49, highlighted: false },
-  { key: "pro", price: 99, highlighted: true },
-  { key: "premium", price: 199, highlighted: false },
+  { key: "pro", price: 129, highlighted: true },
+  { key: "premium", price: 249, highlighted: false },
 ];
 
 const MaintenanceSection = () => {
