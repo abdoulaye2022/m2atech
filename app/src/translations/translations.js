@@ -874,6 +874,60 @@ export const translations = {
             "Up to 90% Cheaper than Interpreters"
           ]
         },
+        sahelyssaveurs: {
+          title: "Sahelys Saveurs",
+          description: "Bilingual e-commerce website for an artisanal dessert company based in Dieppe, New Brunswick, specializing in African-inspired confections (Milya and Doucya lines). Customers browse the catalogue, pick a flavour, choose pickup in Dieppe or delivery across Greater Moncton, and pay securely online with Stripe, Apple Pay or Google Pay, with order tracking and WhatsApp support.",
+          category: "E-commerce & Food Website",
+          features: [
+            "Online Shop & Product Catalogue",
+            "Multiple Flavours per Product Line",
+            "Pickup Scheduling & Local Delivery",
+            "Secure Payments (Stripe, Apple Pay, Google Pay)",
+            "4-step Guided Checkout",
+            "Order Tracking",
+            "Wholesale & Reseller Pricing",
+            "Customer Testimonials",
+            "WhatsApp Support",
+            "Bilingual Interface (FR / EN)",
+            "Responsive Design"
+          ]
+        },
+        dsbiconsulting: {
+          title: "DSBI Consulting Canada",
+          description: "Bilingual corporate website for a Moncton-based consulting firm positioned as the business gateway between Canada and West Africa, backed by the pan-African SAER Group. Presents business establishment, market studies, procurement outsourcing and operations management services, target sectors, project portfolio and testimonials, with an inquiry form to generate qualified leads.",
+          category: "Consulting & Business Services Website",
+          features: [
+            "Business Establishment & Setup Services",
+            "Market Studies & Development Research",
+            "Procurement Outsourcing & Payment Agency",
+            "Industrial & Commercial Operations Management",
+            "Sector Expertise Pages (Mining, Energy, Agriculture…)",
+            "Project Portfolio",
+            "Client Testimonials",
+            "Contact & Inquiry Form",
+            "Bilingual Interface (FR / EN)",
+            "SEO Optimized",
+            "Responsive Design"
+          ]
+        },
+        devik: {
+          title: "Devik",
+          description: "AI-powered SaaS platform and mobile app for construction contractors in Atlantic Canada. Contractors dictate the job on site, and the AI turns the recording into a professional, structured estimate using their pricing library, applies the right provincial taxes and asks follow-up questions for missing details. Includes trade-specific templates, offline recording, digital signatures, bilingual client portal and Solo / Team subscription plans.",
+          category: "AI SaaS & Mobile App",
+          features: [
+            "Voice Dictation to Estimate with AI",
+            "Custom Pricing Library",
+            "Automatic Canadian Tax Calculation (13 provinces & territories)",
+            "Trade-specific Templates (Electricians, Plumbers, Roofers…)",
+            "Offline-first Mobile Recording & Sync",
+            "Digital Signatures with Timestamp & IP Proof",
+            "Bilingual PDFs & Client Portal",
+            "Solo & Team Subscription Plans",
+            "Role-based Permissions",
+            "Canadian Data Hosting",
+            "Blog, FAQ & SEO Landing Pages"
+          ]
+        },
         dhglobalsupply: {
           title: "D&H Global Supply",
           description: "Bilingual corporate website for a Canadian import-export company based in Moncton, connecting Canada with West African markets. Showcases logistics and sourcing services, nine product categories and a Canada → West Africa trade corridor, with a quote request system designed to convert businesses into leads.",
@@ -1998,6 +2052,60 @@ export const translations = {
             "Données Hébergées au Canada (Montréal)",
             "Diffusion à Faible Latence",
             "Jusqu'à 90% Moins Cher qu'un Interprète"
+          ]
+        },
+        sahelyssaveurs: {
+          title: "Sahelys Saveurs",
+          description: "Site e-commerce bilingue pour une entreprise de desserts artisanaux basée à Dieppe, Nouveau-Brunswick, spécialisée dans les douceurs d'inspiration africaine (gammes Milya et Doucya). Les clients parcourent le catalogue, choisissent une saveur, optent pour la cueillette à Dieppe ou la livraison dans le Grand Moncton, et paient en ligne de façon sécurisée avec Stripe, Apple Pay ou Google Pay, avec suivi de commande et support WhatsApp.",
+          category: "Site E-commerce & Alimentation",
+          features: [
+            "Boutique en Ligne & Catalogue Produits",
+            "Plusieurs Saveurs par Gamme",
+            "Planification de Cueillette & Livraison Locale",
+            "Paiements Sécurisés (Stripe, Apple Pay, Google Pay)",
+            "Commande Guidée en 4 Étapes",
+            "Suivi de Commande",
+            "Tarifs de Gros & Revendeurs",
+            "Témoignages Clients",
+            "Support WhatsApp",
+            "Interface Bilingue (FR / EN)",
+            "Design Responsive"
+          ]
+        },
+        dsbiconsulting: {
+          title: "DSBI Consulting Canada",
+          description: "Site vitrine bilingue pour un cabinet-conseil basé à Moncton, positionné comme la passerelle d'affaires entre le Canada et l'Afrique de l'Ouest, soutenu par le groupe panafricain SAER. Présente les services d'implantation d'entreprise, d'études de marché, d'externalisation des achats et de gestion des opérations, les secteurs cibles, le portfolio de projets et les témoignages, avec un formulaire de demande pour générer des prospects qualifiés.",
+          category: "Site de Conseil & Services aux Entreprises",
+          features: [
+            "Implantation & Création d'Entreprise",
+            "Études de Marché & Développement",
+            "Externalisation des Achats & Agence de Paiement",
+            "Gestion des Opérations Industrielles & Commerciales",
+            "Pages Secteurs d'Expertise (Mines, Énergie, Agriculture…)",
+            "Portfolio de Projets",
+            "Témoignages Clients",
+            "Formulaire de Contact & Demande",
+            "Interface Bilingue (FR / EN)",
+            "Optimisé pour le SEO",
+            "Design Responsive"
+          ]
+        },
+        devik: {
+          title: "Devik",
+          description: "Plateforme SaaS et application mobile propulsées par l'IA pour les entrepreneurs en construction du Canada atlantique. L'entrepreneur dicte le travail sur le chantier, et l'IA transforme l'enregistrement en soumission professionnelle et structurée à partir de sa bibliothèque de prix, applique les bonnes taxes provinciales et pose des questions de suivi pour les détails manquants. Inclut des modèles par métier, l'enregistrement hors ligne, la signature électronique, un portail client bilingue et des forfaits Solo / Équipe.",
+          category: "SaaS IA & Application Mobile",
+          features: [
+            "Dictée Vocale vers Soumission par IA",
+            "Bibliothèque de Prix Personnalisée",
+            "Calcul Automatique des Taxes Canadiennes (13 provinces & territoires)",
+            "Modèles par Métier (Électriciens, Plombiers, Couvreurs…)",
+            "Enregistrement Mobile Hors Ligne & Synchronisation",
+            "Signature Électronique avec Horodatage & Preuve IP",
+            "PDF & Portail Client Bilingues",
+            "Forfaits Solo & Équipe",
+            "Permissions par Rôle",
+            "Hébergement des Données au Canada",
+            "Blog, FAQ & Pages SEO"
           ]
         },
         dhglobalsupply: {

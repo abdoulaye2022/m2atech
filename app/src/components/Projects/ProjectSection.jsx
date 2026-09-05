@@ -61,6 +61,9 @@ import {
   FaHardHat,
   FaShippingFast,
   FaCalculator,
+  FaIceCream,
+  FaGlobeAfrica,
+  FaMicrophone,
 } from "react-icons/fa";
 import { useTranslation } from "@/hooks/useTranslation";
 import AnimatedSection from "../Partials/AnimatedSection";
@@ -71,6 +74,51 @@ const MotionBox = motion(Box);
 const MotionButton = motion(Button);
 
 const getProjects = (t) => [
+  {
+    key: "sahelyssaveurs",
+    title: t('projects.projects.sahelyssaveurs.title'),
+    description: t('projects.projects.sahelyssaveurs.description'),
+    tags: ["Next.js", "React", "E-commerce", "Stripe", "Bilingual", "SEO", "Responsive Design"],
+    icon: FaIceCream,
+    category: t('projects.projects.sahelyssaveurs.category'),
+    images: [
+      "/img/projects/sahelyssaveurs1.png",
+      "/img/projects/sahelyssaveurs2.png",
+      "/img/projects/sahelyssaveurs3.png",
+    ],
+    features: t('projects.projects.sahelyssaveurs.features'),
+    liveUrl: "https://www.sahelyssaveurs.com",
+  },
+  {
+    key: "dsbiconsulting",
+    title: t('projects.projects.dsbiconsulting.title'),
+    description: t('projects.projects.dsbiconsulting.description'),
+    tags: ["Next.js", "React", "Bilingual", "SEO", "Consulting", "Lead Generation", "Responsive Design"],
+    icon: FaGlobeAfrica,
+    category: t('projects.projects.dsbiconsulting.category'),
+    images: [
+      "/img/projects/dsbiconsulting1.png",
+      "/img/projects/dsbiconsulting2.png",
+      "/img/projects/dsbiconsulting3.png",
+    ],
+    features: t('projects.projects.dsbiconsulting.features'),
+    liveUrl: "https://dsbiconsulting.ca",
+  },
+  {
+    key: "devik",
+    title: t('projects.projects.devik.title'),
+    description: t('projects.projects.devik.description'),
+    tags: ["Next.js", "React", "AI", "SaaS", "Mobile App", "Bilingual", "Stripe", "SEO"],
+    icon: FaMicrophone,
+    category: t('projects.projects.devik.category'),
+    images: [
+      "/img/projects/devik1.png",
+      "/img/projects/devik2.png",
+      "/img/projects/devik3.png",
+    ],
+    features: t('projects.projects.devik.features'),
+    liveUrl: "https://devik.ca",
+  },
   {
     key: "dhglobalsupply",
     title: t('projects.projects.dhglobalsupply.title'),
