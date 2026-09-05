@@ -73,7 +73,7 @@ import { motion } from "framer-motion";
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
 
-const getProjects = (t) => [
+export const getProjects = (t) => [
   {
     key: "sahelyssaveurs",
     title: t('projects.projects.sahelyssaveurs.title'),

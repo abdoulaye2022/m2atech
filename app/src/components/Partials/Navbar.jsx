@@ -22,7 +22,7 @@ import {
   CloseIcon,
   ChevronDownIcon,
 } from "@chakra-ui/icons";
-import { FaGlobe, FaMobileAlt, FaCode, FaSearch, FaRobot, FaShieldAlt } from "react-icons/fa";
+import { FaGlobe, FaMobileAlt, FaCode, FaSearch, FaRobot, FaComments, FaFileMedical, FaClipboardList, FaFileInvoiceDollar, FaMosque, FaShoppingBasket } from "react-icons/fa";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "@/hooks/useTranslation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -37,9 +37,161 @@ const serviceItems = (t) => [
   { label: t('nav.ai'), href: "/services/ai", icon: FaRobot, desc: t('nav.aiDesc') },
 ];
 
+const productItems = (t) => [
+  { label: "M2aBot", href: "/products#m2abot", icon: FaComments, desc: t('nav.m2abotDesc') },
+  { label: "M2A DocAssist", href: "/products#m2adoc", icon: FaFileMedical, desc: t('nav.m2adocDesc') },
+  { label: "M2A CRM", href: "/products#m2acrm", icon: FaClipboardList, desc: t('nav.m2acrmDesc') },
+  { label: "WasiFacture", href: "/products#wasifacture", icon: FaFileInvoiceDollar, desc: t('nav.wasifactureDesc') },
+  { label: "TimeToPray", href: "/products#timetopray", icon: FaMosque, desc: t('nav.timetoprayDesc') },
+  { label: "EpiList", href: "/products#epilist", icon: FaShoppingBasket, desc: t('nav.epilistDesc') },
+];
+
+const DropdownMenu = ({ label, items, isOpen, setOpen, footerHref, footerLabel }) => (
+  <Box
+    position="relative"
+    onMouseEnter={() => setOpen(true)}
+    onMouseLeave={() => setOpen(false)}
+  >
+    <Box
+      as="button"
+      px={2}
+      py={2}
+      fontSize="md"
+      fontWeight={500}
+      color="var(--color-text-secondary)"
+      position="relative"
+      cursor="pointer"
+      fontFamily="var(--font-body)"
+      display="flex"
+      alignItems="center"
+      gap={1}
+      transition="color 0.2s"
+      _hover={{ color: "#ff5d22" }}
+      _after={{
+        content: '""',
+        position: "absolute",
+        bottom: "0",
+        left: "0",
+        width: "100%",
+        height: "2px",
+        bg: "#ff5d22",
+        transform: isOpen ? "scaleX(1)" : "scaleX(0)",
+        transition: "transform 0.3s ease",
+        transformOrigin: "left",
+      }}
+    >
+      {label}
+      <Icon
+        as={ChevronDownIcon}
+        transition="transform 0.2s"
+        transform={isOpen ? "rotate(180deg)" : ""}
+        fontSize="sm"
+      />
+    </Box>
+
+    <AnimatePresence>
+      {isOpen && (
+        <MotionBox
+          position="absolute"
+          top="100%"
+          left="50%"
+          transform="translateX(-50%)"
+          pt={4}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2 }}
+          zIndex={100}
+        >
+          <Box
+            bg="white"
+            border="1px solid"
+            borderColor="rgba(0, 0, 0, 0.08)"
+            borderRadius="xl"
+            p={6}
+            minW="580px"
+            boxShadow="0 20px 60px rgba(0, 0, 0, 0.1)"
+          >
+            <Grid templateColumns="repeat(2, 1fr)" gap={3}>
+              {items.map((item) => (
+                <GridItem key={item.href}>
+                  <Link href={item.href} _hover={{ textDecoration: "none" }}>
+                    <Flex
+                      p={4}
+                      borderRadius="lg"
+                      align="center"
+                      gap={4}
+                      transition="all 0.2s"
+                      _hover={{ bg: "#fdf5f1" }}
+                      role="group"
+                    >
+                      <Flex
+                        w={10}
+                        h={10}
+                        borderRadius="lg"
+                        bg="#fff3ee"
+                        align="center"
+                        justify="center"
+                        flexShrink={0}
+                        transition="all 0.2s"
+                        _groupHover={{ bg: "rgba(255, 93, 34, 0.15)" }}
+                      >
+                        <Icon
+                          as={item.icon}
+                          w={5}
+                          h={5}
+                          color="var(--color-text-muted)"
+                          _groupHover={{ color: "#ff5d22" }}
+                          transition="color 0.2s"
+                        />
+                      </Flex>
+                      <Box>
+                        <Text
+                          fontWeight={600}
+                          fontSize="sm"
+                          color="var(--color-text-primary)"
+                          _groupHover={{ color: "#ff5d22" }}
+                          transition="color 0.2s"
+                        >
+                          {item.label}
+                        </Text>
+                        <Text fontSize="xs" color="var(--color-text-muted)" mt={0.5}>
+                          {item.desc}
+                        </Text>
+                      </Box>
+                    </Flex>
+                  </Link>
+                </GridItem>
+              ))}
+            </Grid>
+            {footerHref && (
+              <Link
+                href={footerHref}
+                display="block"
+                mt={3}
+                pt={3}
+                borderTop="1px solid"
+                borderColor="rgba(0,0,0,0.06)"
+                textAlign="center"
+                fontSize="sm"
+                fontWeight={600}
+                color="#ff5d22"
+                _hover={{ textDecoration: "none", color: "#e04d15" }}
+              >
+                {footerLabel}
+              </Link>
+            )}
+          </Box>
+        </MotionBox>
+      )}
+    </AnimatePresence>
+  </Box>
+);
+
 const DesktopNav = () => {
   const { t } = useTranslation();
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
 
   const navLinks = [
     { label: t('nav.projects'), href: "/projects" },
@@ -49,131 +201,20 @@ const DesktopNav = () => {
 
   return (
     <HStack spacing={8} align="center">
-      <Box
-        position="relative"
-        onMouseEnter={() => setServicesOpen(true)}
-        onMouseLeave={() => setServicesOpen(false)}
-      >
-        <Box
-          as="button"
-          px={2}
-          py={2}
-          fontSize="md"
-          fontWeight={500}
-          color="var(--color-text-secondary)"
-          position="relative"
-          cursor="pointer"
-          fontFamily="var(--font-body)"
-          display="flex"
-          alignItems="center"
-          gap={1}
-          transition="color 0.2s"
-          _hover={{ color: "#ff5d22" }}
-          _after={{
-            content: '""',
-            position: "absolute",
-            bottom: "0",
-            left: "0",
-            width: "100%",
-            height: "2px",
-            bg: "#ff5d22",
-            transform: servicesOpen ? "scaleX(1)" : "scaleX(0)",
-            transition: "transform 0.3s ease",
-            transformOrigin: "left",
-          }}
-        >
-          {t('nav.services')}
-          <Icon
-            as={ChevronDownIcon}
-            transition="transform 0.2s"
-            transform={servicesOpen ? "rotate(180deg)" : ""}
-            fontSize="sm"
-          />
-        </Box>
-
-        <AnimatePresence>
-          {servicesOpen && (
-            <MotionBox
-              position="absolute"
-              top="100%"
-              left="50%"
-              transform="translateX(-50%)"
-              pt={4}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              zIndex={100}
-            >
-              <Box
-                bg="white"
-                border="1px solid"
-                borderColor="rgba(0, 0, 0, 0.08)"
-                borderRadius="xl"
-                p={6}
-                minW="580px"
-                boxShadow="0 20px 60px rgba(0, 0, 0, 0.1)"
-              >
-                <Grid templateColumns="repeat(2, 1fr)" gap={3}>
-                  {serviceItems(t).map((item) => (
-                    <GridItem key={item.href}>
-                      <Link
-                        href={item.href}
-                        _hover={{ textDecoration: "none" }}
-                      >
-                        <Flex
-                          p={4}
-                          borderRadius="lg"
-                          align="center"
-                          gap={4}
-                          transition="all 0.2s"
-                          _hover={{ bg: "#fdf5f1" }}
-                          role="group"
-                        >
-                          <Flex
-                            w={10}
-                            h={10}
-                            borderRadius="lg"
-                            bg="#fff3ee"
-                            align="center"
-                            justify="center"
-                            flexShrink={0}
-                            transition="all 0.2s"
-                            _groupHover={{ bg: "rgba(255, 93, 34, 0.15)" }}
-                          >
-                            <Icon
-                              as={item.icon}
-                              w={5}
-                              h={5}
-                              color="var(--color-text-muted)"
-                              _groupHover={{ color: "#ff5d22" }}
-                              transition="color 0.2s"
-                            />
-                          </Flex>
-                          <Box>
-                            <Text
-                              fontWeight={600}
-                              fontSize="sm"
-                              color="var(--color-text-primary)"
-                              _groupHover={{ color: "#ff5d22" }}
-                              transition="color 0.2s"
-                            >
-                              {item.label}
-                            </Text>
-                            <Text fontSize="xs" color="var(--color-text-muted)" mt={0.5}>
-                              {item.desc}
-                            </Text>
-                          </Box>
-                        </Flex>
-                      </Link>
-                    </GridItem>
-                  ))}
-                </Grid>
-              </Box>
-            </MotionBox>
-          )}
-        </AnimatePresence>
-      </Box>
+      <DropdownMenu
+        label={t('nav.services')}
+        items={serviceItems(t)}
+        isOpen={servicesOpen}
+        setOpen={setServicesOpen}
+      />
+      <DropdownMenu
+        label={t('nav.products')}
+        items={productItems(t)}
+        isOpen={productsOpen}
+        setOpen={setProductsOpen}
+        footerHref="/products"
+        footerLabel={t('nav.allProducts')}
+      />
 
       {navLinks.map((item) => (
         <Link
@@ -217,6 +258,7 @@ const DesktopNav = () => {
 const MobileNav = () => {
   const { t } = useTranslation();
   const { isOpen: servicesExpanded, onToggle: toggleServices } = useDisclosure();
+  const { isOpen: productsExpanded, onToggle: toggleProducts } = useDisclosure();
 
   const navLinks = [
     { label: t('nav.projects'), href: "/projects" },
@@ -269,6 +311,56 @@ const MobileNav = () => {
                 </HStack>
               </Link>
             ))}
+          </Stack>
+        </Collapse>
+      </Box>
+
+      <Box>
+        <Flex
+          py={2}
+          justify="space-between"
+          align="center"
+          cursor="pointer"
+          onClick={toggleProducts}
+        >
+          <Text fontWeight={600} color="var(--color-text-primary)">
+            {t('nav.products')}
+          </Text>
+          <Icon
+            as={ChevronDownIcon}
+            transition="all .25s ease-in-out"
+            transform={productsExpanded ? "rotate(180deg)" : ""}
+            w={5}
+            h={5}
+            color="var(--color-text-muted)"
+          />
+        </Flex>
+        <Collapse in={productsExpanded} animateOpacity>
+          <Stack
+            mt={2}
+            pl={4}
+            borderLeft="2px solid"
+            borderColor="rgba(255, 93, 34, 0.3)"
+            spacing={3}
+          >
+            {productItems(t).map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                py={1}
+                color="var(--color-text-secondary)"
+                _hover={{ color: "#ff5d22" }}
+                fontSize="sm"
+              >
+                <HStack spacing={3}>
+                  <Icon as={item.icon} w={4} h={4} color="var(--color-text-muted)" />
+                  <Text>{item.label}</Text>
+                </HStack>
+              </Link>
+            ))}
+            <Link href="/products" py={1} color="#ff5d22" fontWeight={600} fontSize="sm">
+              {t('nav.allProducts')}
+            </Link>
           </Stack>
         </Collapse>
       </Box>

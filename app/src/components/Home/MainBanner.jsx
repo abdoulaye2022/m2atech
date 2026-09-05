@@ -61,13 +61,13 @@ function MainBanner() {
 
   const stagger = {
     animate: {
-      transition: { staggerChildren: 0.15 },
+      transition: { staggerChildren: 0.08 },
     },
   };
 
   const fadeUp = {
     initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
   };
 
   return (
@@ -75,7 +75,7 @@ function MainBanner() {
       bg="var(--color-bg-primary)"
       position="relative"
       overflow="hidden"
-      minH="100vh"
+      minH={{ base: "auto", lg: "88vh" }}
       display="flex"
       alignItems="center"
       className="grain-bg"
@@ -110,13 +110,13 @@ function MainBanner() {
         />
       ))}
 
-      <Container maxW="1280px" py={{ base: 20, md: 8 }} pt={{ base: "120px", md: "100px" }} position="relative" zIndex={1}>
+      <Container maxW="1280px" py={{ base: 16, md: 8 }} pt={{ base: "110px", md: "100px" }} pb={{ base: 12, lg: 10 }} position="relative" zIndex={1}>
         <Flex
           direction={{ base: "column", lg: "row" }}
           align="center"
           justify="space-between"
           gap={{ base: 12, lg: 16 }}
-          minH={{ base: "auto", lg: "80vh" }}
+          minH={{ base: "auto", lg: "68vh" }}
         >
           <MotionBox
             flex={{ base: "1", lg: "0 0 58%" }}
@@ -256,7 +256,7 @@ function MainBanner() {
             flex={{ base: "1", lg: "0 0 38%" }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
             display={{ base: "none", lg: "block" }}
           >
             <Box position="relative" w="100%" h="500px" borderRadius="2xl" overflow="hidden">

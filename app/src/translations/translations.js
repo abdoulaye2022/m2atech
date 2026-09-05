@@ -20,7 +20,15 @@ export const translations = {
       customSoftwareDesc: "Custom software for your business",
       seoDesc: "Search engine optimization",
       aiDesc: "Chatbots, ML & AI automation",
-      cybersecurityDesc: "Audits, testing & data protection"
+      cybersecurityDesc: "Audits, testing & data protection",
+      products: "Products",
+      allProducts: "See all our products",
+      m2abotDesc: "Bilingual AI chatbot for your website",
+      m2adocDesc: "AI medical documentation for physicians",
+      m2acrmDesc: "CRM for SMEs: clients, projects, invoicing",
+      wasifactureDesc: "Web & mobile invoicing, FCFA support",
+      timetoprayDesc: "Prayer times, Quran & Qibla app",
+      epilistDesc: "Family shopping list with real-time sync"
     },
 
     // Home Page
@@ -35,6 +43,29 @@ export const translations = {
         trustFreeConsult: "Free 30-min consultation",
         trustQuote24h: "Quote within 24h",
         trustNoCommitment: "No commitment"
+      },
+      offers: {
+        eyebrow: "Popular solutions",
+        title: "What can we build for you?",
+        subtitle: "From a simple showcase website to a full SaaS platform, pick the solution that matches your goal and we'll take it from there.",
+        showcase: "Showcase Website",
+        ecommerce: "E-commerce Store",
+        mobile: "Mobile App (iOS & Android)",
+        crm: "Custom CRM & Management System",
+        chatbot: "AI Chatbot & Automation",
+        redesign: "Website Redesign",
+        maintenance: "Maintenance & Hosting",
+        localSeo: "Local SEO (Moncton & NB)"
+      },
+      recentProjects: {
+        title: "Our Recent",
+        titleHighlight: "Projects",
+        subtitle: "Real websites, apps and platforms we shipped for businesses in Atlantic Canada and beyond.",
+        viewAll: "View all projects",
+        details: "View details",
+        visit: "Visit site",
+        previous: "Previous projects",
+        next: "Next projects"
       },
       services: {
         title: "Our Services",
@@ -259,7 +290,11 @@ export const translations = {
       newsletterTitle: "Stay informed of our news",
       emailPlaceholder: "Your email",
       subscribeButton: "OK",
-      blog: "Blog"
+      blog: "Blog",
+      jobs: "Careers",
+      products: "Products",
+      ourProducts: "Our Products",
+      allProducts: "All products"
     },
 
     ctaBanner: {
@@ -603,6 +638,17 @@ export const translations = {
     },
 
     // Projects
+    products: {
+      eyebrow: "MADE IN MONCTON",
+      title: "Our",
+      titleHighlight: "Products",
+      subtitle: "Beyond client projects, we design and run our own SaaS products: AI chatbots, medical documentation, CRM, invoicing and consumer apps used every day by thousands of people.",
+      visit: "Visit",
+      demo: "Request a demo",
+      ctaTitle: "Need a product like these for your business?",
+      ctaSubtitle: "We can white-label, adapt or build from scratch. Book a free 30-minute consultation and get a detailed quote within 24 hours.",
+      ctaButton: "Book my free consultation"
+    },
     projects: {
       title: "Our",
       titleHighlight: "Projects",
@@ -1200,7 +1246,15 @@ export const translations = {
       customSoftwareDesc: "Logiciels sur mesure pour votre entreprise",
       seoDesc: "Optimisation moteurs de recherche",
       aiDesc: "Chatbots, ML & automatisation IA",
-      cybersecurityDesc: "Audits, tests & protection des donnees"
+      cybersecurityDesc: "Audits, tests & protection des donnees",
+      products: "Produits",
+      allProducts: "Voir tous nos produits",
+      m2abotDesc: "Chatbot IA bilingue pour votre site web",
+      m2adocDesc: "Documentation médicale IA pour médecins",
+      m2acrmDesc: "CRM pour PME : clients, projets, facturation",
+      wasifactureDesc: "Facturation web & mobile, support FCFA",
+      timetoprayDesc: "Horaires de prière, Coran & Qibla",
+      epilistDesc: "Liste de courses familiale synchronisée"
     },
 
     // Home Page
@@ -1215,6 +1269,29 @@ export const translations = {
         trustFreeConsult: "Consultation gratuite 30 min",
         trustQuote24h: "Devis sous 24h",
         trustNoCommitment: "Sans engagement"
+      },
+      offers: {
+        eyebrow: "Solutions populaires",
+        title: "Que pouvons-nous construire pour vous ?",
+        subtitle: "Du simple site vitrine à la plateforme SaaS complète, choisissez la solution qui correspond à votre objectif et on s'occupe du reste.",
+        showcase: "Site Vitrine",
+        ecommerce: "Boutique E-commerce",
+        mobile: "Application Mobile (iOS & Android)",
+        crm: "CRM & Logiciel de Gestion sur Mesure",
+        chatbot: "Chatbot IA & Automatisation",
+        redesign: "Refonte de Site Web",
+        maintenance: "Maintenance & Hébergement",
+        localSeo: "SEO Local (Moncton & N.-B.)"
+      },
+      recentProjects: {
+        title: "Nos Réalisations",
+        titleHighlight: "Récentes",
+        subtitle: "De vrais sites, applications et plateformes livrés pour des entreprises du Canada atlantique et d'ailleurs.",
+        viewAll: "Voir tous les projets",
+        details: "Voir les détails",
+        visit: "Visiter le site",
+        previous: "Projets précédents",
+        next: "Projets suivants"
       },
       services: {
         title: "Nos Services",
@@ -1439,7 +1516,11 @@ export const translations = {
       newsletterTitle: "Restez informe de nos actualites",
       emailPlaceholder: "Votre email",
       subscribeButton: "OK",
-      blog: "Blog"
+      blog: "Blog",
+      jobs: "Carrières",
+      products: "Produits",
+      ourProducts: "Nos Produits",
+      allProducts: "Tous les produits"
     },
 
     ctaBanner: {
@@ -1783,6 +1864,17 @@ export const translations = {
     },
 
     // Projects
+    products: {
+      eyebrow: "CONÇUS À MONCTON",
+      title: "Nos",
+      titleHighlight: "Produits",
+      subtitle: "Au-delà des projets clients, nous concevons et exploitons nos propres produits SaaS : chatbots IA, documentation médicale, CRM, facturation et applications grand public utilisées chaque jour par des milliers de personnes.",
+      visit: "Visiter",
+      demo: "Demander une démo",
+      ctaTitle: "Besoin d'un produit comme ceux-ci pour votre entreprise ?",
+      ctaSubtitle: "Nous pouvons adapter, personnaliser en marque blanche ou construire de zéro. Réservez une consultation gratuite de 30 minutes et recevez un devis détaillé sous 24 heures.",
+      ctaButton: "Réserver ma consultation gratuite"
+    },
     projects: {
       title: "Nos",
       titleHighlight: "Projets",

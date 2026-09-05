@@ -99,7 +99,7 @@ const FooterApp = () => {
 
         {/* Main grid */}
         <Grid
-          templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
+          templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(5, 1fr)" }}
           gap={8}
           mb={12}
         >
@@ -121,9 +121,11 @@ const FooterApp = () => {
               {[
                 { href: "/about", label: t('footer.aboutUs') },
                 { href: "/services/web-apps", label: t('footer.services') },
+                { href: "/products", label: t('footer.products') },
                 { href: "/projects", label: t('footer.projects') },
-                { href: "/contact", label: t('footer.contact') },
                 { href: "/blog", label: t('footer.blog') },
+                { href: "/jobs", label: t('footer.jobs') },
+                { href: "/contact", label: t('footer.contact') },
               ].map((link) => (
                 <Link
                   key={link.href}
@@ -177,6 +179,46 @@ const FooterApp = () => {
             </Stack>
           </GridItem>
 
+          {/* Products */}
+          <GridItem>
+            <Heading
+              as="h3"
+              fontSize="sm"
+              mb={5}
+              color="#ff5d22"
+              fontFamily="var(--font-display)"
+              fontWeight="700"
+              textTransform="uppercase"
+              letterSpacing="wider"
+            >
+              {t('footer.ourProducts')}
+            </Heading>
+            <Stack spacing={3}>
+              {[
+                { href: "https://m2abot.ai", label: "M2aBot", external: true },
+                { href: "https://m2adoc.com", label: "M2A DocAssist", external: true },
+                { href: "https://m2acrm.com", label: "M2A CRM", external: true },
+                { href: "https://wasifacture.com", label: "WasiFacture", external: true },
+                { href: "https://timetopray.app", label: "TimeToPray", external: true },
+                { href: "/products", label: t('footer.allProducts') },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
+                  color="whiteAlpha.600"
+                  fontSize="sm"
+                  _hover={{ color: "#ff5d22", transform: "translateX(4px)" }}
+                  transition="all 0.2s"
+                  display="block"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </Stack>
+          </GridItem>
+
           {/* Contact */}
           <GridItem>
             <Heading
@@ -205,7 +247,14 @@ const FooterApp = () => {
               </Flex>
               <Flex align="center" gap={3}>
                 <PhoneIcon color="#ff5d22" />
-                <Text color="whiteAlpha.600" fontSize="sm">{t('footer.phone')}</Text>
+                <Link
+                  href="tel:+15068506548"
+                  color="whiteAlpha.600"
+                  fontSize="sm"
+                  _hover={{ color: "#ff5d22" }}
+                >
+                  {t('footer.phone')}
+                </Link>
               </Flex>
               <Text color="whiteAlpha.500" fontSize="xs" mt={2}>
                 {t('footer.address')}

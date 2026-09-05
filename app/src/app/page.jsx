@@ -2,6 +2,8 @@
 
 import MainBanner from "@/components/Home/MainBanner";
 import ServicesSection from "@/components/Home/ServicesSection";
+import OffersSection from "@/components/Home/OffersSection";
+import RecentProjectsSection from "@/components/Home/RecentProjectsSection";
 import ToolsSection from "@/components/Home/ToolsSection";
 import WhyChooseUsSection from "@/components/Home/WhyChooseUsSection";
 import StatsSection from "@/components/Home/StatsSection";
@@ -41,6 +43,8 @@ export default function Home() {
       >
         <MainBanner />
         <ServicesSection />
+        <OffersSection />
+        <RecentProjectsSection />
         <StatsSection />
         <WhyChooseUsSection />
         <PromotionBanner />
