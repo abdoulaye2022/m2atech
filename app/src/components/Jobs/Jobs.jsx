@@ -26,22 +26,10 @@ const getJobStatus = (deadlineDate) => {
 const Jobs = () => {
   const { t, language } = useTranslation();
 
-  const jobOpenings = [
-    {
-      id: 1,
-      title: t('jobs.openings.marketingAssistant.title'),
-      department: t('jobs.openings.marketingAssistant.department'),
-      type: t('jobs.openings.marketingAssistant.type'),
-      workMode: t('jobs.openings.marketingAssistant.workMode'),
-      location: t('jobs.openings.marketingAssistant.location'),
-      hours: t('jobs.openings.marketingAssistant.hours'),
-      salary: "60 000 - 120 000 FCFA",
-      deadline: "2026-07-14", // Date limite: mardi 14 juillet 2026
-      shortDescription: t('jobs.openings.marketingAssistant.shortDescription'),
-      skills: ["LinkedIn", "Facebook", "Instagram", "Canva", "CRM"],
-      applyUrl: "https://www.m2acrm.com/careers/ebf02156-6870-4eef-a678-5d6428f831a3"
-    }
-  ];
+  // Aucune offre active pour le moment. Pour en publier une, ajouter un objet ici :
+  // { id, title, department, type, workMode, location, hours, salary, deadline: "YYYY-MM-DD",
+  //   shortDescription, skills: [], applyUrl }
+  const jobOpenings = [];
 
   // Get status for each job
   const getStatusLabel = (job) => {
@@ -81,7 +69,30 @@ const Jobs = () => {
           {t('jobs.subtitle')}
         </Text>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} mb={16}>
+        {jobOpenings.length === 0 && (
+          <Box
+            maxW="640px"
+            mx="auto"
+            mb={8}
+            p={10}
+            textAlign="center"
+            borderWidth="1px"
+            borderStyle="dashed"
+            borderColor="var(--color-border)"
+            borderRadius="xl"
+            bg="var(--color-bg-secondary)"
+          >
+            <Icon as={FaBriefcase} w={8} h={8} color="#ff5d22" mb={4} />
+            <Heading as="h2" fontSize="xl" fontFamily="var(--font-display)" color="var(--color-text-primary)" mb={2}>
+              {t('jobs.noOpeningsTitle')}
+            </Heading>
+            <Text color="var(--color-text-secondary)">
+              {t('jobs.noOpeningsText')}
+            </Text>
+          </Box>
+        )}
+
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} mb={16} display={jobOpenings.length === 0 ? "none" : undefined}>
           {jobOpenings.map((job) => {
             const status = getStatusLabel(job);
 
