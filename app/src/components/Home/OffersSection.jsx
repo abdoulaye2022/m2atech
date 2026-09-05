@@ -29,7 +29,7 @@ const OffersSection = () => {
     { icon: FaClipboardList, label: t("home.offers.crm"), href: "/services/custom-software" },
     { icon: FaRobot, label: t("home.offers.chatbot"), href: "/services/ai" },
     { icon: FaSyncAlt, label: t("home.offers.redesign"), href: "/services/web-apps" },
-    { icon: FaTools, label: t("home.offers.maintenance"), href: "/contact" },
+    { icon: FaTools, label: t("home.offers.maintenance"), href: "/services/maintenance" },
     { icon: FaMapMarkerAlt, label: t("home.offers.localSeo"), href: "/services/seo" },
   ];
 

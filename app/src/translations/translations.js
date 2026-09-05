@@ -20,6 +20,8 @@ export const translations = {
       customSoftwareDesc: "Custom software for your business",
       seoDesc: "Search engine optimization",
       aiDesc: "Chatbots, ML & AI automation",
+      maintenance: "Maintenance & Hosting",
+      maintenanceDesc: "Monthly plans from $49/month",
       cybersecurityDesc: "Audits, testing & data protection",
       products: "Products",
       allProducts: "See all our products",
@@ -87,6 +89,10 @@ export const translations = {
         seo: {
           title: "SEO",
           description: "Boost your visibility with our optimization strategies. Technical SEO, content strategy, and analytics."
+        },
+        maintenance: {
+          title: "Maintenance & Hosting",
+          description: "Monthly plans from $49: Canadian hosting, backups, security updates, 24/7 monitoring and content changes included. Your site stays fast and safe."
         },
         ai: {
           title: "AI Solutions",
@@ -277,6 +283,7 @@ export const translations = {
       customSoftware: "Custom Software",
       seo: "SEO",
       ai: "AI Solutions",
+      maintenance: "Maintenance & Hosting",
       cybersecurity: "Cybersecurity",
       contactUs: "Contact Us",
       address: "74 Belmont Street, Moncton, NB E1C 8W4, Canada",
@@ -401,6 +408,74 @@ export const translations = {
         },
         preview: "Preview",
         previewDescription: "Your custom web application"
+      },
+      maintenance: {
+        title: "Maintenance &",
+        titleHighlight: "Hosting",
+        description: "Your website is live. Now keep it fast, secure and up to date without thinking about it. One monthly plan covers Canadian hosting, backups, updates, monitoring and the small changes you need along the way.",
+        features: {
+          hosting: { title: "Fast Canadian Hosting", description: "Your site hosted on high-performance servers in Canada, with SSL certificate, CDN and PIPEDA-friendly data residency." },
+          backups: { title: "Automatic Backups", description: "Daily or weekly backups stored off-site, with one-click restore if anything ever goes wrong." },
+          updates: { title: "Updates & Security Patches", description: "Framework, plugin and dependency updates applied and tested by us, so vulnerabilities never stay open." },
+          monitoring: { title: "24/7 Monitoring", description: "Uptime, performance and security monitoring with alerts. We usually know about an issue before you do." },
+          changes: { title: "Content Changes Included", description: "A monthly bank of hours for text, image, page and feature tweaks, handled by the team that built your site." },
+          reports: { title: "Performance Reports", description: "A clear monthly report: traffic, speed, uptime and what we did. No jargon." }
+        },
+        pricingTitle: "Simple",
+        pricingTitleHighlight: "Monthly Plans",
+        pricingSubtitle: "Pick the level of care your site needs. Change or cancel any time.",
+        mostPopular: "MOST POPULAR",
+        perMonth: "CAD / month",
+        priceNote: "Plus applicable taxes. No setup fee for sites built by M2ATech.",
+        choosePlan: "Choose this plan",
+        plans: {
+          essential: {
+            name: "Essential",
+            tagline: "For showcase websites that need to stay online and secure.",
+            included: [
+              "Canadian hosting + SSL certificate",
+              "Weekly backups",
+              "Monthly security updates",
+              "Uptime monitoring",
+              "Email support (48 h response)"
+            ]
+          },
+          pro: {
+            name: "Pro",
+            tagline: "For businesses that update their site regularly and want peace of mind.",
+            included: [
+              "Everything in Essential",
+              "Daily backups",
+              "Weekly updates & patches",
+              "2 hours of content changes per month",
+              "Monthly performance report",
+              "Priority support (24 h response)"
+            ]
+          },
+          premium: {
+            name: "Premium",
+            tagline: "For e-commerce, SaaS and high-traffic sites where every hour counts.",
+            included: [
+              "Everything in Pro",
+              "5 hours of changes & improvements per month",
+              "Continuous speed & SEO optimization",
+              "24/7 security monitoring & incident response",
+              "Phone / WhatsApp support (4 h response)",
+              "Dedicated account manager"
+            ]
+          }
+        },
+        guarantees: {
+          noCommitment: "Month to month, cancel any time",
+          canadianHosting: "Data hosted in Canada",
+          responseTime: "Guaranteed response times"
+        },
+        faqTitle: "Questions about maintenance plans",
+        faq: {
+          commitment: { question: "Is there a minimum commitment?", answer: "No. Plans are billed monthly and you can upgrade, downgrade or cancel with 30 days' notice. We would rather keep you with good service than with a contract." },
+          existingSite: { question: "Can you maintain a site you didn't build?", answer: "Yes. We start with a free technical audit of your current site (WordPress, Next.js, Laravel, Shopify…). If it can be maintained safely, we migrate it to our hosting and take over from there." },
+          extraHours: { question: "What happens if I need more changes than my plan includes?", answer: "Unused hours don't expire for 3 months. Beyond that, extra work is billed at our hourly rate, or we simply move you to the next plan for the month." }
+        }
       },
       mobileApps: {
         title: "Mobile",
@@ -1248,6 +1323,8 @@ export const translations = {
       customSoftwareDesc: "Logiciels sur mesure pour votre entreprise",
       seoDesc: "Optimisation moteurs de recherche",
       aiDesc: "Chatbots, ML & automatisation IA",
+      maintenance: "Maintenance & Hébergement",
+      maintenanceDesc: "Forfaits mensuels dès 49 $/mois",
       cybersecurityDesc: "Audits, tests & protection des donnees",
       products: "Produits",
       allProducts: "Voir tous nos produits",
@@ -1315,6 +1392,10 @@ export const translations = {
         seo: {
           title: "SEO",
           description: "Boostez votre visibilité avec nos stratégies d'optimisation. SEO technique, stratégie de contenu et analytiques."
+        },
+        maintenance: {
+          title: "Maintenance & Hébergement",
+          description: "Forfaits mensuels dès 49 $ : hébergement au Canada, sauvegardes, mises à jour de sécurité, surveillance 24/7 et modifications incluses. Votre site reste rapide et sûr."
         },
         ai: {
           title: "Solutions IA",
@@ -1505,6 +1586,7 @@ export const translations = {
       customSoftware: "Logiciels Personnalisés",
       seo: "SEO",
       ai: "Solutions IA",
+      maintenance: "Maintenance & Hébergement",
       cybersecurity: "Cybersécurité",
       contactUs: "Nous Contacter",
       address: "74 Rue Belmont, Moncton, NB E1C 8W4, Canada",
@@ -1629,6 +1711,74 @@ export const translations = {
         },
         preview: "Aperçu",
         previewDescription: "Votre application web personnalisée"
+      },
+      maintenance: {
+        title: "Maintenance &",
+        titleHighlight: "Hébergement",
+        description: "Votre site est en ligne. Gardez-le rapide, sécurisé et à jour sans y penser. Un seul forfait mensuel couvre l'hébergement au Canada, les sauvegardes, les mises à jour, la surveillance et les petites modifications dont vous avez besoin en cours de route.",
+        features: {
+          hosting: { title: "Hébergement Rapide au Canada", description: "Votre site hébergé sur des serveurs performants au Canada, avec certificat SSL, CDN et résidence des données conforme à la LPRPDE." },
+          backups: { title: "Sauvegardes Automatiques", description: "Sauvegardes quotidiennes ou hebdomadaires stockées hors site, avec restauration en un clic si quelque chose tourne mal." },
+          updates: { title: "Mises à Jour & Correctifs", description: "Mises à jour du framework, des extensions et des dépendances appliquées et testées par nous, pour qu'aucune faille ne reste ouverte." },
+          monitoring: { title: "Surveillance 24/7", description: "Surveillance de la disponibilité, des performances et de la sécurité avec alertes. On est souvent au courant d'un problème avant vous." },
+          changes: { title: "Modifications Incluses", description: "Une banque d'heures mensuelle pour les textes, images, pages et petites fonctionnalités, réalisées par l'équipe qui a construit votre site." },
+          reports: { title: "Rapports de Performance", description: "Un rapport mensuel clair : trafic, vitesse, disponibilité et ce que nous avons fait. Sans jargon." }
+        },
+        pricingTitle: "Des forfaits mensuels",
+        pricingTitleHighlight: "simples",
+        pricingSubtitle: "Choisissez le niveau de suivi dont votre site a besoin. Changez ou annulez à tout moment.",
+        mostPopular: "LE PLUS POPULAIRE",
+        perMonth: "CAD / mois",
+        priceNote: "Taxes en sus. Aucuns frais d'installation pour les sites construits par M2ATech.",
+        choosePlan: "Choisir ce forfait",
+        plans: {
+          essential: {
+            name: "Essentiel",
+            tagline: "Pour les sites vitrines qui doivent rester en ligne et sécurisés.",
+            included: [
+              "Hébergement au Canada + certificat SSL",
+              "Sauvegardes hebdomadaires",
+              "Mises à jour de sécurité mensuelles",
+              "Surveillance de la disponibilité",
+              "Support par courriel (réponse sous 48 h)"
+            ]
+          },
+          pro: {
+            name: "Pro",
+            tagline: "Pour les entreprises qui mettent leur site à jour régulièrement et veulent la tranquillité d'esprit.",
+            included: [
+              "Tout le forfait Essentiel",
+              "Sauvegardes quotidiennes",
+              "Mises à jour & correctifs hebdomadaires",
+              "2 heures de modifications par mois",
+              "Rapport mensuel de performance",
+              "Support prioritaire (réponse sous 24 h)"
+            ]
+          },
+          premium: {
+            name: "Premium",
+            tagline: "Pour les sites e-commerce, SaaS et à fort trafic où chaque heure compte.",
+            included: [
+              "Tout le forfait Pro",
+              "5 heures de modifications & améliorations par mois",
+              "Optimisation continue de la vitesse & du SEO",
+              "Surveillance sécurité 24/7 & gestion des incidents",
+              "Support téléphone / WhatsApp (réponse sous 4 h)",
+              "Gestionnaire de compte dédié"
+            ]
+          }
+        },
+        guarantees: {
+          noCommitment: "Mensuel, résiliable à tout moment",
+          canadianHosting: "Données hébergées au Canada",
+          responseTime: "Délais de réponse garantis"
+        },
+        faqTitle: "Questions sur les forfaits de maintenance",
+        faq: {
+          commitment: { question: "Y a-t-il un engagement minimum ?", answer: "Non. Les forfaits sont facturés au mois et vous pouvez monter, descendre ou annuler avec un préavis de 30 jours. Nous préférons vous garder grâce à un bon service plutôt qu'à un contrat." },
+          existingSite: { question: "Pouvez-vous entretenir un site que vous n'avez pas construit ?", answer: "Oui. Nous commençons par un audit technique gratuit de votre site actuel (WordPress, Next.js, Laravel, Shopify…). S'il peut être maintenu en toute sécurité, nous le migrons sur notre hébergement et prenons le relais." },
+          extraHours: { question: "Que se passe-t-il si j'ai besoin de plus de modifications que mon forfait n'en inclut ?", answer: "Les heures non utilisées restent valables 3 mois. Au-delà, le travail supplémentaire est facturé à notre taux horaire, ou nous vous passons simplement au forfait supérieur pour le mois." }
+        }
       },
       mobileApps: {
         title: "Solutions",

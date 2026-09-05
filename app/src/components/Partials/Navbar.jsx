@@ -22,7 +22,7 @@ import {
   CloseIcon,
   ChevronDownIcon,
 } from "@chakra-ui/icons";
-import { FaGlobe, FaMobileAlt, FaCode, FaSearch, FaRobot, FaComments, FaFileMedical, FaClipboardList, FaFileInvoiceDollar, FaMosque, FaShoppingBasket } from "react-icons/fa";
+import { FaGlobe, FaMobileAlt, FaCode, FaSearch, FaRobot, FaTools, FaComments, FaFileMedical, FaClipboardList, FaFileInvoiceDollar, FaMosque, FaShoppingBasket } from "react-icons/fa";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "@/hooks/useTranslation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -35,6 +35,7 @@ const serviceItems = (t) => [
   { label: t('nav.customSoftware'), href: "/services/custom-software", icon: FaCode, desc: t('nav.customSoftwareDesc') },
   { label: t('nav.seo'), href: "/services/seo", icon: FaSearch, desc: t('nav.seoDesc') },
   { label: t('nav.ai'), href: "/services/ai", icon: FaRobot, desc: t('nav.aiDesc') },
+  { label: t('nav.maintenance'), href: "/services/maintenance", icon: FaTools, desc: t('nav.maintenanceDesc') },
 ];
 
 const productItems = (t) => [

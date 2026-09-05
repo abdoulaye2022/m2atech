@@ -27,13 +27,14 @@
 | `/services/custom-software` | Solutions logicielles sur mesure |
 | `/services/ai` | Solutions d'intelligence artificielle |
 | `/services/seo` | Optimisation pour les moteurs de recherche |
+| `/services/maintenance` | Maintenance & hébergement, 3 forfaits mensuels |
 
 > La page cybersécurité n'existe plus. Les clés de traduction `nav.cybersecurity` et `footer.cybersecurity` subsistent mais ne sont plus utilisées.
 
 ### Routes techniques
 | Route | Description |
 |-------|-------------|
-| `/sitemap.xml` | Sitemap généré par `app/sitemap.js` (17 URL) |
+| `/sitemap.xml` | Sitemap généré par `app/sitemap.js` (18 URL) |
 | `/robots.txt` | Règles robots générées par `app/robots.js` |
 | `/api/contact` | Server action `api_contact()` vers le backend PHP |
 | `/api/sitemap` | Ancienne génération de sitemap (conservée) |
@@ -45,7 +46,7 @@
 | # | Composant | Contenu |
 |---|-----------|---------|
 | 1 | `MainBanner` | Hero |
-| 2 | `ServicesSection` | 5 cartes de services |
+| 2 | `ServicesSection` | 6 cartes de services |
 | 3 | `OffersSection` | Grille de 8 offres populaires |
 | 4 | `RecentProjectsSection` | Carrousel des 8 projets récents |
 | 5 | `StatsSection` | Compteurs animés |
@@ -71,15 +72,15 @@
 - Illustration à droite masquée sur mobile
 
 ### ServicesSection
-- Grille de 5 cartes (3 colonnes desktop) : Web Apps, Mobile Apps, Custom Software, SEO, AI Solutions
+- Grille de 6 cartes (3 colonnes desktop) : Web Apps, Mobile Apps, Custom Software, SEO, AI Solutions, Maintenance & Hosting
 - Badge "Popular" sur AI Solutions
-- Code couleur par service (orange, bleu, vert, violet, rose)
+- Code couleur par service (orange, bleu, vert, violet, rose, turquoise)
 - Flèche "Learn more" au survol
 
 ### OffersSection (Solutions populaires)
 - Bloc texte à gauche + grille de 8 pastilles cliquables à droite
 - Offres : Site vitrine, Boutique e-commerce, Application mobile, CRM & logiciel de gestion, Chatbot IA & automatisation, Refonte de site, Maintenance & hébergement, SEO local
-- Chaque pastille pointe vers la page service correspondante (ou `/contact` pour la maintenance)
+- Chaque pastille pointe vers la page service correspondante
 - Ancre `#offers`
 
 ### RecentProjectsSection (Réalisations récentes)
@@ -145,6 +146,26 @@
 
 ---
 
+## 3b. Page Maintenance & hébergement (`/services/maintenance`)
+
+- Composant `MaintenanceSection`, même gabarit que les autres pages services (Navbar, section, `ContactBanner`, footer)
+- 6 features incluses : hébergement rapide au Canada, sauvegardes automatiques, mises à jour & correctifs, surveillance 24/7, modifications incluses, rapports de performance
+- 3 forfaits mensuels en CAD, définis dans la constante `PLANS` du composant (seul endroit où changer les prix) :
+
+| Forfait | Prix | Pour qui |
+|---------|------|----------|
+| Essentiel | 49 $/mois | Sites vitrines |
+| Pro (mis en avant) | 99 $/mois | Entreprises qui mettent à jour régulièrement |
+| Premium | 199 $/mois | E-commerce, SaaS, fort trafic |
+
+- Contenu de chaque forfait (liste `included`) dans `servicesPage.maintenance.plans.*` en EN et FR
+- Bouton "Choisir ce forfait" → `/contact?plan=<clé>`
+- Bandeau de garanties (sans engagement, données au Canada, délais garantis) et FAQ de 3 questions en accordéon
+- Ancre `#pricing` pour lier directement aux forfaits
+- Présente dans le menu Services, le pied de page, la grille de services et les offres populaires de l'accueil, et le sitemap
+
+---
+
 ## 4. Portfolio (`/projects`)
 
 - 32 projets définis dans `getProjects(t)` (exporté depuis `ProjectSection.jsx`), du plus récent au plus ancien
@@ -187,6 +208,7 @@
 | `Services/CustomSoftwareSection.jsx` | 6 features logiciels sur mesure |
 | `Services/AiSection.jsx` | 6 features solutions IA |
 | `Services/SeoSection.jsx` | 6 features SEO |
+| `Services/MaintenanceSection.jsx` | Page Maintenance & hébergement : 6 features, 3 forfaits, garanties, FAQ |
 | `Services/ProcessSection.jsx` | Processus en 4 étapes (aussi sur l'accueil) |
 | `Services/ServiceBanner.jsx` | En-tête des pages de service |
 
@@ -207,7 +229,7 @@
 ## 6. Navigation
 
 ### Menu principal (desktop)
-1. **Services** (menu déroulant, 5 entrées avec icône et description)
+1. **Services** (menu déroulant, 6 entrées avec icône et description)
 2. **Produits** (menu déroulant, 6 entrées avec icône et description + lien "Voir tous nos produits")
 3. **Projets**
 4. **Emplois**
@@ -219,7 +241,7 @@
 
 ### Pied de page
 - **Liens rapides** : À propos, Services, Produits, Projets, Blog, Carrières, Contact
-- **Nos services** : les 5 services
+- **Nos services** : les 6 services
 - **Nos produits** : M2aBot, M2A DocAssist, M2A CRM, WasiFacture, TimeToPray (liens externes) + "Tous les produits"
 - **Contact** : contact@m2atech.com, +1 (506) 850-6548 (lien `tel:`), 74 Belmont Street, Moncton
 - **Réseaux** : Facebook, LinkedIn, Instagram
@@ -277,7 +299,7 @@
 - `<html lang="en">`, Open Graph (locale en_CA, alternate fr_CA), Twitter Card, canonical, alternates en-CA / fr-CA
 - Données structurées JSON-LD : Organization, LocalBusiness, ProfessionalService, WebSite, catalogue de services, horaires, zone desservie
 - SEO local : Moncton, NB, coordonnées 46.0878 / -64.7782, 74 Belmont Street, +1-506-850-6548
-- Sitemap : accueil, about, products, projects, contact, jobs, 5 services, privacy, cookie, blog + 3 articles
+- Sitemap : accueil, about, products, projects, contact, jobs, 6 services, privacy, cookie, blog + 3 articles
 - Robots : tout autorisé sauf `/api/`, `/admin/`, `/_next/`, `/private/`
 - Favicon, apple-touch-icon, manifest PWA, couleur thème #ff5d22
 
@@ -338,7 +360,7 @@
     /blog/[slug]
     /services
       layout.jsx
-      /web-apps, /mobile-apps, /custom-software, /ai, /seo
+      /web-apps, /mobile-apps, /custom-software, /ai, /seo, /maintenance
         layout.jsx, page.jsx
     /api
       /contact/contact.js
@@ -347,7 +369,7 @@
     /Home              # 15 composants (dont OffersSection, RecentProjectsSection)
     /Products          # ProductsSection.jsx
     /Projects          # ProjectSection.jsx (exporte getProjects)
-    /Services          # 7 composants
+    /Services          # 8 composants
     /Contact, /About, /Jobs
     /Partials          # Navbar, FooterApp, ContactBanner, AnimatedSection, …
     /Layout            # ClientLayout.jsx

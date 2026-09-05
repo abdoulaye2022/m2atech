@@ -12,7 +12,7 @@ import {
   Flex,
   Badge,
 } from "@chakra-ui/react";
-import { FaGlobe, FaMobileAlt, FaCode, FaSearch, FaRobot, FaShieldAlt, FaArrowRight } from "react-icons/fa";
+import { FaGlobe, FaMobileAlt, FaCode, FaSearch, FaRobot, FaTools, FaArrowRight } from "react-icons/fa";
 import { useTranslation } from "@/hooks/useTranslation";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -28,6 +28,7 @@ const ServicesSection = () => {
     { icon: FaCode, title: t('home.services.customSoftware.title'), description: t('home.services.customSoftware.description'), href: "/services/custom-software", color: "#10b981" },
     { icon: FaSearch, title: t('home.services.seo.title'), description: t('home.services.seo.description'), href: "/services/seo", color: "#8b5cf6" },
     { icon: FaRobot, title: t('home.services.ai.title'), description: t('home.services.ai.description'), href: "/services/ai", color: "#ec4899", popular: true },
+    { icon: FaTools, title: t('home.services.maintenance.title'), description: t('home.services.maintenance.description'), href: "/services/maintenance", color: "#14b8a6" },
   ];
 
   return (

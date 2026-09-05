@@ -70,6 +70,12 @@ export default function sitemap() {
         priority: 0.9,
       },
       {
+        url: `${baseUrl}/services/maintenance`,
+        lastModified: currentDate,
+        changeFrequency: "monthly",
+        priority: 0.9,
+      },
+      {
         url: `${baseUrl}/services/ai`,
         lastModified: currentDate,
         changeFrequency: "monthly",

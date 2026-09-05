@@ -163,6 +163,7 @@ const FooterApp = () => {
                 { href: "/services/custom-software", label: t('footer.customSoftware') },
                 { href: "/services/seo", label: t('footer.seo') },
                 { href: "/services/ai", label: t('footer.ai') },
+                { href: "/services/maintenance", label: t('footer.maintenance') },
               ].map((link) => (
                 <Link
                   key={link.href}
