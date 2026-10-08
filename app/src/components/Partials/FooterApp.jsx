@@ -197,6 +197,7 @@ const FooterApp = () => {
             <Stack spacing={3}>
               {[
                 { href: "https://m2abot.ai", label: "M2aBot", external: true },
+                { href: "https://trajo.ca", label: "Trajo", external: true },
                 { href: "https://m2adoc.com", label: "M2A DocAssist", external: true },
                 { href: "https://m2acrm.com", label: "M2A CRM", external: true },
                 { href: "https://wasifacture.com", label: "WasiFacture", external: true },

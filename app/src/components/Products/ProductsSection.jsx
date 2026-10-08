@@ -23,7 +23,7 @@ import { getProjects } from "@/components/Projects/ProjectSection";
 
 const MotionBox = motion(Box);
 
-export const PRODUCT_KEYS = ["m2abot", "m2adoc", "m2acrm", "wasifacture", "timetopray", "epilist"];
+export const PRODUCT_KEYS = ["m2abot", "trajo", "m2adoc", "m2acrm", "wasifacture", "timetopray", "epilist"];
 
 export const getProducts = (t) => {
   const all = getProjects(t);

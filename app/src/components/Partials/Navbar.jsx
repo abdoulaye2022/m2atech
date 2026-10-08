@@ -22,7 +22,7 @@ import {
   CloseIcon,
   ChevronDownIcon,
 } from "@chakra-ui/icons";
-import { FaGlobe, FaMobileAlt, FaCode, FaSearch, FaRobot, FaTools, FaComments, FaFileMedical, FaClipboardList, FaFileInvoiceDollar, FaMosque, FaShoppingBasket } from "react-icons/fa";
+import { FaGlobe, FaMobileAlt, FaCode, FaSearch, FaRobot, FaTools, FaComments, FaFileMedical, FaClipboardList, FaFileInvoiceDollar, FaMosque, FaShoppingBasket, FaRoute } from "react-icons/fa";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "@/hooks/useTranslation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -40,6 +40,7 @@ const serviceItems = (t) => [
 
 const productItems = (t) => [
   { label: "M2aBot", href: "/products#m2abot", icon: FaComments, desc: t('nav.m2abotDesc') },
+  { label: "Trajo", href: "/products#trajo", icon: FaRoute, desc: t('nav.trajoDesc') },
   { label: "M2A DocAssist", href: "/products#m2adoc", icon: FaFileMedical, desc: t('nav.m2adocDesc') },
   { label: "M2A CRM", href: "/products#m2acrm", icon: FaClipboardList, desc: t('nav.m2acrmDesc') },
   { label: "WasiFacture", href: "/products#wasifacture", icon: FaFileInvoiceDollar, desc: t('nav.wasifactureDesc') },

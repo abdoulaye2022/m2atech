@@ -26,6 +26,7 @@ export const translations = {
       products: "Products",
       allProducts: "See all our products",
       m2abotDesc: "Bilingual AI chatbot for your website",
+      trajoDesc: "Automatic mileage & CRA reports on the road",
       m2adocDesc: "AI medical documentation for physicians",
       m2acrmDesc: "CRM for SMEs: clients, projects, invoicing",
       wasifactureDesc: "Web & mobile invoicing, FCFA support",
@@ -717,7 +718,7 @@ export const translations = {
       eyebrow: "MADE IN MONCTON",
       title: "Our",
       titleHighlight: "Products",
-      subtitle: "Beyond client projects, we design and run our own SaaS products: AI chatbots, medical documentation, CRM, invoicing and consumer apps used every day by thousands of people.",
+      subtitle: "Beyond client projects, we design and run our own SaaS products: AI chatbots, mileage tracking, medical documentation, CRM, invoicing and consumer apps used every day by thousands of people.",
       visit: "Visit",
       demo: "Request a demo",
       ctaTitle: "Need a product like these for your business?",
@@ -993,6 +994,58 @@ export const translations = {
             "Data Hosted in Canada (Montreal)",
             "Low-latency Streaming",
             "Up to 90% Cheaper than Interpreters"
+          ]
+        },
+        trajo: {
+          title: "Trajo",
+          description: "Bilingual SaaS platform and iPhone / Android app that automatically logs mileage for professionals on the road: real estate, construction, property management, inspection, mortgage and other mobile trades. Trips are captured in the background, linked to the right appointment and classified, while expenses and CRA-compliant reports are prepared automatically. A web dashboard gives organizations per-member monthly totals without ever exposing real-time location.",
+          category: "SaaS & Mobile App",
+          features: [
+            "Automatic GPS Trip Tracking (Background)",
+            "Offline Mode with Auto-sync",
+            "Personal / Business Trip Classification",
+            "Multiple Vehicles & Odometer Photos",
+            "Expenses with Receipt Capture",
+            "CRA-compliant Reports (PDF & Excel)",
+            "Trade-specific Vocabulary & Modules (6 Trades)",
+            "Privacy-first Team Dashboard",
+            "Per-seat Subscription Billing & 14-day Trial",
+            "iOS & Android Apps",
+            "Bilingual Interface (FR / EN)"
+          ]
+        },
+        nomadi: {
+          title: "Nomadi Social House",
+          description: "Bilingual website for Nomadi Social House, an Afro-fusion restaurant in Moncton, New Brunswick. Guests book a table online in a few steps (party size, date, time, allergies), place takeout orders for pickup, discover menus and upcoming experiences, and request private events, group dinners or catering, all in an immersive dark design that tells the restaurant's story.",
+          category: "Restaurant Website",
+          features: [
+            "Online Table Reservations",
+            "Takeout Ordering for Pickup",
+            "Menus & Opening Hours",
+            "Experiences & Events Page",
+            "Private Event & Catering Requests",
+            "Email Confirmation & Cancellation Link",
+            "Brand Story & Photo Gallery",
+            "Newsletter Signup",
+            "Bilingual Interface (FR / EN)",
+            "Responsive Design"
+          ]
+        },
+        copaje: {
+          title: "COPAJE AF/CA",
+          description: "Bilingual website for COPAJE AF/CA, a Moncton-based non-profit supporting Afro-descendant youth in Canada through training, financial literacy talks, mentorship and entrepreneurship. The site presents the mission and its four support pillars, activities and photo gallery, and turns visitors into members, volunteers and partners with dedicated sign-up paths.",
+          category: "Non-profit Website",
+          features: [
+            "Mission & Four Support Pillars",
+            "Activities & Events",
+            "Photo Gallery",
+            "Membership Sign-up",
+            "Volunteer & Partner Applications",
+            "Donations & Sponsorship",
+            "Newsletter Signup",
+            "Contact Page",
+            "Bilingual Interface (FR / EN)",
+            "Responsive Design"
           ]
         },
         sahelyssaveurs: {
@@ -1329,6 +1382,7 @@ export const translations = {
       products: "Produits",
       allProducts: "Voir tous nos produits",
       m2abotDesc: "Chatbot IA bilingue pour votre site web",
+      trajoDesc: "Kilométrage automatique & rapports ARC",
       m2adocDesc: "Documentation médicale IA pour médecins",
       m2acrmDesc: "CRM pour PME : clients, projets, facturation",
       wasifactureDesc: "Facturation web & mobile, support FCFA",
@@ -2020,7 +2074,7 @@ export const translations = {
       eyebrow: "CONÇUS À MONCTON",
       title: "Nos",
       titleHighlight: "Produits",
-      subtitle: "Au-delà des projets clients, nous concevons et exploitons nos propres produits SaaS : chatbots IA, documentation médicale, CRM, facturation et applications grand public utilisées chaque jour par des milliers de personnes.",
+      subtitle: "Au-delà des projets clients, nous concevons et exploitons nos propres produits SaaS : chatbots IA, suivi du kilométrage, documentation médicale, CRM, facturation et applications grand public utilisées chaque jour par des milliers de personnes.",
       visit: "Visiter",
       demo: "Demander une démo",
       ctaTitle: "Besoin d'un produit comme ceux-ci pour votre entreprise ?",
@@ -2296,6 +2350,58 @@ export const translations = {
             "Données Hébergées au Canada (Montréal)",
             "Diffusion à Faible Latence",
             "Jusqu'à 90% Moins Cher qu'un Interprète"
+          ]
+        },
+        trajo: {
+          title: "Trajo",
+          description: "Plateforme SaaS bilingue et application iPhone / Android qui enregistre automatiquement le kilométrage des professionnels sur la route : immobilier, construction, gestion immobilière, inspection, hypothèque et autres métiers mobiles. Les trajets sont captés en arrière-plan, rattachés au bon rendez-vous et classés, tandis que les dépenses et les rapports conformes à l'ARC sont préparés automatiquement. Un tableau de bord web donne aux organisations des totaux mensuels par membre sans jamais exposer la position en temps réel.",
+          category: "SaaS & Application Mobile",
+          features: [
+            "Suivi GPS Automatique des Trajets (Arrière-plan)",
+            "Mode Hors Ligne avec Synchronisation",
+            "Classement Personnel / Affaires",
+            "Véhicules Multiples & Photos d'Odomètre",
+            "Dépenses avec Photo des Reçus",
+            "Rapports Conformes à l'ARC (PDF & Excel)",
+            "Vocabulaire & Modules par Métier (6 Métiers)",
+            "Tableau de Bord d'Équipe Respectueux de la Vie Privée",
+            "Abonnement par Siège & Essai de 14 Jours",
+            "Applications iOS & Android",
+            "Interface Bilingue (FR / EN)"
+          ]
+        },
+        nomadi: {
+          title: "Nomadi Social House",
+          description: "Site web bilingue pour Nomadi Social House, un restaurant afro-fusion à Moncton, Nouveau-Brunswick. Les clients réservent une table en ligne en quelques étapes (nombre de personnes, date, heure, allergies), passent des commandes à emporter, découvrent les menus et les expériences à venir, et demandent des événements privés, des repas de groupe ou un service traiteur, dans un design sombre et immersif qui raconte l'histoire du restaurant.",
+          category: "Site de Restaurant",
+          features: [
+            "Réservation de Table en Ligne",
+            "Commande à Emporter",
+            "Menus & Heures d'Ouverture",
+            "Page Expériences & Événements",
+            "Demandes d'Événements Privés & Traiteur",
+            "Confirmation par Courriel & Lien d'Annulation",
+            "Histoire de la Marque & Galerie Photo",
+            "Inscription à l'Infolettre",
+            "Interface Bilingue (FR / EN)",
+            "Design Responsive"
+          ]
+        },
+        copaje: {
+          title: "COPAJE AF/CA",
+          description: "Site web bilingue pour COPAJE AF/CA, un organisme à but non lucratif de Moncton qui accompagne les jeunes afrodescendants au Canada par des formations, des conférences en littératie financière, du mentorat et de l'entrepreneuriat. Le site présente la mission et ses quatre piliers d'accompagnement, les activités et la galerie photo, et transforme les visiteurs en membres, bénévoles et partenaires grâce à des parcours d'inscription dédiés.",
+          category: "Site d'Organisme à But Non Lucratif",
+          features: [
+            "Mission & Quatre Piliers d'Accompagnement",
+            "Activités & Événements",
+            "Galerie Photo",
+            "Adhésion en Ligne",
+            "Candidatures Bénévoles & Partenaires",
+            "Dons & Commandites",
+            "Inscription à l'Infolettre",
+            "Page de Contact",
+            "Interface Bilingue (FR / EN)",
+            "Design Responsive"
           ]
         },
         sahelyssaveurs: {

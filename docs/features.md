@@ -10,8 +10,8 @@
 | `/` | Page d'accueil (landing page) |
 | `/about` | Page À propos |
 | `/contact` | Page Contact |
-| `/projects` | Portfolio des projets (32 réalisations) |
-| `/products` | Produits SaaS maison (6 produits) |
+| `/projects` | Portfolio des projets (35 réalisations) |
+| `/products` | Produits SaaS maison (7 produits) |
 | `/blog` | Liste des articles de blog |
 | `/blog/[slug]` | Article de blog (3 articles) |
 | `/jobs` | Offres d'emploi |
@@ -66,7 +66,7 @@
 - Titre orienté résultat avec mot-clé en dégradé orange
 - Deux boutons : "Get My Free Quote" (→ `/contact`) et "See Our Work" (→ `/projects`)
 - Trois preuves de confiance : consultation gratuite 30 min, devis sous 24 h, sans engagement
-- Trois compteurs animés : 32+ projets, 98 % satisfaction, 6+ années
+- Trois compteurs animés : 35+ projets, 98 % satisfaction, 6+ années
 - Hauteur limitée à 88 % de l'écran sur desktop pour laisser voir la section suivante
 - Animations d'entrée Framer Motion accélérées (stagger 0,08 s, durée 0,4 s)
 - Illustration à droite masquée sur mobile
@@ -91,7 +91,7 @@
 - Ancre `#recent-projects`
 
 ### StatsSection
-- 5 compteurs animés : 32+ projets, 98 % satisfaction, 24/7 support, 6+ années, 15+ technologies
+- 5 compteurs animés : 35+ projets, 98 % satisfaction, 24/7 support, 6+ années, 15+ technologies
 - Fond dégradé orange
 - Animation déclenchée au scroll (`useInView`)
 
@@ -129,11 +129,12 @@
 ## 3. Page Produits (`/products`)
 
 - Composant `ProductsSection` avec en-tête "Made in Moncton"
-- 6 produits SaaS maison, tirés de `getProjects()` via `getProducts()` (clés `PRODUCT_KEYS`) :
+- 7 produits SaaS maison, tirés de `getProjects()` via `getProducts()` (clés `PRODUCT_KEYS`) :
 
 | Produit | Catégorie | URL |
 |---------|-----------|-----|
 | M2aBot | Chatbot IA bilingue | https://m2abot.ai |
+| Trajo | Kilométrage automatique & rapports ARC (web + iOS/Android) | https://trajo.ca |
 | M2A DocAssist | Documentation médicale IA | https://m2adoc.com |
 | M2A CRM | CRM pour PME | https://m2acrm.com |
 | WasiFacture | Facturation web & mobile (FCFA) | https://wasifacture.com |
@@ -168,7 +169,7 @@
 
 ## 4. Portfolio (`/projects`)
 
-- 32 projets définis dans `getProjects(t)` (exporté depuis `ProjectSection.jsx`), du plus récent au plus ancien
+- 35 projets définis dans `getProjects(t)` (exporté depuis `ProjectSection.jsx`), du plus récent au plus ancien
 - Chaque projet : clé, titre, description, catégorie, tags, icône react-icons, 3 captures, liste de features, URL live
 - Galerie d'images par projet avec navigation, modale plein écran
 - Captures stockées dans `/public/img/projects/<clé>1..3.png` (1440×900)
@@ -230,7 +231,7 @@
 
 ### Menu principal (desktop)
 1. **Services** (menu déroulant, 6 entrées avec icône et description)
-2. **Produits** (menu déroulant, 6 entrées avec icône et description + lien "Voir tous nos produits")
+2. **Produits** (menu déroulant, 7 entrées avec icône et description + lien "Voir tous nos produits")
 3. **Projets**
 4. **Emplois**
 5. **Contact**
@@ -242,7 +243,7 @@
 ### Pied de page
 - **Liens rapides** : À propos, Services, Produits, Projets, Blog, Carrières, Contact
 - **Nos services** : les 6 services
-- **Nos produits** : M2aBot, M2A DocAssist, M2A CRM, WasiFacture, TimeToPray (liens externes) + "Tous les produits"
+- **Nos produits** : M2aBot, Trajo, M2A DocAssist, M2A CRM, WasiFacture, TimeToPray (liens externes) + "Tous les produits"
 - **Contact** : contact@m2atech.com, +1 (506) 850-6548 (lien `tel:`), 74 Belmont Street, Moncton
 - **Réseaux** : Facebook, LinkedIn, Instagram
 - Newsletter (champ + bouton, sans traitement backend)

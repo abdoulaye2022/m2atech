@@ -64,6 +64,8 @@ import {
   FaIceCream,
   FaGlobeAfrica,
   FaMicrophone,
+  FaHandsHelping,
+  FaRoute,
 } from "react-icons/fa";
 import { useTranslation } from "@/hooks/useTranslation";
 import AnimatedSection from "../Partials/AnimatedSection";
@@ -74,6 +76,51 @@ const MotionBox = motion(Box);
 const MotionButton = motion(Button);
 
 export const getProjects = (t) => [
+  {
+    key: "trajo",
+    title: t('projects.projects.trajo.title'),
+    description: t('projects.projects.trajo.description'),
+    tags: ["Next.js", "React", "Mobile App", "SaaS", "GPS Tracking", "Offline-first", "Bilingual", "Stripe"],
+    icon: FaRoute,
+    category: t('projects.projects.trajo.category'),
+    images: [
+      "/img/projects/trajo1.png",
+      "/img/projects/trajo2.png",
+      "/img/projects/trajo3.png",
+    ],
+    features: t('projects.projects.trajo.features'),
+    liveUrl: "https://trajo.ca",
+  },
+  {
+    key: "nomadi",
+    title: t('projects.projects.nomadi.title'),
+    description: t('projects.projects.nomadi.description'),
+    tags: ["Next.js", "React", "Restaurant", "Reservations", "Online Ordering", "Bilingual", "SEO"],
+    icon: FaUtensils,
+    category: t('projects.projects.nomadi.category'),
+    images: [
+      "/img/projects/nomadi1.png",
+      "/img/projects/nomadi2.png",
+      "/img/projects/nomadi3.png",
+    ],
+    features: t('projects.projects.nomadi.features'),
+    liveUrl: "https://www.nomadisoho.ca",
+  },
+  {
+    key: "copaje",
+    title: t('projects.projects.copaje.title'),
+    description: t('projects.projects.copaje.description'),
+    tags: ["Next.js", "React", "Non-profit", "Membership", "Bilingual", "SEO", "Responsive Design"],
+    icon: FaHandsHelping,
+    category: t('projects.projects.copaje.category'),
+    images: [
+      "/img/projects/copaje1.png",
+      "/img/projects/copaje2.png",
+      "/img/projects/copaje3.png",
+    ],
+    features: t('projects.projects.copaje.features'),
+    liveUrl: "https://copaje.ca",
+  },
   {
     key: "sahelyssaveurs",
     title: t('projects.projects.sahelyssaveurs.title'),
