@@ -12,6 +12,9 @@ import { useTranslation } from "@/hooks/useTranslation";
 import Image from "next/image";
 
 const clients = [
+  { name: "Trajo", logo: "/img/clients/trajo.png", url: "https://trajo.ca" },
+  { name: "Nomadi Social House", logo: "/img/clients/nomadi.png", url: "https://www.nomadisoho.ca" },
+  { name: "COPAJE AF/CA", logo: "/img/clients/copaje.png", url: "https://copaje.ca" },
   { name: "D&H Global Supply", logo: "/img/clients/dhglobalsupply.png", url: "https://www.dhglobalsupply.com" },
   { name: "AxxesBusiness", logo: "/img/clients/axxesbusiness.png", url: "https://www.axxesbusiness.com" },
   { name: "4 Plus One Contracting", logo: "/img/clients/4plusone.png", url: "https://www.4plusone.ca" },

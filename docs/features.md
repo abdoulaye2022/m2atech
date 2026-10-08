@@ -112,7 +112,7 @@
 
 ### ClientsSection
 - Carrousel à défilement infini, logos cliquables vers le site du client
-- 11 clients : D&H Global Supply, AxxesBusiness, 4 Plus One Contracting, Bin Bab Makka, M2A DocAssist, DIO Cleaning, Masta Barber, Kane Eco Construction, Trio Pro Move, Maelo Studio, OPTEN Niger
+- 14 clients : Trajo, Nomadi Social House, COPAJE AF/CA, D&H Global Supply, AxxesBusiness, 4 Plus One Contracting, Bin Bab Makka, M2A DocAssist, DIO Cleaning, Masta Barber, Kane Eco Construction, Trio Pro Move, Maelo Studio, OPTEN Niger
 
 ### TestimonialsSection
 - 4 témoignages : Masta Barber, DIO Cleaning Services, Trio Pro Move & Clean, Frais Chez Vous
